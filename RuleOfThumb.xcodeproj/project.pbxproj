@@ -19,6 +19,7 @@
 		3065BD3421A2EC000005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3321A2EC000005339A /* .gitkeep */; };
 		3065BD3621A2EC0D0005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3521A2EC0D0005339A /* .gitkeep */; };
 		3065BD3821A2EC1B0005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3721A2EC1B0005339A /* .gitkeep */; };
+		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3521A2EC0D0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
+		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 				3065BD1321A2E6E50005339A /* RuleOfThumbTests */,
 				3065BD1E21A2E6E50005339A /* RuleOfThumbUITests */,
 				3065BCFA21A2E6E30005339A /* Products */,
+				3065BD3A21A2EEBF0005339A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +112,7 @@
 		3065BCFB21A2E6E30005339A /* RuleOfThumb */ = {
 			isa = PBXGroup;
 			children = (
+				3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */,
 				3065BD3021A2EB430005339A /* Meetings */,
 				3065BD2F21A2EB240005339A /* Notifications */,
 				3065BD2E21A2EB1D0005339A /* Rules */,
@@ -170,6 +176,14 @@
 				3065BD3121A2EB990005339A /* .gitkeep */,
 			);
 			path = Meetings;
+			sourceTree = "<group>";
+		};
+		3065BD3A21A2EEBF0005339A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3065BD3B21A2EEBF0005339A /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,14 @@
 				TargetAttributes = {
 					3065BCF821A2E6E30005339A = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					3065BD0F21A2E6E50005339A = {
 						CreatedOnToolsVersion = 10.0;
@@ -484,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3BJSYBS9R;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
@@ -502,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3BJSYBS9R;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
