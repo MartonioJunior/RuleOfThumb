@@ -28,6 +28,17 @@ class RuleListViewController: UIViewController {
         registerForPreviewing(with: self, sourceView: rulesTableView)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let destination = segue.destination as! RuleDetailViewController
+            let rule = sender as! MockRule
+            destination.ruleTitle = rule.title
+            destination.ruleDate = Date(timeIntervalSinceNow: 0)
+            destination.ruleDescription = rule.description
+            destination.ruleStatus = "Valendo"
+        }
+    }
+    
     func source(forLocation location: CGPoint) -> RuleTableViewCell? {
         guard let indexPath = rulesTableView.indexPathForRow(at: location), let cell = rulesTableView.cellForRow(at: indexPath) as? RuleTableViewCell else {
             return nil
@@ -55,6 +66,10 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.titleLabel.text = rule.title
         cell?.descriptionLabel.text = rule.description
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detail", sender: rules[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

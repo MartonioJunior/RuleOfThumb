@@ -40,11 +40,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="rulesTableView" destination="OKr-mO-gYq" id="s3u-K3-VTw"/>
+                        <segue destination="7KS-h6-ba1" kind="presentation" identifier="detail" id="TqG-es-ZAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sa6-w8-sh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-430.43478260869568"/>
+        </scene>
+        <!--ruleDetail-->
+        <scene sceneID="QG9-yA-ANs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RuleDetail" referencedIdentifier="ruleDetail" id="7KS-h6-ba1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGO-th-CGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2138" y="-431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gqU-rR-eI7">
