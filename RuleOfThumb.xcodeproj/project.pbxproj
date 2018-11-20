@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3004AE4C21A426960020629B /* RulePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE4A21A426960020629B /* RulePeekView.swift */; };
+		3004AE4F21A427210020629B /* RulePeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE4E21A427210020629B /* RulePeekView.xib */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
 		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
 		3065BD0221A2E6E30005339A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
@@ -15,11 +17,11 @@
 		3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0821A2E6E50005339A /* LaunchScreen.storyboard */; };
 		3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */; };
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
-		3065BD3221A2EB990005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3121A2EB990005339A /* .gitkeep */; };
-		3065BD3421A2EC000005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3321A2EC000005339A /* .gitkeep */; };
-		3065BD3621A2EC0D0005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3521A2EC0D0005339A /* .gitkeep */; };
-		3065BD3821A2EC1B0005339A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3721A2EC1B0005339A /* .gitkeep */; };
 		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
+		3065BD4021A2F3220005339A /* RuleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3F21A2F3220005339A /* RuleList.storyboard */; };
+		3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4121A2F42B0005339A /* RuleListViewController.swift */; };
+		3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */; };
+		3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3004AE4A21A426960020629B /* RulePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulePeekView.swift; sourceTree = "<group>"; };
+		3004AE4E21A427210020629B /* RulePeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulePeekView.xib; sourceTree = "<group>"; };
 		3065BCF921A2E6E30005339A /* RuleOfThumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleOfThumb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BCFC21A2E6E30005339A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3065BCFE21A2E6E30005339A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,10 @@
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3065BD3F21A2F3220005339A /* RuleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RuleList.storyboard; sourceTree = "<group>"; };
+		3065BD4121A2F42B0005339A /* RuleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
+		3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
+		3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +165,13 @@
 		3065BD2E21A2EB1D0005339A /* Rules */ = {
 			isa = PBXGroup;
 			children = (
+				3065BD4121A2F42B0005339A /* RuleListViewController.swift */,
+				3065BD3F21A2F3220005339A /* RuleList.storyboard */,
+				3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */,
+				3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */,
 				3065BD3521A2EC0D0005339A /* .gitkeep */,
+				3004AE4A21A426960020629B /* RulePeekView.swift */,
+				3004AE4E21A427210020629B /* RulePeekView.xib */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -300,11 +314,10 @@
 			files = (
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
-				3065BD3421A2EC000005339A /* .gitkeep in Resources */,
-				3065BD3621A2EC0D0005339A /* .gitkeep in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
-				3065BD3221A2EB990005339A /* .gitkeep in Resources */,
-				3065BD3821A2EC1B0005339A /* .gitkeep in Resources */,
+				3004AE4F21A427210020629B /* RulePeekView.xib in Resources */,
+				3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */,
+				3065BD4021A2F3220005339A /* RuleList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
+				3004AE4C21A426960020629B /* RulePeekView.swift in Sources */,
+				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
