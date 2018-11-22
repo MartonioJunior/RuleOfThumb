@@ -16,6 +16,7 @@ struct MockRule {
 class RuleListViewController: UIViewController {
     @IBOutlet weak var rulesTableView: UITableView!
     var rules = [MockRule]()
+    var highlightedIndex = 0
     let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
@@ -45,12 +46,9 @@ class RuleListViewController: UIViewController {
         }
         return cell
     }
-    
-    @IBAction func proposeRule(_ sender: UIBarButtonItem) {
-        
-    }
 }
 
+// - MARK: TableView Delegate & Data Source
 extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rules.count
@@ -70,6 +68,10 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detail", sender: rules[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        highlightedIndex = indexPath.row
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -98,6 +100,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// - MARK: Peek and Pop
 extension RuleListViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let displayInfo = source(forLocation: location), let peekView = Bundle.main.loadNibNamed("RulePeekView", owner: "self", options: nil)?.first as? RulePeekView else {
@@ -106,7 +109,7 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         previewingContext.sourceRect = displayInfo.frame
         
         peekView.ruleTitleLabel.text = displayInfo.titleLabel.text
-        peekView.dateAuthorLabel.text = "Criada por Fulano ás 18:30"
+        peekView.dateAuthorLabel.text = "Criada em 05/11/2018 por Fulano"
         peekView.ruleDescriptionLabel.text = displayInfo.descriptionLabel.text
         
         let previewRule = UIViewController()
@@ -117,7 +120,7 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        showDetailViewController(viewControllerToCommit, sender: nil)
+        performSegue(withIdentifier: "detail", sender: rules[highlightedIndex])
     }
     
     

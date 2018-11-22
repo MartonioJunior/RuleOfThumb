@@ -11,6 +11,14 @@
 		3004AE4F21A427210020629B /* RulePeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE4E21A427210020629B /* RulePeekView.xib */; };
 		3004AE5121A436160020629B /* RuleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5021A436160020629B /* RuleDetailViewController.swift */; };
 		3004AE5321A436230020629B /* RuleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5221A436230020629B /* RuleDetail.storyboard */; };
+		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
+		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
+		300A58A621A57772000160DF /* RuleCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300A58A521A57772000160DF /* RuleCreate.storyboard */; };
+		300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A721A57791000160DF /* RuleCreateViewController.swift */; };
+		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
+		300A58AE21A5995F000160DF /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58AD21A5995F000160DF /* PromptView.swift */; };
+		300A58B021A5996D000160DF /* PromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300A58AF21A5996D000160DF /* PromptView.xib */; };
+		300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58B321A5A32B000160DF /* UIAlertController.swift */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
 		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
 		3065BD0221A2E6E30005339A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
@@ -48,6 +56,14 @@
 		3004AE4E21A427210020629B /* RulePeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulePeekView.xib; sourceTree = "<group>"; };
 		3004AE5021A436160020629B /* RuleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleDetailViewController.swift; sourceTree = "<group>"; };
 		3004AE5221A436230020629B /* RuleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RuleDetail.storyboard; sourceTree = "<group>"; };
+		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
+		3004AE5521A44E3E0020629B /* CreatorProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorProfileView.xib; sourceTree = "<group>"; };
+		300A58A521A57772000160DF /* RuleCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RuleCreate.storyboard; sourceTree = "<group>"; };
+		300A58A721A57791000160DF /* RuleCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreateViewController.swift; sourceTree = "<group>"; };
+		300A58A921A586A8000160DF /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		300A58AD21A5995F000160DF /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		300A58AF21A5996D000160DF /* PromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptView.xib; sourceTree = "<group>"; };
+		300A58B321A5A32B000160DF /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		3065BCF921A2E6E30005339A /* RuleOfThumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleOfThumb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BCFC21A2E6E30005339A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3065BCFE21A2E6E30005339A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +116,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300A58B121A59C88000160DF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				300A58B521A5A332000160DF /* Class Extensions */,
+				300A58B221A59C8E000160DF /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		300A58B221A59C8E000160DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3004AE5421A44E3E0020629B /* CreatorProfileView.swift */,
+				3004AE5521A44E3E0020629B /* CreatorProfileView.xib */,
+				300A58AD21A5995F000160DF /* PromptView.swift */,
+				300A58AF21A5996D000160DF /* PromptView.xib */,
+				300A58A921A586A8000160DF /* XibView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		300A58B521A5A332000160DF /* Class Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				300A58B321A5A32B000160DF /* UIAlertController.swift */,
+			);
+			path = "Class Extensions";
+			sourceTree = "<group>";
+		};
 		3065BCF021A2E6E30005339A = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +169,7 @@
 		3065BCFB21A2E6E30005339A /* RuleOfThumb */ = {
 			isa = PBXGroup;
 			children = (
+				300A58B121A59C88000160DF /* Shared */,
 				3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */,
 				3065BD3021A2EB430005339A /* Meetings */,
 				3065BD2F21A2EB240005339A /* Notifications */,
@@ -178,6 +224,8 @@
 				3004AE4E21A427210020629B /* RulePeekView.xib */,
 				3004AE5021A436160020629B /* RuleDetailViewController.swift */,
 				3004AE5221A436230020629B /* RuleDetail.storyboard */,
+				300A58A721A57791000160DF /* RuleCreateViewController.swift */,
+				300A58A521A57772000160DF /* RuleCreate.storyboard */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -320,10 +368,13 @@
 			files = (
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
+				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
+				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
 				3004AE4F21A427210020629B /* RulePeekView.xib in Resources */,
 				3004AE5321A436230020629B /* RuleDetail.storyboard in Resources */,
 				3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */,
+				300A58A621A57772000160DF /* RuleCreate.storyboard in Resources */,
 				3065BD4021A2F3220005339A /* RuleList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,11 +401,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
+				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
+				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
+				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
 				3004AE4C21A426960020629B /* RulePeekView.swift in Sources */,
+				300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */,
 				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
+				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
 				3004AE5121A436160020629B /* RuleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

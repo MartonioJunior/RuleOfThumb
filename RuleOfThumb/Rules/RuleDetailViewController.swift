@@ -12,8 +12,7 @@ class RuleDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var creatorLabel: UILabel!
+    @IBOutlet weak var profileView: CreatorProfileView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var archiveRuleButton: UIButton!
     
@@ -28,11 +27,11 @@ class RuleDetailViewController: UIViewController {
         descriptionLabel.text = ruleDescription
         statusLabel.text = ruleStatus
         setCreatedAtLabel(date: ruleDate)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         setCreatorLabel(name: "Fulano")
-        profileImageView.backgroundColor = .black
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.borderWidth = 0
+        profileView.setCircleImageView(UIImage())
     }
     
     func setCreatedAtLabel(date: Date) {
@@ -55,7 +54,7 @@ class RuleDetailViewController: UIViewController {
         creatorString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: creatorString.string.count))
         creatorString.addAttribute(.kern, value: -0.43, range: NSRange(location: 0, length: creatorString.string.count))
         creatorString.addAttribute(.font, value: UIFont.systemFont(ofSize: 14.0, weight: .semibold), range: NSRange(location: 0, length: 11))
-        creatorLabel.attributedText = creatorString
+        profileView.setProfileLabel(text: creatorString)
     }
     
     @IBAction func archiveRule(_ sender: UIButton) {

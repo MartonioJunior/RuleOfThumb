@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" title="Regras" id="gUC-1Y-JHt">
                         <barButtonItem key="rightBarButtonItem" title="Propor Regra" id="fao-Ge-a5n">
                             <connections>
-                                <action selector="proposeRule:" destination="Mf6-hm-LnX" id="8kf-0d-uuS"/>
+                                <segue destination="9pc-sD-8rc" kind="presentation" id="mSz-JP-aap"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,13 +47,21 @@
             </objects>
             <point key="canvasLocation" x="1232.8" y="-430.43478260869568"/>
         </scene>
+        <!--ruleCreate-->
+        <scene sceneID="MQd-Rd-a7T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RuleCreate" referencedIdentifier="ruleCreate" id="9pc-sD-8rc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Efr-Ed-eji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2118" y="-624"/>
+        </scene>
         <!--ruleDetail-->
         <scene sceneID="QG9-yA-ANs">
             <objects>
                 <viewControllerPlaceholder storyboardName="RuleDetail" referencedIdentifier="ruleDetail" id="7KS-h6-ba1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGO-th-CGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="-431"/>
+            <point key="canvasLocation" x="2122" y="-410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gqU-rR-eI7">
