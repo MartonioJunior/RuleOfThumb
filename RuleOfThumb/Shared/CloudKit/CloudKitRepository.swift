@@ -76,8 +76,22 @@ extension CloudKitRepository: RulesRepository {
 
 // - MARK: HousesRepository protocol implementation.
 extension CloudKitRepository: HousesRepository {
+
+    func currentHouse(_ completion: @escaping ((House) -> Void)) {
+        let defaults = UserDefaults.standard
+        
+        // Teoricamente quando chamar essa função, já deve estar inicializada.
+        if let houseCreated = defaults.string(forKey: "HouseCreated") {
+            CloudKitRepository.fetchById(CKRecord.ID(recordName: houseCreated)) { (record) in
+                let house = House(from: record)
+                
+                completion(house)
+            }
+        }
+    }
     
     func create(house: House, then completion: @escaping ((House) -> Void)) {
+        let defaults = UserDefaults.standard
         let record = house.toCKRecord()
         
         self.publicDB?.save(record, completionHandler: { (saved, error) in
@@ -87,6 +101,8 @@ extension CloudKitRepository: HousesRepository {
             }
             
             print("House \(saved.recordID) saved")
+            
+            defaults.set(house.recordName, forKey: "HomeCreated")
             
             completion(house)
         })
