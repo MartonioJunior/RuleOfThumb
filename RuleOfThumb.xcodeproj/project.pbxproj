@@ -30,6 +30,11 @@
 		3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */; };
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
 		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
+		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
+		5D08B56521A598C900FBF73A /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56421A598C900FBF73A /* Rule.swift */; };
+		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
+		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
+		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
 		3065BD4021A2F3220005339A /* RuleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD3F21A2F3220005339A /* RuleList.storyboard */; };
 		3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4121A2F42B0005339A /* RuleListViewController.swift */; };
 		3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */; };
@@ -97,6 +102,11 @@
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		300A58B121A59C88000160DF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		300A58B121A59C88000160DF /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		300A58B121A59C88000160DF /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		300A58B121A59C88000160DF /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
+		300A58B121A59C88000160DF /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
 		3065BD3F21A2F3220005339A /* RuleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RuleList.storyboard; sourceTree = "<group>"; };
 		3065BD4121A2F42B0005339A /* RuleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
 		3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +297,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D08B55F21A5965600FBF73A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5D08B56321A598AB00FBF73A /* Entities */,
+				5D08B56021A5965F00FBF73A /* CloudKit */,
+				5D08B56121A5968E00FBF73A /* Repository.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5D08B56021A5965F00FBF73A /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */,
+			);
+			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		5D08B56321A598AB00FBF73A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5D08B56421A598C900FBF73A /* Rule.swift */,
+				5D08B56621A59A4B00FBF73A /* House.swift */,
+				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,6 +483,9 @@
 				300A5C4621AC1FCC00C6013D /* RuleCreateDelegate.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
+				5D08B56521A598C900FBF73A /* Rule.swift in Sources */,
+				5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */,
+				5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
@@ -452,6 +493,8 @@
 				300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */,
 				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
+				300A58B121A59C88000160DF /* House.swift in Sources */,
+				300A58B121A59C88000160DF /* Repository.swift in Sources */,
 				308EE4F121A6E63700C17310 /* VotingPromptView.swift in Sources */,
 				308EE4FD21A6F61A00C17310 /* VotingPromptViewDelegate.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
@@ -632,13 +675,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,13 +694,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
