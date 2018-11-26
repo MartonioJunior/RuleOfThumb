@@ -12,12 +12,7 @@ class XibView: UIView {
     @IBOutlet var contentView: UIView!
     var nibName: String {
         get {
-            return ""
-        }
-    }
-    var owner: XibView {
-        get {
-            return self
+            return "XibView"
         }
     }
     
@@ -32,7 +27,7 @@ class XibView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed(nibName, owner: owner, options: nil)
+        Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

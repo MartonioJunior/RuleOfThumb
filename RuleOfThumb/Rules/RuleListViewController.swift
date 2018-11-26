@@ -11,6 +11,7 @@ import UIKit
 struct MockRule {
     var title: String
     var description: String
+    var author: String
 }
 
 class RuleListViewController: UIViewController {
@@ -25,7 +26,7 @@ class RuleListViewController: UIViewController {
         rulesTableView.dataSource = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
-        rules = Array(repeating: MockRule(title: "Dar bom dia para todos os membros da casa", description: "Com o intuito de aproximar o relacionamento dos membros do AP104, todos deverão dar bom dia assim que acordar"), count: 5)
+        rules = Array(repeating: MockRule(title: "Dar bom dia para todos os membros da casa", description: "Com o intuito de aproximar o relacionamento dos membros do AP104, todos deverão dar bom dia assim que acordar", author: "Anne"), count: 5)
         registerForPreviewing(with: self, sourceView: rulesTableView)
     }
     
@@ -50,24 +51,74 @@ class RuleListViewController: UIViewController {
 
 // - MARK: TableView Delegate & Data Source
 extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rules.count
+        switch section {
+            case 0:
+                return 1
+            case 1:
+                return rules.count
+            default:
+                return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+        switch indexPath.section {
+        case 0:
+            return createOpenVotesCollection()
+        case 1:
+            return createRuleCell(indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func createOpenVotesCollection() -> UITableViewCell {
+        var cell = rulesTableView.dequeueReusableCell(withIdentifier: "allVotations") as? OpenVotesTableViewCell
         if cell == nil {
-            tableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
-            cell = tableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+            rulesTableView.register(UINib(nibName: "OpenVotesTableViewCell", bundle: nil), forCellReuseIdentifier: "allVotations")
+            cell = rulesTableView.dequeueReusableCell(withIdentifier: "allVotations") as? OpenVotesTableViewCell
+        }
+        cell?.data = rules
+        cell?.reloadData()
+        return cell!
+    }
+    
+    func createRuleCell(indexPath: IndexPath) -> UITableViewCell {
+        var cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+        if cell == nil {
+            rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
+            cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
         }
         let rule = rules[indexPath.row]
-        cell?.titleLabel.text = rule.title
-        cell?.descriptionLabel.text = rule.description
+        cell?.ruleTitleLabel.text = rule.title
+        cell?.ruleDescriptionLabel.text = rule.description
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detail", sender: rules[indexPath.row])
+        switch indexPath.section {
+            case 1:
+                performSegue(withIdentifier: "detail", sender: rules[indexPath.row])
+                break
+            default:
+                break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        switch indexPath.section {
+        case 0:
+            return false
+        case 1:
+            return true
+        default:
+            return false
+        }
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -89,28 +140,38 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.frame = headerView.frame
-        titleLabel.text = "Lista de Regras"
+        switch section {
+        case 0:
+            titleLabel.text = "Vote opened"
+            break
+        case 1:
+            titleLabel.text = "Lista de Regras"
+            break
+        default:
+            break
+        }
         headerView.addSubview(titleLabel)
         
         return headerView
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Lista de Regras"
+        return ""
     }
 }
 
 // - MARK: Peek and Pop
 extension RuleListViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let displayInfo = source(forLocation: location), let peekView = Bundle.main.loadNibNamed("RulePeekView", owner: "self", options: nil)?.first as? RulePeekView else {
+        guard let displayInfo = source(forLocation: location) else {
             return nil
         }
         previewingContext.sourceRect = displayInfo.frame
         
-        peekView.ruleTitleLabel.text = displayInfo.titleLabel.text
+        let peekView = RulePeekView()
+        peekView.ruleTitleLabel.text = displayInfo.ruleTitleLabel.text
         peekView.dateAuthorLabel.text = "Criada em 05/11/2018 por Fulano"
-        peekView.ruleDescriptionLabel.text = displayInfo.descriptionLabel.text
+        peekView.ruleDescriptionLabel.text = displayInfo.ruleDescriptionLabel.text
         
         let previewRule = UIViewController()
         previewRule.preferredContentSize = peekView.frame.size

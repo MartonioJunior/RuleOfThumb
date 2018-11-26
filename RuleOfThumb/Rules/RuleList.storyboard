@@ -24,9 +24,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OKr-mO-gYq" firstAttribute="top" secondItem="jsp-zs-9vF" secondAttribute="top" id="1d0-Nm-wUf"/>
                             <constraint firstItem="jsp-zs-9vF" firstAttribute="trailing" secondItem="OKr-mO-gYq" secondAttribute="trailing" constant="8" id="2RF-pX-LdM"/>
+                            <constraint firstItem="OKr-mO-gYq" firstAttribute="bottom" secondItem="jsp-zs-9vF" secondAttribute="bottom" id="88L-gT-1s7"/>
                             <constraint firstItem="jsp-zs-9vF" firstAttribute="bottom" secondItem="OKr-mO-gYq" secondAttribute="bottom" id="Gsu-xo-8DL"/>
-                            <constraint firstItem="OKr-mO-gYq" firstAttribute="top" secondItem="jsp-zs-9vF" secondAttribute="top" id="fNt-jV-SC0"/>
                             <constraint firstItem="OKr-mO-gYq" firstAttribute="leading" secondItem="jsp-zs-9vF" secondAttribute="leading" constant="8" id="yIf-lq-KdQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jsp-zs-9vF"/>
@@ -40,7 +41,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="rulesTableView" destination="OKr-mO-gYq" id="s3u-K3-VTw"/>
-                        <segue destination="7KS-h6-ba1" kind="presentation" identifier="detail" id="TqG-es-ZAX"/>
+                        <segue destination="7KS-h6-ba1" kind="show" identifier="detail" id="TqG-es-ZAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sa6-w8-sh8" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,8 +9,9 @@
 import UIKit
 
 class RuleTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var ruleTitleLabel: UILabel!
+    @IBOutlet weak var ruleDescriptionLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
