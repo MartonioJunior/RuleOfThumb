@@ -16,6 +16,8 @@ class RuleDetailViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var archiveRuleButton: UIButton!
     
+    var rule: MockRule?
+    
     var ruleTitle = "Sem nome"
     var ruleDescription = "Sem descrição"
     var ruleDate = Date(timeIntervalSinceNow: 0)
@@ -23,18 +25,21 @@ class RuleDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = ruleTitle
-        descriptionLabel.text = ruleDescription
-        statusLabel.text = ruleStatus
-        setCreatedAtLabel(date: ruleDate)
+        guard let rule = rule else { return }
+        titleLabel.text = rule.title
+        descriptionLabel.text = rule.description
+        statusLabel.text = rule.status
+        setCreatedAtLabel(date: rule.date)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setCreatorLabel(name: "Fulano")
+        guard let rule = rule else { return }
+        setCreatorLabel(name: rule.author)
         profileView.setCircleImageView(UIImage())
     }
     
-    func setCreatedAtLabel(date: Date) {
+    func setCreatedAtLabel(date: Date?) {
+        guard let date = date else { return }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let message = "Criada em\n"+dateFormatter.string(from: date)
@@ -47,7 +52,8 @@ class RuleDetailViewController: UIViewController {
         createdAtLabel.attributedText = createdAtString
     }
     
-    func setCreatorLabel(name: String) {
+    func setCreatorLabel(name: String?) {
+        guard let name = name else { return }
         let message = "Criada por\n"+name
         let creatorString = NSMutableAttributedString(string: message, attributes: nil)
         creatorString.addAttribute(.font, value: UIFont.systemFont(ofSize: 17.0, weight: .regular), range: NSRange(location: 0, length: creatorString.string.count))

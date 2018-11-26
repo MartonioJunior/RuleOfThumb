@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Regras" id="gUC-1Y-JHt">
                         <barButtonItem key="rightBarButtonItem" title="Propor Regra" id="fao-Ge-a5n">
                             <connections>
-                                <segue destination="9pc-sD-8rc" kind="presentation" id="mSz-JP-aap"/>
+                                <segue destination="9pc-sD-8rc" kind="presentation" identifier="create" id="mSz-JP-aap"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

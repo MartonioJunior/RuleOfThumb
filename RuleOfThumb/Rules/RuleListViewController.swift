@@ -12,6 +12,8 @@ struct MockRule {
     var title: String
     var description: String
     var author: String
+    var date: Date
+    var status: String
 }
 
 class RuleListViewController: UIViewController {
@@ -26,18 +28,18 @@ class RuleListViewController: UIViewController {
         rulesTableView.dataSource = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
-        rules = Array(repeating: MockRule(title: "Dar bom dia para todos os membros da casa", description: "Com o intuito de aproximar o relacionamento dos membros do AP104, todos deverão dar bom dia assim que acordar", author: "Anne"), count: 5)
+        rules = Array(repeating: MockRule(title: "Dar bom dia para todos os membros da casa", description: "Com o intuito de aproximar o relacionamento dos membros do AP104, todos deverão dar bom dia assim que acordar", author: "Anne", date: Date(), status: "Valendo"), count: 5)
         registerForPreviewing(with: self, sourceView: rulesTableView)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
-            let destination = segue.destination as! RuleDetailViewController
+            guard let destination = segue.destination as? RuleDetailViewController else { return }
             let rule = sender as! MockRule
-            destination.ruleTitle = rule.title
-            destination.ruleDate = Date(timeIntervalSinceNow: 0)
-            destination.ruleDescription = rule.description
-            destination.ruleStatus = "Valendo"
+            destination.rule = rule
+        } else if segue.identifier == "create" {
+            guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? RuleCreateViewController else { return }
+            destination.delegate = self
         }
     }
     
@@ -95,8 +97,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
         }
         let rule = rules[indexPath.row]
-        cell?.ruleTitleLabel.text = rule.title
-        cell?.ruleDescriptionLabel.text = rule.description
+        cell?.rule = rule
         return cell!
     }
     
@@ -169,9 +170,7 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         previewingContext.sourceRect = displayInfo.frame
         
         let peekView = RulePeekView()
-        peekView.ruleTitleLabel.text = displayInfo.ruleTitleLabel.text
-        peekView.dateAuthorLabel.text = "Criada em 05/11/2018 por Fulano"
-        peekView.ruleDescriptionLabel.text = displayInfo.ruleDescriptionLabel.text
+        peekView.rule = displayInfo.rule
         
         let previewRule = UIViewController()
         previewRule.preferredContentSize = peekView.frame.size
@@ -183,6 +182,11 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         performSegue(withIdentifier: "detail", sender: rules[highlightedIndex])
     }
-    
-    
+}
+
+extension RuleListViewController: RuleCreateDelegate {
+    func proposedNewRule(_ rule: MockRule) {
+        rules.insert(rule, at: 0)
+        rulesTableView.reloadData()
+    }
 }

@@ -20,6 +20,7 @@ class RuleCreateViewController: UIViewController {
             return Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         }
     }
+    var delegate: RuleCreateDelegate?
     var ruleName: String = ""
     var ruleReason: String = ""
     
@@ -70,7 +71,8 @@ class RuleCreateViewController: UIViewController {
     }
     
     func saveRule(name: String, reason: String) {
-        
+        let newRule = MockRule(title: name, description: reason, author: "Moura", date: Date(), status: "Em votação")
+        delegate?.proposedNewRule(newRule)
     }
     
     @IBAction func cancelRuleCreation(_ sender: UIBarButtonItem) {
