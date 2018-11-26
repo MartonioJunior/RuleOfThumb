@@ -45,4 +45,5 @@ class House: CKManagedObject {
         
         return record
     }
+    
 }
