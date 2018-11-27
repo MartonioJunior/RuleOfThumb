@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SugestionModalView" customModule="RuleOfThumb" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="UQb-K7-bVa"/>
+                <outlet property="firstActionButton" destination="seU-0S-UPf" id="iIB-Te-gnS"/>
+                <outlet property="modalDescriptionLabel" destination="egx-R3-I7M" id="vvw-Ed-t0T"/>
+                <outlet property="modalImage" destination="UME-Me-VUs" id="RvI-Jh-xcy"/>
+                <outlet property="modalTitleLabel" destination="Ldk-X1-kW7" id="qwd-6c-rQc"/>
+                <outlet property="secondActionButton" destination="2GY-Tm-e2J" id="JNM-2v-xXd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="477"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-wk-Lvh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="477"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="J64-D8-tSv">
+                            <rect key="frame" x="16" y="16" width="343" height="445"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" image="image-default" translatesAutoresizingMaskIntoConstraints="NO" id="UME-Me-VUs">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="272"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure that you want to archive this rule?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldk-X1-kW7">
+                                    <rect key="frame" x="0.0" y="288" width="343" height="41"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure that all the members of the house agree with this decision. Maybe you should schedule a meeting before doing that." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egx-R3-I7M">
+                                    <rect key="frame" x="0.0" y="345" width="343" height="54"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-RH-mHL">
+                                    <rect key="frame" x="0.0" y="415" width="343" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seU-0S-UPf" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="155.5" height="30"/>
+                                            <state key="normal" title="Not yet"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-Tm-e2J" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                            <rect key="frame" x="187.5" y="0.0" width="155.5" height="30"/>
+                                            <state key="normal" title="Yes, I'm sure"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="seU-0S-UPf" firstAttribute="width" secondItem="2GY-Tm-e2J" secondAttribute="width" id="vwf-Ko-Civ"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Ldk-X1-kW7" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="mhj-Pd-Xjk"/>
+                                <constraint firstItem="9Tb-RH-mHL" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="rVW-VY-fMi"/>
+                                <constraint firstItem="egx-R3-I7M" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="zGu-Yi-iAR"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="J64-D8-tSv" firstAttribute="top" secondItem="JYZ-wk-Lvh" secondAttribute="top" constant="16" id="3ek-gB-pEt"/>
+                        <constraint firstAttribute="trailing" secondItem="J64-D8-tSv" secondAttribute="trailing" constant="16" id="P73-qp-hbK"/>
+                        <constraint firstAttribute="bottom" secondItem="J64-D8-tSv" secondAttribute="bottom" constant="16" id="lPK-gQ-5hW"/>
+                        <constraint firstItem="J64-D8-tSv" firstAttribute="leading" secondItem="JYZ-wk-Lvh" secondAttribute="leading" constant="16" id="tUq-x8-5s5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JYZ-wk-Lvh" secondAttribute="bottom" id="8ER-fU-TfT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JYZ-wk-Lvh" secondAttribute="trailing" id="XLC-SP-lIh"/>
+                <constraint firstItem="JYZ-wk-Lvh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YQe-dH-kIZ"/>
+                <constraint firstItem="JYZ-wk-Lvh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uwz-7q-sbv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="58.920539730134934"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image-default" width="800" height="800"/>
+    </resources>
+</document>

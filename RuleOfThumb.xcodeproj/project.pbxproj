@@ -32,6 +32,12 @@
 		3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4121A2F42B0005339A /* RuleListViewController.swift */; };
 		3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */; };
 		3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */; };
+		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
+		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
+		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
+		E597836521A83808009FDDCF /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836421A83808009FDDCF /* DefaultButton.swift */; };
+		E597836721A839B3009FDDCF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836621A839B3009FDDCF /* UIColor.swift */; };
+		E597836921A83AA5009FDDCF /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836821A83AA5009FDDCF /* FormButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +86,6 @@
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		3065BD3521A2EC0D0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -88,6 +93,12 @@
 		3065BD4121A2F42B0005339A /* RuleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
 		3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
 		3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleTableViewCell.xib; sourceTree = "<group>"; };
+		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
+		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
+		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
+		E597836421A83808009FDDCF /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		E597836621A839B3009FDDCF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E597836821A83AA5009FDDCF /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +144,11 @@
 				300A58AD21A5995F000160DF /* PromptView.swift */,
 				300A58AF21A5996D000160DF /* PromptView.xib */,
 				300A58A921A586A8000160DF /* XibView.swift */,
+				E597836421A83808009FDDCF /* DefaultButton.swift */,
+				E597835E21A82695009FDDCF /* SugestionModalView.xib */,
+				E597836021A8270D009FDDCF /* SugestionModalView.swift */,
+				E597836221A837E0009FDDCF /* SugestionModal.storyboard */,
+				E597836821A83AA5009FDDCF /* FormButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				300A58B321A5A32B000160DF /* UIAlertController.swift */,
+				E597836621A839B3009FDDCF /* UIColor.swift */,
 			);
 			path = "Class Extensions";
 			sourceTree = "<group>";
@@ -219,7 +236,6 @@
 				3065BD3F21A2F3220005339A /* RuleList.storyboard */,
 				3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */,
 				3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */,
-				3065BD3521A2EC0D0005339A /* .gitkeep */,
 				3004AE4A21A426960020629B /* RulePeekView.swift */,
 				3004AE4E21A427210020629B /* RulePeekView.xib */,
 				3004AE5021A436160020629B /* RuleDetailViewController.swift */,
@@ -369,8 +385,10 @@
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
+				E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
+				E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */,
 				3004AE4F21A427210020629B /* RulePeekView.xib in Resources */,
 				3004AE5321A436230020629B /* RuleDetail.storyboard in Resources */,
 				3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */,
@@ -401,13 +419,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
+				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
+				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
+				E597836521A83808009FDDCF /* DefaultButton.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
 				3004AE4C21A426960020629B /* RulePeekView.swift in Sources */,
 				300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */,
+				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
@@ -588,13 +610,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,13 +629,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
