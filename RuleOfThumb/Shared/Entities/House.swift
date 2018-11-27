@@ -30,11 +30,25 @@ class House: CKManagedObject {
     required init(from record: CKRecord) {
         self.name = record.value(forKey: "name") as! String
         self.openKey = record.value(forKey: "openKey") as! String
-        self.recordName = record.value(forKey: "recordName") as? String
+        self.recordName = record.recordID.recordName
         self.recordType = record.recordType
         
         let recordID = record.recordID
         self.recordID = self.ckRecordIDToData(recordID: recordID)
+    }
+    
+    convenience init(from ckReference: CKRecord.Reference) {
+        let group = DispatchGroup()
+        var record = CKRecord(recordType: "Houses")
+        
+        group.enter()
+        CloudKitRepository.fetchById(ckReference.recordID) { (houseRecord) in
+            record = houseRecord
+            group.leave()
+        }
+        group.wait()
+        
+        self.init(from: record)
     }
     
     func toCKRecord() -> CKRecord {

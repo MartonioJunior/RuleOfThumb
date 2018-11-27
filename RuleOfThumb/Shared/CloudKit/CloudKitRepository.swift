@@ -47,9 +47,13 @@ extension CloudKitRepository: RulesRepository {
                 return
             }
             
+            var rules = [Rule]()
+            
             records?.forEach({ (record) in
-                print(record.value(forKey: "name") ?? "Sem nome")
+                rules.append(Rule(from: record))
             })
+            
+            completion(rules)
         })
     }
     
@@ -69,7 +73,17 @@ extension CloudKitRepository: RulesRepository {
     }
     
     func delete(rule: Rule, then completion: @escaping ((Bool) -> Void)) {
-        
+        self.publicDB?.delete(withRecordID: rule.ckRecordId(), completionHandler: { (recordID, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                completion(false)
+                return
+            }
+            
+            print("Rule \(String(describing: recordID)) deleted")
+            
+            completion(true)
+        })
     }
     
 }

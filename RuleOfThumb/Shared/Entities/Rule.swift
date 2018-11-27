@@ -48,15 +48,14 @@ class Rule: CKManagedObject {
     
     required init(from record: CKRecord) {
         self.recordType = record.recordType
+        self.recordName = record.recordID.recordName
         self.name = record["name"] as! String
         self.number = record["number"] as! Int
         self.description = record["description"] as! String
         self.status = Rule.Status(rawValue: record["status"] as! Int)!
         
         let houseReference = record["house"] as! CKRecord.Reference
-        CloudKitRepository.fetchById(houseReference.recordID) { (houseRecord) in
-            self.house = House(from: houseRecord)
-        }
+        self.house = House(from: houseReference)
         
         let recordID = record.recordID
         self.recordID = self.ckRecordIDToData(recordID: recordID)
