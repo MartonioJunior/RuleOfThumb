@@ -31,6 +31,28 @@ class CloudKitRepository {
             completion(record)
         })
     }
+    
+    static func subscription(for recordType: String) {
+        let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
+        let subscription = CKQuerySubscription(
+            recordType: recordType,
+            predicate: NSPredicate(value: true),
+            options: [.firesOnRecordCreation])
+        
+        let info = CKSubscription.NotificationInfo()
+        info.alertLocalizationKey = "New record on \(recordType): %@"
+        info.alertLocalizationArgs = ["name"]
+        info.category = "RecordAdded"
+        
+        subscription.notificationInfo = info
+        
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { (savedSubscription, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+        })
+    }
 }
 
 // - MARK: RulesRepository protocol implementation.

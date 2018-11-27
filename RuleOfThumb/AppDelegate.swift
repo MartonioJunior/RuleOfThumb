@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let notificationManager = NotificationManager()
+        
+        notificationManager.requestAuthorization()
+        application.registerForRemoteNotifications()
+        
         return true
     }
 
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        // TODO: Colocar toda essa lógica em outro lugar mais apropriado.
+        if let userInfo = userInfo as? [String: NSObject] {
+            let notification = CKNotification(fromRemoteNotificationDictionary: userInfo)
+            
+            // NOTE: Essa verificação garante que é uma notification de uma subscription.
+            if (notification.notificationType == CKNotification.NotificationType.query) {
+                let queryNotification = notification as! CKQueryNotification
+                
+                let recordID = queryNotification.recordID
+                
+                CloudKitRepository.fetchById(recordID!) { (record) in
+                    print(record)
+                }
+            }
+        }
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
