@@ -39,6 +39,12 @@
 		3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4121A2F42B0005339A /* RuleListViewController.swift */; };
 		3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */; };
 		3065BD4721A2FD3E0005339A /* RuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */; };
+		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
+		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
+		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
+		E597836521A83808009FDDCF /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836421A83808009FDDCF /* DefaultButton.swift */; };
+		E597836721A839B3009FDDCF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836621A839B3009FDDCF /* UIColor.swift */; };
+		E597836921A83AA5009FDDCF /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836821A83AA5009FDDCF /* FormButton.swift */; };
 		308EE4EB21A6E20E00C17310 /* RuleVotingCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EE4EA21A6E20E00C17310 /* RuleVotingCardViewCell.swift */; };
 		308EE4ED21A6E22800C17310 /* RuleVotingCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308EE4EC21A6E22800C17310 /* RuleVotingCardViewCell.xib */; };
 		308EE4EF21A6E62800C17310 /* VotingPromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308EE4EE21A6E62800C17310 /* VotingPromptView.xib */; };
@@ -98,7 +104,6 @@
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		3065BD3521A2EC0D0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -111,6 +116,12 @@
 		3065BD4121A2F42B0005339A /* RuleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
 		3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
 		3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleTableViewCell.xib; sourceTree = "<group>"; };
+		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
+		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
+		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
+		E597836421A83808009FDDCF /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		E597836621A839B3009FDDCF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E597836821A83AA5009FDDCF /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		308EE4EA21A6E20E00C17310 /* RuleVotingCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleVotingCardViewCell.swift; sourceTree = "<group>"; };
 		308EE4EC21A6E22800C17310 /* RuleVotingCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleVotingCardViewCell.xib; sourceTree = "<group>"; };
 		308EE4EE21A6E62800C17310 /* VotingPromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingPromptView.xib; sourceTree = "<group>"; };
@@ -165,6 +176,11 @@
 				300A58AD21A5995F000160DF /* PromptView.swift */,
 				300A58AF21A5996D000160DF /* PromptView.xib */,
 				300A58A921A586A8000160DF /* XibView.swift */,
+				E597836421A83808009FDDCF /* DefaultButton.swift */,
+				E597835E21A82695009FDDCF /* SugestionModalView.xib */,
+				E597836021A8270D009FDDCF /* SugestionModalView.swift */,
+				E597836221A837E0009FDDCF /* SugestionModal.storyboard */,
+				E597836821A83AA5009FDDCF /* FormButton.swift */,
 				300A5C4321AC1B0700C6013D /* XibView.xib */,
 			);
 			path = Views;
@@ -174,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				300A58B321A5A32B000160DF /* UIAlertController.swift */,
+				E597836621A839B3009FDDCF /* UIColor.swift */,
 			);
 			path = "Class Extensions";
 			sourceTree = "<group>";
@@ -443,8 +460,10 @@
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
+				E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
+				E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */,
 				308EE4EF21A6E62800C17310 /* VotingPromptView.xib in Resources */,
 				3004AE4F21A427210020629B /* RulePeekView.xib in Resources */,
 				3004AE5321A436230020629B /* RuleDetail.storyboard in Resources */,
@@ -480,6 +499,11 @@
 			files = (
 				308EE4F321A6E8FC00C17310 /* VotingStatusView.swift in Sources */,
 				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
+				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
+				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
+				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
+				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
+				E597836521A83808009FDDCF /* DefaultButton.swift in Sources */,
 				308EE4F921A6EC0900C17310 /* OpenVotesTableViewCell.swift in Sources */,
 				308EE4EB21A6E20E00C17310 /* RuleVotingCardViewCell.swift in Sources */,
 				300A5C4621AC1FCC00C6013D /* RuleCreateDelegate.swift in Sources */,
@@ -493,6 +517,7 @@
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
 				3004AE4C21A426960020629B /* RulePeekView.swift in Sources */,
 				300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */,
+				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
