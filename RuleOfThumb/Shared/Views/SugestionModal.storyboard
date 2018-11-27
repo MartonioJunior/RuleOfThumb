@@ -12,7 +12,7 @@
         <!--Sugestion View Controller-->
         <scene sceneID="bI8-jQ-6ql">
             <objects>
-                <viewController id="PXR-N4-xxT" customClass="SugestionViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXR-N4-xxT" customClass="SugestionViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="VvD-TN-vso">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bY7-mi-WE9"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="modalView" destination="rfG-AY-D60" id="6xI-ZZ-cuO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wO7-ow-0NH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

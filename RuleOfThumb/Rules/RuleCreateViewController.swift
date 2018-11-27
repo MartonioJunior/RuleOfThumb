@@ -71,8 +71,13 @@ class RuleCreateViewController: UIViewController {
     }
     
     func saveRule(name: String, reason: String) {
-        let newRule = MockRule(title: name, description: reason, author: "Moura", date: Date(), status: "Em votação")
-        delegate?.proposedNewRule(newRule)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        ViewController.fetchHome { (house) in
+            let newRule = Rule(name: name, description: reason, house: house)
+            appDelegate.repository.save(rule: newRule, then: { (rule) in
+                self.delegate?.proposedNewRule(rule)
+            })
+        }
     }
     
     @IBAction func cancelRuleCreation(_ sender: UIBarButtonItem) {

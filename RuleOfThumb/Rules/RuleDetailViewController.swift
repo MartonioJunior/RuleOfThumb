@@ -16,7 +16,7 @@ class RuleDetailViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var archiveRuleButton: UIButton!
     
-    var rule: MockRule?
+    var rule: Rule?
     
     var ruleTitle = "Sem nome"
     var ruleDescription = "Sem descrição"
@@ -26,35 +26,48 @@ class RuleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let rule = rule else { return }
-        titleLabel.text = rule.title
+        titleLabel.text = rule.name
         descriptionLabel.text = rule.description
-        statusLabel.text = rule.status
-        setCreatedAtLabel(date: rule.date)
+        setStatusLabel(status: rule.status)
+        setCreatedAtLabel(date: rule.validFrom ?? Date())
     }
     
     override func viewWillAppear(_ animated: Bool) {
         guard let rule = rule else { return }
-        setCreatorLabel(name: rule.author)
-        profileView.setCircleImageView(UIImage())
+        setCreatorLabel(name: rule.house?.name)
+        profileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
     }
     
-    func setCreatedAtLabel(date: Date?) {
-        guard let date = date else { return }
+    func setStatusLabel(status: Rule.Status) {
+        switch status {
+        case .voting:
+            statusLabel.text = "Voting"
+            break
+        case .revoked:
+            statusLabel.text = "Revoked"
+            break
+        case .inForce:
+            statusLabel.text = "In force"
+            break
+        }
+    }
+    
+    func setCreatedAtLabel(date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        let message = "Criada em\n"+dateFormatter.string(from: date)
+        let message = "Created at\n"+dateFormatter.string(from: date)
         
         let createdAtString = NSMutableAttributedString(string: message, attributes: nil)
         createdAtString.addAttribute(.font, value: UIFont.systemFont(ofSize: 20.0, weight: .semibold), range: NSRange(location: 0, length: createdAtString.string.count))
         createdAtString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: createdAtString.string.count))
         createdAtString.addAttribute(.kern, value: -0.38, range: NSRange(location: 0, length: createdAtString.string.count))
-        createdAtString.addAttribute(.font, value: UIFont.systemFont(ofSize: 15.0, weight: .regular), range: NSRange(location: 0, length: 9))
+        createdAtString.addAttribute(.font, value: UIFont.systemFont(ofSize: 15.0, weight: .regular), range: NSRange(location: 0, length: 10))
         createdAtLabel.attributedText = createdAtString
     }
     
     func setCreatorLabel(name: String?) {
         guard let name = name else { return }
-        let message = "Criada por\n"+name
+        let message = "Created by\n"+name
         let creatorString = NSMutableAttributedString(string: message, attributes: nil)
         creatorString.addAttribute(.font, value: UIFont.systemFont(ofSize: 17.0, weight: .regular), range: NSRange(location: 0, length: creatorString.string.count))
         creatorString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: creatorString.string.count))

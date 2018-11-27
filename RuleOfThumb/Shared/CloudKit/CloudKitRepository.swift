@@ -47,9 +47,12 @@ extension CloudKitRepository: RulesRepository {
                 return
             }
             
+            var rules = [Rule]()
             records?.forEach({ (record) in
                 print(record.value(forKey: "name") ?? "Sem nome")
+                rules.append(Rule(from: record))
             })
+            completion(rules)
         })
     }
     

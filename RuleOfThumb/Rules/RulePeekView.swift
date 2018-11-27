@@ -12,11 +12,11 @@ class RulePeekView: XibView {
     @IBOutlet weak var ruleTitleLabel: UILabel!
     @IBOutlet weak var dateAuthorLabel: UILabel!
     @IBOutlet weak var ruleDescriptionLabel: UILabel!
-    var rule: MockRule? {
+    var rule: Rule? {
         didSet {
-            self.ruleTitleLabel.text = rule?.title
+            self.ruleTitleLabel.text = rule?.name
             self.ruleDescriptionLabel.text = rule?.description
-            self.setDateAuthorLabel(date: Date(), author: rule?.author)
+            self.setDateAuthorLabel(date: rule?.validFrom, author: rule?.house?.name)
         }
     }
     
@@ -26,9 +26,13 @@ class RulePeekView: XibView {
         }
     }
     
-    func setDateAuthorLabel(date: Date, author: String?) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateAuthorLabel.text = "Created in \(dateFormatter.string(from: date)) by "+(author ?? "")
+    func setDateAuthorLabel(date: Date?, author: String?) {
+        var message = "Created "
+        if let date = date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            message += "in \(dateFormatter.string(from: date))"
+        }
+        dateAuthorLabel.text = message+"by "+(author ?? "")
     }
 }

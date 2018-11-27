@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    static func fetchHome(completion: @escaping ((House) -> Void)) {
+        let defaults = UserDefaults.standard
+        guard let id = defaults.string(forKey: "HouseCreated") else { return }
+        CloudKitRepository.fetchById(CKRecord.ID(recordName: id)) { (record) in
+            let house = House(from: record)
+            completion(house)
+        }
+    }
 }
 

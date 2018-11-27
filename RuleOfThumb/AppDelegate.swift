@@ -13,10 +13,20 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    static let repository = CloudKitRepository()
+    var repository: CloudKitRepository {
+        get {
+            return AppDelegate.repository
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
+        let house = House(name: "De papel")
+        repository.create(house: house) { (house) in
+            defaults.set(house.recordName, forKey: "HouseCreated")
+        }
         return true
     }
 

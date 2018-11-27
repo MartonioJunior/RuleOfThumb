@@ -21,6 +21,8 @@
 		300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58B321A5A32B000160DF /* UIAlertController.swift */; };
 		300A5C4421AC1B0700C6013D /* XibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300A5C4321AC1B0700C6013D /* XibView.xib */; };
 		300A5C4621AC1FCC00C6013D /* RuleCreateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A5C4521AC1FCC00C6013D /* RuleCreateDelegate.swift */; };
+		300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E021AD6E8300766ECF /* SugestionViewController.swift */; };
+		300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
 		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
 		3065BD0221A2E6E30005339A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
@@ -88,6 +90,8 @@
 		300A58B321A5A32B000160DF /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		300A5C4321AC1B0700C6013D /* XibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibView.xib; sourceTree = "<group>"; };
 		300A5C4521AC1FCC00C6013D /* RuleCreateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreateDelegate.swift; sourceTree = "<group>"; };
+		300D58E021AD6E8300766ECF /* SugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionViewController.swift; sourceTree = "<group>"; };
+		300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalViewDelegate.swift; sourceTree = "<group>"; };
 		3065BCF921A2E6E30005339A /* RuleOfThumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleOfThumb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BCFC21A2E6E30005339A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3065BCFE21A2E6E30005339A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,15 +163,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		300A58B121A59C88000160DF /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				300A58B521A5A332000160DF /* Class Extensions */,
-				300A58B221A59C8E000160DF /* Views */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		300A58B221A59C8E000160DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,12 +171,14 @@
 				300A58AD21A5995F000160DF /* PromptView.swift */,
 				300A58AF21A5996D000160DF /* PromptView.xib */,
 				300A58A921A586A8000160DF /* XibView.swift */,
+				300A5C4321AC1B0700C6013D /* XibView.xib */,
 				E597836421A83808009FDDCF /* DefaultButton.swift */,
 				E597835E21A82695009FDDCF /* SugestionModalView.xib */,
 				E597836021A8270D009FDDCF /* SugestionModalView.swift */,
+				300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */,
 				E597836221A837E0009FDDCF /* SugestionModal.storyboard */,
+				300D58E021AD6E8300766ECF /* SugestionViewController.swift */,
 				E597836821A83AA5009FDDCF /* FormButton.swift */,
-				300A5C4321AC1B0700C6013D /* XibView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				5D08B55F21A5965600FBF73A /* Shared */,
-				300A58B121A59C88000160DF /* Shared */,
 				3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */,
 				3065BD3021A2EB430005339A /* Meetings */,
 				3065BD2F21A2EB240005339A /* Notifications */,
@@ -317,6 +313,8 @@
 		5D08B55F21A5965600FBF73A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				300A58B521A5A332000160DF /* Class Extensions */,
+				300A58B221A59C8E000160DF /* Views */,
 				5D08B56321A598AB00FBF73A /* Entities */,
 				5D08B56021A5965F00FBF73A /* CloudKit */,
 				5D08B56121A5968E00FBF73A /* Repository.swift */,
@@ -510,6 +508,7 @@
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				5D08B56521A598C900FBF73A /* Rule.swift in Sources */,
 				5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */,
+				300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */,
 				5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
@@ -518,6 +517,7 @@
 				300A58A821A57791000160DF /* RuleCreateViewController.swift in Sources */,
 				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				3065BD4221A2F42B0005339A /* RuleListViewController.swift in Sources */,
+				300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,

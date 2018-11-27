@@ -1,0 +1,46 @@
+//
+//  SugestionViewController.swift
+//  RuleOfThumb
+//
+//  Created by Martônio Júnior on 27/11/18.
+//  Copyright © 2018 So Many Deadlines. All rights reserved.
+//
+
+import UIKit
+
+class SugestionViewController: UIViewController, SugestionModalViewDelegate {
+    @IBOutlet weak var modalView: SugestionModalView!
+    var modalTitle: String = ""
+    var modalDescription: String = ""
+    var firstButtonTitle: String = ""
+    var secondButtonTitle: String = ""
+    var firstButtonIsHidden: Bool = false
+    var secondButtonIsHidden: Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let modalView = modalView else { return }
+        modalView.setTitleLabel(text: modalTitle)
+        modalView.setDescriptionLabel(text: modalDescription)
+        modalView.setFirstButtonTitle(text: firstButtonTitle)
+        modalView.setSecondButtonTitle(text: secondButtonTitle)
+        modalView.setFirstButtonHidden(hidden: firstButtonIsHidden)
+        modalView.setSecondButtonHidden(hidden: secondButtonIsHidden)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        modalView.setDelegate(self)
+    }
+
+    func pressedLeftButton() {
+        popModalView()
+    }
+    
+    func pressedRightButton() {
+        popModalView()
+    }
+    
+    func popModalView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

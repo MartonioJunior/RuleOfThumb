@@ -11,9 +11,9 @@ import UIKit
 class RuleTableViewCell: UITableViewCell {
     @IBOutlet weak var ruleTitleLabel: UILabel!
     @IBOutlet weak var ruleDescriptionLabel: UILabel!
-    var rule: MockRule? {
+    var rule: Rule? {
         didSet {
-            ruleTitleLabel.text = rule?.title
+            ruleTitleLabel.text = rule?.name
             ruleDescriptionLabel.text = rule?.description
         }
     }

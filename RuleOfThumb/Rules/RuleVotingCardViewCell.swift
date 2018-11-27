@@ -12,6 +12,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var votingPrompt: XibView!
+    var voteStatus: VotingStatusView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +38,11 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
     func votedOnRule(agreed: Bool) {
         let voteStatus = VotingStatusView()
+        voteStatus.backgroundColor = self.backgroundColor
         voteStatus.frame = votingPrompt.frame
         voteStatus.setLabelText(votesLeft: 6)
+        self.addSubview(voteStatus)
+        votingPrompt.removeFromSuperview()
+        votingPrompt = voteStatus
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class OpenVotesTableViewCell: UITableViewCell {
     @IBOutlet weak var votesView: UICollectionView!
-    var data = [MockRule]()
+    var data = [Rule]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +48,7 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
             cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
         }
         let rule = data[indexPath.row]
-        cell?.setNameLabel(ruleName: rule.title)
+        cell?.setNameLabel(ruleName: rule.name)
         cell?.setCreatorLabel(creatorName: "Anne")
         return cell!
     }

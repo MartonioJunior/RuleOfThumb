@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RuleCreateDelegate {
-    func proposedNewRule(_ rule: MockRule)
+    func proposedNewRule(_ rule: Rule)
 }

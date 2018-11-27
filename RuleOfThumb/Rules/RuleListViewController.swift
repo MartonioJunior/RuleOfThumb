@@ -8,38 +8,42 @@
 
 import UIKit
 
-struct MockRule {
-    var title: String
-    var description: String
-    var author: String
-    var date: Date
-    var status: String
-}
-
 class RuleListViewController: UIViewController {
     @IBOutlet weak var rulesTableView: UITableView!
-    var rules = [MockRule]()
+    var rules = [Rule]()
+    var searchRules = [Rule]()
+    var rulesInVoting = [Rule]()
     var highlightedIndex = 0
     let searchController = UISearchController(searchResultsController: nil)
+    let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         rulesTableView.delegate = self
         rulesTableView.dataSource = self
+        searchController.searchBar.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
-        rules = Array(repeating: MockRule(title: "Dar bom dia para todos os membros da casa", description: "Com o intuito de aproximar o relacionamento dos membros do AP104, todos deverão dar bom dia assim que acordar", author: "Anne", date: Date(), status: "Valendo"), count: 5)
+        setRefreshControl()
+        rulesTableView.refreshControl = refreshControl
+        refreshData(self)
         registerForPreviewing(with: self, sourceView: rulesTableView)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
             guard let destination = segue.destination as? RuleDetailViewController else { return }
-            let rule = sender as! MockRule
+            let rule = sender as! Rule
             destination.rule = rule
         } else if segue.identifier == "create" {
             guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? RuleCreateViewController else { return }
             destination.delegate = self
+        } else if segue.identifier == "modal" {
+            guard let destination = segue.destination as? SugestionViewController else { return }
+            destination.modalTitle = "Your rule has been created!"
+            destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
+            destination.firstButtonIsHidden = true
+            destination.secondButtonTitle = "Alright"
         }
     }
     
@@ -48,6 +52,25 @@ class RuleListViewController: UIViewController {
             return nil
         }
         return cell
+    }
+    
+    func setRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.tintColor = .black
+        refreshControl.attributedTitle = NSAttributedString(string: "Searching new rules...")
+    }
+    
+    @objc func refreshData(_ sender: Any) {
+        ViewController.fetchHome { (house) in
+            AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
+                DispatchQueue.main.async {
+                    self.rules = allRules
+                    self.searchRules = self.rules
+                    self.rulesTableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+            })
+        }
     }
 }
 
@@ -62,7 +85,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 return 1
             case 1:
-                return rules.count
+                return searchRules.count
             default:
                 return 0
         }
@@ -85,7 +108,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             rulesTableView.register(UINib(nibName: "OpenVotesTableViewCell", bundle: nil), forCellReuseIdentifier: "allVotations")
             cell = rulesTableView.dequeueReusableCell(withIdentifier: "allVotations") as? OpenVotesTableViewCell
         }
-        cell?.data = rules
+        cell?.data = rulesInVoting
         cell?.reloadData()
         return cell!
     }
@@ -96,7 +119,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
             cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
         }
-        let rule = rules[indexPath.row]
+        let rule = searchRules[indexPath.row]
         cell?.rule = rule
         return cell!
     }
@@ -104,7 +127,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
             case 1:
-                performSegue(withIdentifier: "detail", sender: rules[indexPath.row])
+                performSegue(withIdentifier: "detail", sender: searchRules[indexPath.row])
                 break
             default:
                 break
@@ -146,7 +169,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             titleLabel.text = "Vote opened"
             break
         case 1:
-            titleLabel.text = "Lista de Regras"
+            titleLabel.text = "Rule List"
             break
         default:
             break
@@ -184,9 +207,44 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
     }
 }
 
+// -- MARK: Rule Creation Delegate
 extension RuleListViewController: RuleCreateDelegate {
-    func proposedNewRule(_ rule: MockRule) {
-        rules.insert(rule, at: 0)
-        rulesTableView.reloadData()
+    func proposedNewRule(_ rule: Rule) {
+        rulesInVoting.insert(rule, at: 0)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "modal", sender: nil)
+            self.rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        }
+    }
+}
+
+// -- MARK: Search Bar Delegate
+extension RuleListViewController: UISearchBarDelegate {
+    func search(argument: String?) {
+        guard let argument = argument else {
+            self.searchRules = self.rules
+            return
+        }
+        self.searchRules = self.rules.filter({
+            return $0.name.lowercased().contains(argument.lowercased())
+        }).sorted(by: { (r1, r2) -> Bool in
+            return r2.name.lowercased().hasPrefix(argument.lowercased())
+        })
+        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchController.resignFirstResponder()
+        searchBar.text = nil
+        self.search(argument: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.search(argument: searchBar.text)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.search(argument: searchText)
     }
 }

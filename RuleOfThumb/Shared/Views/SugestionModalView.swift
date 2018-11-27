@@ -21,6 +21,11 @@ class SugestionModalView: XibView {
             return "SugestionModalView"
         }
     }
+    var delegate: SugestionModalViewDelegate?
+    
+    func setDelegate(_ del: SugestionModalViewDelegate) {
+        delegate = del
+    }
     
     func setModalImageView(_ image: UIImage) {
         guard let modalImage = modalImage else { return }
@@ -41,11 +46,28 @@ class SugestionModalView: XibView {
         guard let firstActionButton = firstActionButton else { return }
         firstActionButton.setTitle(text, for: .normal)
     }
-
+    
+    func setFirstButtonHidden(hidden: Bool) {
+        guard let firstActionButton = firstActionButton else { return }
+        firstActionButton.isHidden = hidden
+    }
+    
+    @IBAction func firstButtonAction(_ sender: UIButton) {
+        delegate?.pressedLeftButton()
+    }
+    
     func setSecondButtonTitle(text: String) {
         guard let secondActionButton = secondActionButton else { return }
         secondActionButton.setTitle(text, for: .normal)
     }
+    
+    func setSecondButtonHidden(hidden: Bool) {
+        guard let secondActionButton = secondActionButton else { return }
+        secondActionButton.isHidden = hidden
+    }
 
+    @IBAction func secondButtonAction(_ sender: UIButton) {
+        delegate?.pressedRightButton()
+    }
     
 }

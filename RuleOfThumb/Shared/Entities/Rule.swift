@@ -38,7 +38,7 @@ class Rule: CKManagedObject {
         self.house = house
         self.number = 1111
         self.status = .voting
-        
+        self.validFrom = Date()
         self.recordType = "Rules"
         self.recordName = self.recordType + "." + UUID().uuidString
         
