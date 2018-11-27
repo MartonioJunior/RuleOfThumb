@@ -65,6 +65,7 @@ class RuleListViewController: UIViewController {
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
                 DispatchQueue.main.async {
                     self.rules = allRules
+                    self.rulesInVoting = []
                     self.searchRules = self.rules
                     self.rulesTableView.reloadData()
                     self.refreshControl.endRefreshing()
