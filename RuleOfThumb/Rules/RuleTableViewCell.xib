@@ -43,8 +43,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descriptionLabel" destination="pDl-wf-NLz" id="wRs-O8-pS9"/>
-                <outlet property="titleLabel" destination="cWZ-va-pcd" id="FNc-Ny-7D7"/>
+                <outlet property="ruleDescriptionLabel" destination="pDl-wf-NLz" id="zyP-eo-zwM"/>
+                <outlet property="ruleTitleLabel" destination="cWZ-va-pcd" id="EZP-9K-wXd"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="55.772113943028494"/>
         </tableViewCell>
