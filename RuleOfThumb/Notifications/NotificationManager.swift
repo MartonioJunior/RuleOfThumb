@@ -21,6 +21,16 @@ class NotificationManager: NSObject {
         center.requestAuthorization(options: options) { (granted, error) in
             print("granted: \(granted)")
         }
+        
+        center.delegate = self
+    }
+    
+}
+
+extension NotificationManager: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
     
 }

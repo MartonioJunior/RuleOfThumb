@@ -48,6 +48,7 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D128D3021AD6CBF008E0AF8 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */; };
 		5D97832F21AC39160085C305 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D97832E21AC39160085C305 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
 		5D97832E21AC39160085C305 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 		3065BD1321A2E6E50005339A /* RuleOfThumbTests */ = {
 			isa = PBXGroup;
 			children = (
+				5D128D2E21AD6C8D008E0AF8 /* Cloudkit */,
 				3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */,
 				3065BD1621A2E6E50005339A /* Info.plist */,
 			);
@@ -317,6 +320,14 @@
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		5D128D2E21AD6C8D008E0AF8 /* Cloudkit */ = {
+			isa = PBXGroup;
+			children = (
+				5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */,
+			);
+			path = Cloudkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D128D3021AD6CBF008E0AF8 /* CloudKitRulesTests.swift in Sources */,
 				3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

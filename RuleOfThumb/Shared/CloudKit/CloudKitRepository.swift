@@ -32,27 +32,37 @@ class CloudKitRepository {
         })
     }
     
-    static func subscription(for recordType: String) {
+    /// Cria uma nova subscription para o Record Type passado como parâmetro. Sempre
+    /// deve haver uma casa, pois a referência dela será usada como filtro.
+    ///
+    /// - Parameters:
+    ///   - recordType: nome do Record Type
+    ///   - house: objeto da casa do usuário salva no dispositivo.
+    func subscription(in recordType: String, with house: House) {
         let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
         let subscription = CKQuerySubscription(
             recordType: recordType,
-            predicate: NSPredicate(value: true),
+            predicate: NSPredicate(format: "house == %@", reference),
             options: [.firesOnRecordCreation])
         
         let info = CKSubscription.NotificationInfo()
         info.alertLocalizationKey = "New record on \(recordType): %@"
         info.alertLocalizationArgs = ["name"]
+        info.shouldSendContentAvailable = false
         info.category = "RecordAdded"
         
         subscription.notificationInfo = info
         
-        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { (savedSubscription, error) in
+        self.publicDB?.save(subscription, completionHandler: { (subscription, error) in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
             }
+            
+            print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
         })
     }
+    
 }
 
 // - MARK: RulesRepository protocol implementation.
