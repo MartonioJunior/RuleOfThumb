@@ -72,10 +72,12 @@
             </objects>
             <point key="canvasLocation" x="2121" y="-252"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Rules-->
         <scene sceneID="gqU-rR-eI7">
             <objects>
                 <navigationController storyboardIdentifier="ruleList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iCC-PW-ciz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rules" image="rules" id="7zV-eE-emy"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pf7-Ue-ezc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,4 +91,7 @@
             <point key="canvasLocation" x="364" y="-430"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rules" width="150" height="150"/>
+    </resources>
 </document>

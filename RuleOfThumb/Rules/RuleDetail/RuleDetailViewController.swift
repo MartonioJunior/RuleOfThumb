@@ -83,14 +83,18 @@ class RuleDetailViewController: UIViewController {
     @IBAction func returnButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        let agree = UIPreviewAction(title: "Agree", style: .default, handler: { (action, viewController) in
+            print("I agree / Update in CloudKit here")
+        })
+        let disagree = UIPreviewAction(title: "Disagree", style: .default, handler:{ (action, viewController) in
+            print("I disagree / Update in CloudKit here")
+        })
+        let cancel = UIPreviewAction(title: "Cancel", style: .destructive, handler:{ (action, viewController) in
+        })
+        
+        return[agree, disagree, cancel]
     }
-    */
 
 }

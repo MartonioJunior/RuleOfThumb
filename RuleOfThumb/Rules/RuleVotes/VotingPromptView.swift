@@ -9,6 +9,9 @@
 import UIKit
 
 class VotingPromptView: XibView {
+    
+    @IBOutlet weak var view: UIView!
+    
     override var nibName: String {
         get {
             return "VotingPromptView"
@@ -17,10 +20,12 @@ class VotingPromptView: XibView {
     var delegate: VotingPromptViewDelegate?
 
     @IBAction func agreedToRule(_ sender: UIButton) {
-        delegate?.votedOnRule(agreed: true)
+        delegate?.votedOnRule(Rule(name: "Regra teste", description: "Concordada", house: House(name: "000")), agreed: true)
+        print("I agree / Update in CloudKit here")
     }
     
     @IBAction func disagreeToRule(_ sender: UIButton) {
-        delegate?.votedOnRule(agreed: false)
+        delegate?.votedOnRule(Rule(name: "Regra teste", description: "Discordada", house: House(name: "000")), agreed: false)
+        print("I disagree / Update in CloudKit here")
     }
 }

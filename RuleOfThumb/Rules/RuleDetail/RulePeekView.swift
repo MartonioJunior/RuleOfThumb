@@ -12,6 +12,9 @@ class RulePeekView: XibView {
     @IBOutlet weak var ruleTitleLabel: UILabel!
     @IBOutlet weak var dateAuthorLabel: UILabel!
     @IBOutlet weak var ruleDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var mainView: UIView!
+    
     var rule: Rule? {
         didSet {
             self.ruleTitleLabel.text = rule?.name
@@ -20,10 +23,18 @@ class RulePeekView: XibView {
         }
     }
     
+    override func layoutSubviews() {
+        self.contentView.frame = self.mainView.frame
+    }
+    
     override var nibName: String {
         get {
             return "RulePeekView"
         }
+    }
+    
+    func getContentViewSize() -> CGSize {
+        return self.mainView.frame.size
     }
     
     func setDateAuthorLabel(date: Date?, author: String?) {
@@ -35,4 +46,5 @@ class RulePeekView: XibView {
         }
         dateAuthorLabel.text = message+"by "+(author ?? "")
     }
+    
 }

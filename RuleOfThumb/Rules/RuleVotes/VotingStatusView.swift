@@ -10,6 +10,8 @@ import UIKit
 
 class VotingStatusView: XibView {
     @IBOutlet weak var votesLeftLabel: UILabel!
+    @IBOutlet weak var view: UIView!
+    
     override var nibName: String {
         get {
             return "VotingStatusView"

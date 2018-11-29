@@ -151,15 +151,22 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if indexPath.section == 0 { //Vote opened
+          return 130
+        } else if indexPath.section == 1 { //Rule list
+            return 100
+        } else { // ?
+            return 100
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 34
+        return 45
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: self.tableView(tableView, heightForHeaderInSection: section)))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
         headerView.backgroundColor = .white
         
         let titleLabel = UILabel()
@@ -196,16 +203,19 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         let peekView = RulePeekView()
         peekView.rule = displayInfo.rule
         
-        let previewRule = UIViewController()
-        previewRule.preferredContentSize = peekView.frame.size
-        previewRule.view = peekView
-        return previewRule
+        let previewRule = RuleDetailViewController()
         
+        previewRule.view.addSubview(peekView)
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        return previewRule
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         performSegue(withIdentifier: "detail", sender: rules[highlightedIndex])
     }
+    
+    
 }
 
 // -- MARK: Rule Creation Delegate
