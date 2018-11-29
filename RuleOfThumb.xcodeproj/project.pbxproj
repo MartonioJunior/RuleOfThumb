@@ -45,6 +45,7 @@
 		308EE4F921A6EC0900C17310 /* OpenVotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EE4F821A6EC0900C17310 /* OpenVotesTableViewCell.swift */; };
 		308EE4FB21A6EC1C00C17310 /* OpenVotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308EE4FA21A6EC1C00C17310 /* OpenVotesTableViewCell.xib */; };
 		308EE4FD21A6F61A00C17310 /* VotingPromptViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308EE4FC21A6F61A00C17310 /* VotingPromptViewDelegate.swift */; };
+		30B6FCC221AEC9DA00F0B5AD /* OpenVotesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6FCC121AEC9DA00F0B5AD /* OpenVotesDelegate.swift */; };
 		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
 		5D08B56521A598C900FBF73A /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56421A598C900FBF73A /* Rule.swift */; };
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
@@ -124,6 +125,7 @@
 		308EE4F821A6EC0900C17310 /* OpenVotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVotesTableViewCell.swift; sourceTree = "<group>"; };
 		308EE4FA21A6EC1C00C17310 /* OpenVotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenVotesTableViewCell.xib; sourceTree = "<group>"; };
 		308EE4FC21A6F61A00C17310 /* VotingPromptViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingPromptViewDelegate.swift; sourceTree = "<group>"; };
+		30B6FCC121AEC9DA00F0B5AD /* OpenVotesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVotesDelegate.swift; sourceTree = "<group>"; };
 		5D08B56121A5968E00FBF73A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5D08B56421A598C900FBF73A /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				308EE4F621A6E91900C17310 /* VotingStatusView.xib */,
 				308EE4F821A6EC0900C17310 /* OpenVotesTableViewCell.swift */,
 				308EE4FA21A6EC1C00C17310 /* OpenVotesTableViewCell.xib */,
+				30B6FCC121AEC9DA00F0B5AD /* OpenVotesDelegate.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			files = (
 				308EE4F321A6E8FC00C17310 /* VotingStatusView.swift in Sources */,
 				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
+				30B6FCC221AEC9DA00F0B5AD /* OpenVotesDelegate.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,

@@ -30,7 +30,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-NU-NGT" customClass="VotingPromptView" customModule="RuleOfThumb" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-NU-NGT" customClass="XibView" customModule="RuleOfThumb" customModuleProvider="target">
                         <rect key="frame" x="8" y="65" width="307" height="34"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>

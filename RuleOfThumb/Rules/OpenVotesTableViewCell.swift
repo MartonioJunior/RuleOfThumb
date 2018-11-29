@@ -11,6 +11,7 @@ import UIKit
 class OpenVotesTableViewCell: UITableViewCell {
     @IBOutlet weak var votesView: UICollectionView!
     var data = [Rule]()
+    var delegate: OpenVotesDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,8 +49,8 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
             cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
         }
         let rule = data[indexPath.row]
-        cell?.setNameLabel(ruleName: rule.name)
-        cell?.setCreatorLabel(creatorName: "Anne")
+        cell?.rule = rule
+        cell?.delegate = self
         return cell!
     }
     
@@ -59,5 +60,34 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+}
+
+// --MARK: Open Votes Delegate
+extension OpenVotesTableViewCell: OpenVotesDelegate {
+    func set(status: Rule.Status, for rule: Rule) {
+        guard let votedRule = data.first(where: {
+            return $0.recordID == rule.recordID
+        }) else {return}
+        votedRule.status = status
+    }
+    
+    func sortAndReload() {
+        data.sort(by: {a,b in
+            return a.status == Rule.Status.voting
+        })
+        votesView.reloadData()
+    }
+    
+    func ruleApproved(rule: Rule) {
+        set(status: .inForce, for: rule)
+        sortAndReload()
+        delegate?.ruleApproved(rule: rule)
+    }
+    
+    func ruleRefused(rule: Rule) {
+        set(status: .revoked, for: rule)
+        sortAndReload()
+        delegate?.ruleRefused(rule: rule)
     }
 }

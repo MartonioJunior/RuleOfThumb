@@ -12,18 +12,46 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var votingPrompt: XibView!
+    var rule: Rule? {
+        didSet {
+            guard let rule = rule else {return}
+            self.setNameLabel(ruleName: rule.name)
+            self.setCreatorLabel(creatorName: "Anne")
+            self.setUpView(voted: rule.status != .voting)
+        }
+    }
     var voteStatus: VotingStatusView?
+    var delegate: OpenVotesDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setDelegate()
+    }
+    
+    func setUpView(voted: Bool) {
+        if voted {
+            let voteStatus = VotingStatusView()
+            voteStatus.backgroundColor = self.backgroundColor
+            voteStatus.frame = votingPrompt.frame
+            voteStatus.setLabelText(votesLeft: 6)
+            self.addSubview(voteStatus)
+            votingPrompt.removeFromSuperview()
+            votingPrompt = voteStatus
+        } else {
+            let votePrompt = VotingPromptView()
+            votePrompt.backgroundColor = self.backgroundColor
+            votePrompt.frame = votingPrompt.frame
+            self.addSubview(votePrompt)
+            votingPrompt.removeFromSuperview()
+            votingPrompt = votePrompt
+            setDelegate()
+        }
     }
     
     private func setDelegate() {
-        guard let votePrompt = votingPrompt as? VotingPromptView else {
+        guard let votingPrompt = votingPrompt as? VotingPromptView else {
             return
         }
-        votePrompt.delegate = self
+        votingPrompt.delegate = self
     }
     
     func setNameLabel(ruleName: String) {
@@ -37,12 +65,8 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
     func votedOnRule(agreed: Bool) {
-        let voteStatus = VotingStatusView()
-        voteStatus.backgroundColor = self.backgroundColor
-        voteStatus.frame = votingPrompt.frame
-        voteStatus.setLabelText(votesLeft: 6)
-        self.addSubview(voteStatus)
-        votingPrompt.removeFromSuperview()
-        votingPrompt = voteStatus
+        setUpView(voted: true)
+        guard let rule = rule else {return}
+        agreed ? delegate?.ruleApproved(rule: rule) : delegate?.ruleRefused(rule: rule)
     }
 }
