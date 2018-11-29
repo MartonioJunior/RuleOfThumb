@@ -20,12 +20,12 @@ class VotingPromptView: XibView {
     var delegate: VotingPromptViewDelegate?
 
     @IBAction func agreedToRule(_ sender: UIButton) {
-        delegate?.votedOnRule(Rule(name: "Regra teste", description: "Concordada", house: House(name: "000")), agreed: true)
+        delegate?.votedOnRule(agreed: true)
         print("I agree / Update in CloudKit here")
     }
     
     @IBAction func disagreeToRule(_ sender: UIButton) {
-        delegate?.votedOnRule(Rule(name: "Regra teste", description: "Discordada", house: House(name: "000")), agreed: false)
+        delegate?.votedOnRule(agreed: false)
         print("I disagree / Update in CloudKit here")
     }
 }

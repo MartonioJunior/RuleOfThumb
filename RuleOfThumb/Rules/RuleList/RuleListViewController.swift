@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum ModalType {
+    case ruleCreated
+    case ruleApproved
+    case ruleRejected
+}
+
 class RuleListViewController: UIViewController {
     @IBOutlet weak var rulesTableView: UITableView!
     var rules = [Rule]()
@@ -39,11 +45,27 @@ class RuleListViewController: UIViewController {
             guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? RuleCreateViewController else { return }
             destination.delegate = self
         } else if segue.identifier == "modal" {
-            guard let destination = segue.destination as? SugestionViewController else { return }
-            destination.modalTitle = "Your rule has been created!"
-            destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
-            destination.firstButtonIsHidden = true
-            destination.secondButtonTitle = "Alright"
+            guard let destination = segue.destination as? SugestionViewController, let modalType = sender as? ModalType else { return }
+            switch modalType {
+                case .ruleCreated:
+                    destination.modalTitle = "Your rule has been created!"
+                    destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
+                    destination.firstButtonIsHidden = true
+                    destination.secondButtonTitle = "Alright"
+                    break
+                case .ruleApproved:
+                    destination.modalTitle = "Your rule has been approved!"
+                    destination.modalDescription = "Your rule got the majority of votes and now everyone must follow it"
+                    destination.firstButtonIsHidden = true
+                    destination.secondButtonTitle = "Alright"
+                    break
+                case .ruleRejected:
+                    destination.modalTitle = "Your rule has been rejected!"
+                    destination.modalDescription = "Sorry, but the house doesn't agree with the rule. Talk to the other members to know what's going on."
+                    destination.firstButtonIsHidden = true
+                    destination.secondButtonTitle = "Alright"
+                    break
+            }
         }
     }
     
@@ -64,8 +86,12 @@ class RuleListViewController: UIViewController {
         ViewController.fetchHome { (house) in
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
                 DispatchQueue.main.async {
-                    self.rules = allRules
-                    self.rulesInVoting = []
+                    self.rules = allRules.filter {
+                        return $0.status == Rule.Status.inForce
+                    }
+                    self.rulesInVoting = allRules.filter {
+                        return $0.status == Rule.Status.voting
+                    }
                     self.searchRules = self.rules
                     self.rulesTableView.reloadData()
                     self.refreshControl.endRefreshing()
@@ -110,6 +136,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             cell = rulesTableView.dequeueReusableCell(withIdentifier: "allVotations") as? OpenVotesTableViewCell
         }
         cell?.data = rulesInVoting
+        cell?.delegate = self
         cell?.reloadData()
         return cell!
     }
@@ -223,7 +250,7 @@ extension RuleListViewController: RuleCreateDelegate {
     func proposedNewRule(_ rule: Rule) {
         rulesInVoting.insert(rule, at: 0)
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "modal", sender: nil)
+            self.performSegue(withIdentifier: "modal", sender: ModalType.ruleCreated)
             self.rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
         }
     }
@@ -257,5 +284,20 @@ extension RuleListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.search(argument: searchText)
+    }
+}
+
+// --MARK: Rule List View Controller Delegate
+extension RuleListViewController: OpenVotesDelegate {
+    func ruleApproved(rule: Rule) {
+        rules.append(rule)
+        searchRules.append(rule)
+        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
+        performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
+    }
+    
+    func ruleRefused(rule: Rule) {
+        rule.status = .revoked
+        performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
     }
 }

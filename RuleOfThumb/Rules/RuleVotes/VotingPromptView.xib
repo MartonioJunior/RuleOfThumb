@@ -26,7 +26,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="845-OA-Wki">
                             <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ue-J0-wep" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ue-J0-wep" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="34"/>
                                     <state key="normal" title="Disagree"/>
                                     <connections>
@@ -42,8 +42,7 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="5ue-J0-wep" firstAttribute="width" secondItem="oNW-P1-GDa" secondAttribute="width" id="ig9-pD-CQA"/>
-                                <constraint firstItem="5ue-J0-wep" firstAttribute="height" secondItem="oNW-P1-GDa" secondAttribute="height" id="uEe-Si-bhv"/>
+                                <constraint firstItem="5ue-J0-wep" firstAttribute="width" secondItem="oNW-P1-GDa" secondAttribute="width" id="oMR-ps-k9m"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -60,8 +59,8 @@
             <constraints>
                 <constraint firstItem="dGZ-HM-Eap" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Jh-pi-RAh"/>
                 <constraint firstAttribute="bottom" secondItem="dGZ-HM-Eap" secondAttribute="bottom" id="Ifv-1U-LKI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dGZ-HM-Eap" secondAttribute="trailing" id="MRz-P9-Rkr"/>
-                <constraint firstItem="dGZ-HM-Eap" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ykf-85-DQN"/>
+                <constraint firstAttribute="trailing" secondItem="dGZ-HM-Eap" secondAttribute="trailing" id="MRz-P9-Rkr"/>
+                <constraint firstItem="dGZ-HM-Eap" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ykf-85-DQN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

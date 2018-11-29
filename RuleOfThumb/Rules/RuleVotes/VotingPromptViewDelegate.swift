@@ -9,5 +9,5 @@
 import Foundation
 
 protocol VotingPromptViewDelegate {
-    func votedOnRule(_ rule: Rule, agreed: Bool)
+    func votedOnRule(agreed: Bool)
 }
