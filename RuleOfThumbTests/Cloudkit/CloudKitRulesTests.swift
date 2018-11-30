@@ -15,14 +15,14 @@ class CloudKitRulesTests: XCTestCase {
     let repository = CloudKitRepository()
     
     override func setUp() {
-        repository.create(house: house) { (house) in
-            for i in 1...3 {
-                let rule = Rule(name: "Teste 0\(i)", description: "Isso é um teste", house: house)
-                self.repository.save(rule: rule, then: { _ in
-                    self.testRules.append(rule)
-                })
-            }
-        }
+//        repository.create(house: house) { (house) in
+//            for i in 1...3 {
+//                let rule = Rule(name: "Teste 0\(i)", description: "Isso é um teste", house: house)
+//                self.repository.save(rule: rule, then: { _ in
+//                    self.testRules.append(rule)
+//                })
+//            }
+//        }
     }
 
     override func tearDown() {

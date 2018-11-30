@@ -49,6 +49,7 @@
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
 		5D128D3021AD6CBF008E0AF8 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */; };
+		5D128D3221B00D0A008E0AF8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128D3121B00D0A008E0AF8 /* User.swift */; };
 		5D97832F21AC39160085C305 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D97832E21AC39160085C305 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
 		5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
+		5D128D3121B00D0A008E0AF8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D97832E21AC39160085C305 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
+				5D128D3121B00D0A008E0AF8 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				308EE4F321A6E8FC00C17310 /* VotingStatusView.swift in Sources */,
 				3065BD4621A2FD3E0005339A /* RuleTableViewCell.swift in Sources */,
 				308EE4F921A6EC0900C17310 /* OpenVotesTableViewCell.swift in Sources */,
+				5D128D3221B00D0A008E0AF8 /* User.swift in Sources */,
 				308EE4EB21A6E20E00C17310 /* RuleVotingCardViewCell.swift in Sources */,
 				300A5C4621AC1FCC00C6013D /* RuleCreateDelegate.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,

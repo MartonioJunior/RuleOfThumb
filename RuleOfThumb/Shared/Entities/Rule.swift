@@ -76,4 +76,9 @@ class Rule: CKManagedObject {
         
         return record
     }
+    
+    // TODO: Implementar isso depois
+    func toCKRecord(_ completion: @escaping ((CKRecord) -> Void)) {
+        completion(CKRecord(recordType: self.recordType))
+    }
 }
