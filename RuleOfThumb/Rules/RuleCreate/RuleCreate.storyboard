@@ -14,7 +14,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ruleCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b61-u7-fr8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iZs-bG-z73">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,7 +29,7 @@
         <scene sceneID="KDh-8W-V8c">
             <objects>
                 <viewController id="iOK-p4-8RV" customClass="RuleCreateViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="uZG-We-mAM">
+                    <view key="view" contentMode="scaleToFill" id="uZG-We-mAM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

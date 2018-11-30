@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2B257B6221B180AA00D56DEC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B257B6121B180AA00D56DEC /* UIFont.swift */; };
+		2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B6821B1863C00D56DEC /* Lato-Light.ttf */; };
+		2B257B7421B1863D00D56DEC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B6A21B1863D00D56DEC /* Lato-Regular.ttf */; };
+		2B257B8921B1865800D56DEC /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B7B21B1865700D56DEC /* Nunito-SemiBold.ttf */; };
+		2B257B8C21B1865800D56DEC /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B7E21B1865800D56DEC /* Nunito-ExtraBold.ttf */; };
+		2B257B8D21B1865800D56DEC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */; };
+		2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8021B1865800D56DEC /* Nunito-Black.ttf */; };
+		2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */; };
 		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
 		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
@@ -79,6 +86,13 @@
 
 /* Begin PBXFileReference section */
 		2B257B6121B180AA00D56DEC /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		2B257B6821B1863C00D56DEC /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		2B257B6A21B1863D00D56DEC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		2B257B7B21B1865700D56DEC /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		2B257B7E21B1865800D56DEC /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		2B257B8021B1865800D56DEC /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
 		3004AE5521A44E3E0020629B /* CreatorProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorProfileView.xib; sourceTree = "<group>"; };
 		300A58A921A586A8000160DF /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -167,6 +181,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B257B6321B1860100D56DEC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2B257B6521B1861B00D56DEC /* Lato */,
+				2B257B6421B1861600D56DEC /* Nunito */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2B257B6421B1861600D56DEC /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				2B257B8021B1865800D56DEC /* Nunito-Black.ttf */,
+				2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */,
+				2B257B7E21B1865800D56DEC /* Nunito-ExtraBold.ttf */,
+				2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */,
+				2B257B7B21B1865700D56DEC /* Nunito-SemiBold.ttf */,
+			);
+			path = Nunito;
+			sourceTree = "<group>";
+		};
+		2B257B6521B1861B00D56DEC /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				2B257B6821B1863C00D56DEC /* Lato-Light.ttf */,
+				2B257B6A21B1863D00D56DEC /* Lato-Regular.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
 		300A58B221A59C8E000160DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +265,7 @@
 		3065BCFB21A2E6E30005339A /* RuleOfThumb */ = {
 			isa = PBXGroup;
 			children = (
+				2B257B6321B1860100D56DEC /* Fonts */,
 				5D08B55F21A5965600FBF73A /* Shared */,
 				3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */,
 				3065BD3021A2EB430005339A /* Meetings */,
@@ -490,24 +535,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B257B8C21B1865800D56DEC /* Nunito-ExtraBold.ttf in Resources */,
+				2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */,
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				E507C5E221B0034800EEC7E7 /* RuleList.storyboard in Resources */,
 				E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
+				2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */,
 				E507C5F521B0035300EEC7E7 /* VotingPromptView.xib in Resources */,
 				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
+				2B257B7421B1863D00D56DEC /* Lato-Regular.ttf in Resources */,
 				E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */,
 				E507C5F421B0035300EEC7E7 /* RuleVotingCardViewCell.xib in Resources */,
 				E507C5E521B0034800EEC7E7 /* RuleTableViewCell.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
+				2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */,
 				E507C5EF21B0035300EEC7E7 /* OpenVotesTableViewCell.xib in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
 				E507C5F021B0035300EEC7E7 /* VotingStatusView.xib in Resources */,
 				E507C5DC21B0034000EEC7E7 /* RuleDetail.storyboard in Resources */,
+				2B257B8921B1865800D56DEC /* Nunito-SemiBold.ttf in Resources */,
 				E507C5DD21B0034000EEC7E7 /* RulePeekView.xib in Resources */,
 				E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */,
 				300A5C4421AC1B0700C6013D /* XibView.xib in Resources */,
+				2B257B8D21B1865800D56DEC /* Nunito-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
