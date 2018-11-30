@@ -209,7 +209,7 @@ extension CloudKitRepository {
                         }
                         
                         // Adicionar a referência do usuário a casa.
-                        let house = House(name: "Nova Casa")
+                        let house = House(name: name)
                         house.users.append(CKRecord.Reference(record: userRecord, action: .none))
                         
                         // Adicionar a referência da casa ao usuário.
