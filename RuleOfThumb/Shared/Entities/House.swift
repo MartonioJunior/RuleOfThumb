@@ -17,6 +17,9 @@ class House: CKManagedObject {
     var name: String
     var openKey: String
     
+    // --MARK: Test Votation
+    var peopleAmountAtHome = 7
+    
     init(name: String) {
         self.name = name
         self.openKey = "ABC123"

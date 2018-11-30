@@ -115,8 +115,13 @@ extension OpenVotesTableViewCell: UIViewControllerPreviewingDelegate {
         let peekView = RulePeekView()
         peekView.rule = displayInfo.rule
         
-        let previewRule = RuleDetailViewController()
-        previewRule.previewActionDelegate = displayInfo
+        var previewRule: RuleDetailViewController
+        if let rule = displayInfo.rule, !rule.voted {
+            previewRule = RuleDetailViewController()
+            previewRule.previewActionDelegate = displayInfo
+        } else {
+            previewRule = ActionlessRuleDetailViewController()
+        }
         previewRule.view.addSubview(peekView)
         previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
         

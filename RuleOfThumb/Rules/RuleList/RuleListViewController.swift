@@ -50,19 +50,19 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? SugestionViewController, let modalType = sender as? ModalType else { return }
             switch modalType {
                 case .ruleCreated:
-                    destination.modalTitle = "Your rule has been created!"
+                    destination.modalTitle = "Your rule has been proposed!"
                     destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleApproved:
-                    destination.modalTitle = "Your rule has been approved!"
-                    destination.modalDescription = "Your rule got the majority of votes and now everyone must follow it"
+                    destination.modalTitle = "The rule has been approved!"
+                    destination.modalDescription = "The rule got the majority of votes and now everyone must follow it"
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleRejected:
-                    destination.modalTitle = "Your rule has been rejected!"
+                    destination.modalTitle = "The rule has been rejected!"
                     destination.modalDescription = "Sorry, but the house doesn't agree with the rule. Talk to the other members to know what's going on."
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
@@ -294,12 +294,19 @@ extension RuleListViewController: OpenVotesDelegate {
     func ruleApproved(rule: Rule) {
         rules.append(rule)
         searchRules.append(rule)
-        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
+        rulesInVoting = rulesInVoting.filter {
+            return $0.status == Rule.Status.voting
+        }
+        rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
         performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
     }
     
     func ruleRefused(rule: Rule) {
         rule.status = .revoked
+        rulesInVoting = rulesInVoting.filter {
+            return $0.status == Rule.Status.voting
+        }
+        rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
         performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
     }
 }
@@ -311,7 +318,10 @@ extension RuleListViewController: RuleDetailDelegate {
         rules = rules.filter {
             return $0.status == Rule.Status.inForce
         }
+        rulesInVoting = rulesInVoting.filter {
+            return $0.status == Rule.Status.voting
+        }
         searchRules = rules
-        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
+        rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
     }
 }
