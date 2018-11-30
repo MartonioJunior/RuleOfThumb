@@ -19,6 +19,12 @@ class VotingStatusView: XibView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupStyle()
+    }
+    
     func setLabelText(votesLeft: Int) {
         votesLeftLabel.text = votesLeft == 1 ? "1 person left" : "\(votesLeft) people left"
     }

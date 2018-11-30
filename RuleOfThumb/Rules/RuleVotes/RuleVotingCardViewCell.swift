@@ -64,6 +64,14 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     func setCreatorLabel(creatorName: String) {
         creatorLabel.text = "Proposed by "+creatorName
     }
+    
+    func setupStyle() {
+        nameLabel.font = UIFont.primaryText
+        nameLabel.textColor = UIColor.dusk
+        
+        creatorLabel.font = UIFont.terciaryText
+        creatorLabel.textColor = UIColor.dusk80
+    }
 }
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
