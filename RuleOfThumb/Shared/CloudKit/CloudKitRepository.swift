@@ -31,7 +31,7 @@ class CloudKitRepository {
             completion(record)
         })
     }
-    
+
     /// Cria uma nova subscription para o Record Type passado como parâmetro. Sempre
     /// deve haver uma casa, pois a referência dela será usada como filtro.
     ///
@@ -62,7 +62,7 @@ class CloudKitRepository {
             print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
         })
     }
-    
+
 }
 
 // - MARK: RulesRepository protocol implementation.
@@ -80,11 +80,11 @@ extension CloudKitRepository: RulesRepository {
             }
             
             var rules = [Rule]()
-            
+
             records?.forEach({ (record) in
                 rules.append(Rule(from: record))
             })
-            
+
             completion(rules)
         })
     }
@@ -339,5 +339,5 @@ extension CloudKitRepository {
             }
         }
     }
-    
+
 }

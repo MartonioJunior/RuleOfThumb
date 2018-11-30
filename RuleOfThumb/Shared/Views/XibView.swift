@@ -10,6 +10,7 @@ import UIKit
 
 class XibView: UIView {
     @IBOutlet var contentView: UIView!
+    
     var nibName: String {
         get {
             return "XibView"

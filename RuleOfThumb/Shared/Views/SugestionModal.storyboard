@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXR-N4-xxT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sugestion View Controller-->
+        <scene sceneID="bI8-jQ-6ql">
+            <objects>
+                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXR-N4-xxT" customClass="SugestionViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="VvD-TN-vso">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfG-AY-D60" customClass="SugestionModalView" customModule="RuleOfThumb" customModuleProvider="target">
+                                <rect key="frame" x="19" y="100" width="337.5" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5037992294520548" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rfG-AY-D60" firstAttribute="centerY" secondItem="VvD-TN-vso" secondAttribute="centerY" id="3z2-HK-mK6"/>
+                            <constraint firstItem="rfG-AY-D60" firstAttribute="centerX" secondItem="VvD-TN-vso" secondAttribute="centerX" id="Ilp-45-tKm"/>
+                            <constraint firstItem="rfG-AY-D60" firstAttribute="width" secondItem="VvD-TN-vso" secondAttribute="width" multiplier="0.9" id="gcN-It-dlG"/>
+                            <constraint firstItem="rfG-AY-D60" firstAttribute="height" secondItem="VvD-TN-vso" secondAttribute="height" multiplier="0.7" id="kT2-fl-ybC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bY7-mi-WE9"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="modalView" destination="rfG-AY-D60" id="6xI-ZZ-cuO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wO7-ow-0NH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2998" y="-2724"/>
+        </scene>
+    </scenes>
+</document>

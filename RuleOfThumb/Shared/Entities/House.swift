@@ -73,7 +73,7 @@ class House: CKManagedObject {
         record["name"] = self.name as CKRecordValue
         record["openKey"] = self.openKey as CKRecordValue
         record["users"] = self.users as CKRecordValue
-        
+
         return record
     }
     
