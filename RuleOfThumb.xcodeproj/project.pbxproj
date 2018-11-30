@@ -30,6 +30,9 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D128D3021AD6CBF008E0AF8 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */; };
+		5D128D3221B00D0A008E0AF8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128D3121B00D0A008E0AF8 /* User.swift */; };
+		5D97832F21AC39160085C305 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D97832E21AC39160085C305 /* NotificationManager.swift */; };
 		E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */; };
 		E507C5D421B0033600EEC7E7 /* RuleCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */; };
 		E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */; };
@@ -101,15 +104,31 @@
 		3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleOfThumbUITests.swift; sourceTree = "<group>"; };
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3065BD3521A2EC0D0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3065BD3F21A2F3220005339A /* RuleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RuleList.storyboard; sourceTree = "<group>"; };
+		3065BD4121A2F42B0005339A /* RuleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
+		3065BD4421A2FD3E0005339A /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
+		3065BD4521A2FD3E0005339A /* RuleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleTableViewCell.xib; sourceTree = "<group>"; };
+		308EE4EA21A6E20E00C17310 /* RuleVotingCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleVotingCardViewCell.swift; sourceTree = "<group>"; };
+		308EE4EC21A6E22800C17310 /* RuleVotingCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleVotingCardViewCell.xib; sourceTree = "<group>"; };
+		308EE4EE21A6E62800C17310 /* VotingPromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingPromptView.xib; sourceTree = "<group>"; };
+		308EE4F021A6E63700C17310 /* VotingPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingPromptView.swift; sourceTree = "<group>"; };
+		308EE4F221A6E8FC00C17310 /* VotingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingStatusView.swift; sourceTree = "<group>"; };
+		308EE4F621A6E91900C17310 /* VotingStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingStatusView.xib; sourceTree = "<group>"; };
+		308EE4F821A6EC0900C17310 /* OpenVotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVotesTableViewCell.swift; sourceTree = "<group>"; };
+		308EE4FA21A6EC1C00C17310 /* OpenVotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenVotesTableViewCell.xib; sourceTree = "<group>"; };
+		308EE4FC21A6F61A00C17310 /* VotingPromptViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingPromptViewDelegate.swift; sourceTree = "<group>"; };
 		5D08B56121A5968E00FBF73A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5D08B56421A598C900FBF73A /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
+		5D128D3121B00D0A008E0AF8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5D97832E21AC39160085C305 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateDelegate.swift; sourceTree = "<group>"; };
 		E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateViewController.swift; sourceTree = "<group>"; };
 		E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RuleCreate.storyboard; sourceTree = "<group>"; };
@@ -165,6 +184,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300A58B121A59C88000160DF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5D08B56321A598AB00FBF73A /* Entities */,
+				5D08B56021A5965F00FBF73A /* CloudKit */,
+				5D08B56121A5968E00FBF73A /* Repository.swift */,
+				300A58B521A5A332000160DF /* Class Extensions */,
+				300A58B221A59C8E000160DF /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		300A58B221A59C8E000160DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +249,7 @@
 		3065BCFB21A2E6E30005339A /* RuleOfThumb */ = {
 			isa = PBXGroup;
 			children = (
+				300A58B121A59C88000160DF /* Shared */,
 				5D08B55F21A5965600FBF73A /* Shared */,
 				3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */,
 				3065BD3021A2EB430005339A /* Meetings */,
@@ -238,6 +270,7 @@
 		3065BD1321A2E6E50005339A /* RuleOfThumbTests */ = {
 			isa = PBXGroup;
 			children = (
+				5D128D2E21AD6C8D008E0AF8 /* Cloudkit */,
 				3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */,
 				3065BD1621A2E6E50005339A /* Info.plist */,
 			);
@@ -275,7 +308,7 @@
 		3065BD2F21A2EB240005339A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				3065BD3321A2EC000005339A /* .gitkeep */,
+				5D97832E21AC39160085C305 /* NotificationManager.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -322,10 +355,17 @@
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
+				5D128D3121B00D0A008E0AF8 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		5D128D2E21AD6C8D008E0AF8 /* Cloudkit */ = {
+			isa = PBXGroup;
+			children = (
+				5D128D2F21AD6CBF008E0AF8 /* CloudKitRulesTests.swift */,
+			);
+			path = Cloudkit;
 		E507C5CA21AF161600EEC7E7 /* RuleList */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +569,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D128D3221B00D0A008E0AF8 /* User.swift in Sources */,
+				5D97832F21AC39160085C305 /* NotificationManager.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				E507C5E321B0034800EEC7E7 /* RuleListViewController.swift in Sources */,
 				E507C5DA21B0034000EEC7E7 /* RulePeekView.swift in Sources */,
@@ -568,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D128D3021AD6CBF008E0AF8 /* CloudKitRulesTests.swift in Sources */,
 				3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

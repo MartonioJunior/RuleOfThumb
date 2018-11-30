@@ -18,7 +18,7 @@ protocol CKManagedObject {
     var recordType: String { get }
     
     init(from record: CKRecord)
-    func toCKRecord() -> CKRecord
+    func toCKRecord(_ completion: @escaping ((CKRecord) -> Void))
     func ckRecordId() -> CKRecord.ID
     func ckRecordIDToData(recordID: CKRecord.ID) -> Data
 }
