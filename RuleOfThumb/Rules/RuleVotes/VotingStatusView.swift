@@ -9,6 +9,7 @@
 import UIKit
 
 class VotingStatusView: XibView {
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var votesLeftLabel: UILabel!
     @IBOutlet weak var view: UIView!
     
@@ -20,5 +21,13 @@ class VotingStatusView: XibView {
     
     func setLabelText(votesLeft: Int) {
         votesLeftLabel.text = votesLeft == 1 ? "1 person left" : "\(votesLeft) people left"
+    }
+    
+    func setupStyle() {
+        votesLeftLabel.font = UIFont.terciaryText
+        votesLeftLabel.textColor = UIColor.dusk80
+        
+        statusLabel.font = UIFont.secondaryText
+        statusLabel.textColor = UIColor.dusk80
     }
 }

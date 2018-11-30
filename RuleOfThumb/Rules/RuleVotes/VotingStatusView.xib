@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VotingStatusView" customModule="RuleOfThumb" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="aSE-27-NuH"/>
+                <outlet property="statusLabel" destination="y1s-Ic-THG" id="f40-Vl-wG2"/>
                 <outlet property="view" destination="mr1-19-7DO" id="GkY-zD-FvS"/>
                 <outlet property="votesLeftLabel" destination="rsv-aF-Kvg" id="9Q0-nJ-e4a"/>
             </connections>
