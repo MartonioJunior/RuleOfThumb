@@ -235,6 +235,8 @@ extension CloudKitRepository {
                             
                             defaults.set(houseRecord?.recordID.recordName, forKey: "HouseCreated")
                             
+                            self.subscription(in: "Rules", with: house)
+                            
                             completion(house)
                         }
                     }
@@ -283,6 +285,10 @@ extension CloudKitRepository {
                         }
                         
                         print("User: \(userRecord.recordID) added to house: \(houseRecord.recordID)")
+                        
+                        self.subscription(in: "Rules", with: house)
+                        
+                        completion(true)
                     }
                     
                 })
