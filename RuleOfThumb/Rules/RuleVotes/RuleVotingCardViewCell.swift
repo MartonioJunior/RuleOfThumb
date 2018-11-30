@@ -28,6 +28,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupStyle()
     }
     
     func setUpView(voted: Bool) {
