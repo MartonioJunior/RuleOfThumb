@@ -16,6 +16,8 @@ class SugestionViewController: UIViewController, SugestionModalViewDelegate {
     var secondButtonTitle: String = ""
     var firstButtonIsHidden: Bool = false
     var secondButtonIsHidden: Bool = false
+    var leftAction: (()->Void)?
+    var rightAction: (()->Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +35,14 @@ class SugestionViewController: UIViewController, SugestionModalViewDelegate {
     }
 
     func pressedLeftButton() {
-        popModalView()
+        popModalView(completion: leftAction)
     }
     
     func pressedRightButton() {
-        popModalView()
+        popModalView(completion: rightAction)
     }
     
-    func popModalView() {
-        self.dismiss(animated: true, completion: nil)
+    func popModalView(completion: (()->Void)?) {
+        self.dismiss(animated: true, completion: completion)
     }
 }

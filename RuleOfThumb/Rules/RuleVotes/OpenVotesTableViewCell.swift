@@ -11,7 +11,8 @@ import UIKit
 class OpenVotesTableViewCell: UITableViewCell {
     @IBOutlet weak var votesView: UICollectionView!
     var data = [Rule]()
-    var delegate: OpenVotesDelegate?
+    var delegate: RuleListViewController?
+    var highlightedIndex = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,13 @@ class OpenVotesTableViewCell: UITableViewCell {
         
         let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
         print(nib)
+    }
+    
+    func source(forLocation location: CGPoint) -> RuleVotingCardViewCell? {
+        guard let indexPath = votesView.indexPathForItem(at: location), let cell = votesView.cellForItem(at: indexPath) as? RuleVotingCardViewCell else {
+            return nil
+        }
+        return cell
     }
     
     func reloadData() {
@@ -59,7 +67,11 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        delegate?.seeRuleInVotation(rule: data[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        highlightedIndex = indexPath.row
     }
 }
 
@@ -89,5 +101,29 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
         set(status: .revoked, for: rule)
         sortAndReload()
         delegate?.ruleRefused(rule: rule)
+    }
+}
+
+// --MARK: Peek and Pop
+extension OpenVotesTableViewCell: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let displayInfo = source(forLocation: location) else {
+            return nil
+        }
+        previewingContext.sourceRect = displayInfo.frame
+        
+        let peekView = RulePeekView()
+        peekView.rule = displayInfo.rule
+        
+        let previewRule = RuleDetailViewController()
+        previewRule.previewActionDelegate = displayInfo
+        previewRule.view.addSubview(peekView)
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        return previewRule
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        delegate?.seeRuleInVotation(rule: data[highlightedIndex])
     }
 }

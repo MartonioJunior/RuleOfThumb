@@ -35,7 +35,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             let voteStatus = VotingStatusView()
             voteStatus.backgroundColor = self.backgroundColor
             voteStatus.frame = votingPrompt.frame
-            voteStatus.setLabelText(votesLeft: 6)
+            voteStatus.setLabelText(votesLeft: 0)
             self.addSubview(voteStatus)
             votingPrompt.removeFromSuperview()
             votingPrompt = voteStatus
@@ -67,7 +67,6 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 }
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
-    
     func votedOnRule(agreed: Bool) {
         setUpView(voted: true)
         guard let rule = rule else {return}

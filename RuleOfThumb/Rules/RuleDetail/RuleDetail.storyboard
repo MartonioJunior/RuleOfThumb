@@ -99,20 +99,45 @@
                         <viewLayoutGuide key="safeArea" id="TMs-OP-cf6"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="AmU-a1-Ypo">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="dYO-oq-IjK"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dYO-oq-IjK">
+                            <connections>
+                                <action selector="returnButton:" destination="RA9-TY-XDp" id="gLP-yk-hpK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iLH-wa-hfR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TRJ-TD-Rcy">
+                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Archive"/>
+                                <connections>
+                                    <action selector="archiveRule:" destination="RA9-TY-XDp" eventType="touchUpInside" id="Nwe-Fv-DGU"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="archiveRuleButton" destination="TRJ-TD-Rcy" id="VgU-Zm-Efz"/>
                         <outlet property="createdAtLabel" destination="8xM-Fv-HpB" id="VQK-qG-eur"/>
                         <outlet property="descriptionLabel" destination="e59-Gg-GnM" id="Yiy-Pz-t9A"/>
                         <outlet property="profileView" destination="7g2-Ab-D9f" id="pJx-qu-Wri"/>
                         <outlet property="statusLabel" destination="jZj-cT-tf2" id="djG-hX-3M6"/>
                         <outlet property="titleLabel" destination="56d-WP-Bs4" id="4Oa-sX-q0D"/>
+                        <segue destination="zfI-Zt-4XL" kind="presentation" identifier="modal" id="sqn-CZ-oA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Tu-29i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="172" y="116.49175412293854"/>
+        </scene>
+        <!--modal-->
+        <scene sceneID="aDh-ZL-0nB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SugestionModal" referencedIdentifier="modal" id="zfI-Zt-4XL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ao5-cy-4pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="116"/>
         </scene>
     </scenes>
 </document>

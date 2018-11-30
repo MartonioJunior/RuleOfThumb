@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let defaults = UserDefaults.standard
-        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
-        let house = House(name: "De papel")
-        repository.create(house: house) { (house) in
-            defaults.set(house.recordName, forKey: "HouseCreated")
-        }
+//        let defaults = UserDefaults.standard
+//        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
+//        let house = House(name: "De papel")
+//        repository.create(house: house) { (house) in
+//            defaults.set(house.recordName, forKey: "HouseCreated")
+//        }
         return true
     }
 

@@ -41,6 +41,8 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? RuleDetailViewController else { return }
             let rule = sender as! Rule
             destination.rule = rule
+            destination.delegate = self
+            destination.delegate = self
         } else if segue.identifier == "create" {
             guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? RuleCreateViewController else { return }
             destination.delegate = self
@@ -138,6 +140,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.data = rulesInVoting
         cell?.delegate = self
         cell?.reloadData()
+        registerForPreviewing(with: cell!, sourceView: cell!.votesView)
         return cell!
     }
     
@@ -230,8 +233,7 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         let peekView = RulePeekView()
         peekView.rule = displayInfo.rule
         
-        let previewRule = RuleDetailViewController()
-        
+        let previewRule = ActionlessRuleDetailViewController()
         previewRule.view.addSubview(peekView)
         previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
         
@@ -299,5 +301,17 @@ extension RuleListViewController: OpenVotesDelegate {
     func ruleRefused(rule: Rule) {
         rule.status = .revoked
         performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
+    }
+}
+
+// --MARK: Rule Archivation Delegate
+extension RuleListViewController: RuleDetailDelegate {
+    func ruleArchived(rule: Rule) {
+        rule.status = .revoked
+        rules = rules.filter {
+            return $0.status == Rule.Status.inForce
+        }
+        searchRules = rules
+        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
     }
 }

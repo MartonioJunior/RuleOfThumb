@@ -15,8 +15,10 @@ class RuleDetailViewController: UIViewController {
     @IBOutlet weak var profileView: CreatorProfileView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var archiveRuleButton: UIButton!
-    
+    var delegate: RuleDetailDelegate?
+    var previewActionDelegate: RuleVotingCardViewCell?
     var rule: Rule?
+    var showPreviewActions: Bool = true
     
     var ruleTitle = "Sem nome"
     var ruleDescription = "Sem descrição"
@@ -36,6 +38,17 @@ class RuleDetailViewController: UIViewController {
         guard let rule = rule else { return }
         setCreatorLabel(name: rule.house?.name)
         profileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "modal" {
+            guard let destination = segue.destination as? SugestionViewController else {return}
+            destination.modalTitle = "Are you sure that you want to archive this rule?"
+            destination.modalDescription = "Make sure that all the members of the house agree with this decision. Maybe you should schedule a meeting before doing that."
+            destination.firstButtonTitle = "Not yet"
+            destination.secondButtonTitle = "Yes, I'm sure"
+            destination.rightAction = confirmArchive
+        }
     }
     
     func setStatusLabel(status: Rule.Status) {
@@ -76,8 +89,14 @@ class RuleDetailViewController: UIViewController {
         profileView.setProfileLabel(text: creatorString)
     }
     
+    func confirmArchive() {
+        guard let rule = self.rule else {return}
+        delegate?.ruleArchived(rule: rule)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func archiveRule(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: "modal", sender: nil)
     }
     
     @IBAction func returnButton(_ sender: UIBarButtonItem) {
@@ -87,13 +106,15 @@ class RuleDetailViewController: UIViewController {
     override var previewActionItems: [UIPreviewActionItem] {
         let agree = UIPreviewAction(title: "Agree", style: .default, handler: { (action, viewController) in
             print("I agree / Update in CloudKit here")
+            self.previewActionDelegate?.votedOnRule(agreed: true)
         })
         let disagree = UIPreviewAction(title: "Disagree", style: .default, handler:{ (action, viewController) in
             print("I disagree / Update in CloudKit here")
+            self.previewActionDelegate?.votedOnRule(agreed: false)
         })
         let cancel = UIPreviewAction(title: "Cancel", style: .destructive, handler:{ (action, viewController) in
         })
-        
+
         return[agree, disagree, cancel]
     }
 
