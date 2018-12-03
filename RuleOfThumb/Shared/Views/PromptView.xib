@@ -24,7 +24,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kPc-WU-71f">
                     <rect key="frame" x="8" y="8" width="359" height="119"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="751" text="Which rule would you like to propose?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-ZQ-eIg">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="751" text="Which rule would you like to propose?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-ZQ-eIg">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="73"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                             <nil key="textColor"/>

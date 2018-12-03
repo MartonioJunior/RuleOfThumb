@@ -263,6 +263,8 @@ extension CloudKitRepository {
                 return
             }
             
+            let defaults = UserDefaults.standard
+            
             self.publicDB?.fetch(withRecordID: userRecordID) { (userRecord, error) in
                 guard let userRecord = userRecord, error == nil else {
                     print(error!.localizedDescription)
@@ -293,6 +295,8 @@ extension CloudKitRepository {
                         print("User: \(userRecord.recordID) added to house: \(houseRecord.recordID)")
                         
                         self.subscription(in: "Rules", with: house)
+                        
+                        defaults.set(houseRecord.recordID.recordName, forKey: "HouseCreated")
                         
                         completion(true)
                     }

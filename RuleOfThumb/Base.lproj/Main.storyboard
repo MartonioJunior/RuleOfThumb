@@ -19,12 +19,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="oUo-Qy-bU7" kind="relationship" relationship="viewControllers" id="BhT-L0-30s"/>
-                        <segue destination="sQu-U8-iFS" kind="relationship" relationship="viewControllers" id="zXt-UJ-4Ml"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBo-gV-Rqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="-152"/>
+            <point key="canvasLocation" x="442" y="-177"/>
         </scene>
         <!--ruleList-->
         <scene sceneID="TZQ-tM-lAQ">
@@ -35,16 +34,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcD-6h-GXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1213" y="-407"/>
-        </scene>
-        <!--HomeLogin-->
-        <scene sceneID="kQL-Re-2oZ">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="homeCreate" storyboardName="HomeLogin" id="sQu-U8-iFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4vb-Bq-cE8"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PiS-5a-5I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1097" y="47"/>
         </scene>
     </scenes>
     <resources>
