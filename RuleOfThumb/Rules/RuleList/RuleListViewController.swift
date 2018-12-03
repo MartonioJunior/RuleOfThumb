@@ -34,6 +34,8 @@ class RuleListViewController: UIViewController {
         rulesTableView.refreshControl = refreshControl
         refreshData(self)
         registerForPreviewing(with: self, sourceView: rulesTableView)
+        
+        rulesTableView.backgroundColor = UIColor.clear
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -194,7 +196,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
-        headerView.backgroundColor = .white
+        headerView.backgroundColor = UIColor.clear
         
         let titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)

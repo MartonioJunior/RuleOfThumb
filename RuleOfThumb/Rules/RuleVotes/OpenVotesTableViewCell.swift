@@ -16,6 +16,9 @@ class OpenVotesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setDelegate()
+        
+        contentView.backgroundColor = UIColor.clear
+        votesView.backgroundColor = UIColor.clear
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
