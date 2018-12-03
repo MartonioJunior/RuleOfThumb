@@ -17,24 +17,24 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
+            <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-HM-Eap">
-                    <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
+                    <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="845-OA-Wki">
-                            <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
+                            <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ue-J0-wep" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="34"/>
                                     <state key="normal" title="Disagree"/>
                                     <connections>
                                         <action selector="disagreeToRule:" destination="-1" eventType="touchUpInside" id="GvE-Qg-dTT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-P1-GDa" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
-                                    <rect key="frame" x="160" y="0.0" width="144" height="36"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-P1-GDa" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                    <rect key="frame" x="170" y="0.0" width="154" height="34"/>
                                     <state key="normal" title="Agree"/>
                                     <connections>
                                         <action selector="agreedToRule:" destination="-1" eventType="touchUpInside" id="lnK-iN-pNC"/>
@@ -46,6 +46,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="845-OA-Wki" secondAttribute="bottom" id="Cpm-vx-6yb"/>
                         <constraint firstItem="845-OA-Wki" firstAttribute="top" secondItem="dGZ-HM-Eap" secondAttribute="top" id="Urb-Vs-iSJ"/>

@@ -9,9 +9,6 @@
 import UIKit
 
 class RuleVotingCardViewCell: UICollectionViewCell{
-    
-    var shadowLayer: CAShapeLayer!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var votingPrompt: XibView!
@@ -29,11 +26,6 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        addRoundedBorder(to: view)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupStyle()
@@ -42,7 +34,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     func setUpView(voted: Bool) {
         if voted {
             let voteStatus = VotingStatusView()
-            voteStatus.backgroundColor = self.view.backgroundColor
+            voteStatus.backgroundColor = self.backgroundColor
             voteStatus.frame = votingPrompt.frame
             voteStatus.setLabelText(votesLeft: 6)
             self.addSubview(voteStatus)
@@ -50,7 +42,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             votingPrompt = voteStatus
         } else {
             let votePrompt = VotingPromptView()
-            votePrompt.backgroundColor = self.view.backgroundColor
+            votePrompt.backgroundColor = self.backgroundColor
             votePrompt.frame = votingPrompt.frame
             self.addSubview(votePrompt)
             votingPrompt.removeFromSuperview()
@@ -80,28 +72,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         
         creatorLabel.font = UIFont.terciaryText
         creatorLabel.textColor = UIColor.dusk80
-        
-        view.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
-    
-    func addRoundedBorder(to view: UIView) {
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.masksToBounds = false
-            
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.2
-            shadowLayer.shadowRadius = 3
-            
-            view.layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
-    
 }
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {

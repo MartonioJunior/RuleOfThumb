@@ -15,10 +15,7 @@ enum ModalType {
 }
 
 class RuleListViewController: UIViewController {
-    @IBOutlet weak var gradientView: UIView!
-    
     @IBOutlet weak var rulesTableView: UITableView!
-    
     var rules = [Rule]()
     var searchRules = [Rule]()
     var rulesInVoting = [Rule]()
@@ -37,14 +34,6 @@ class RuleListViewController: UIViewController {
         rulesTableView.refreshControl = refreshControl
         refreshData(self)
         registerForPreviewing(with: self, sourceView: rulesTableView)
-        
-        setupStyle()
-        
-        gradientView.addGradientWith(colors: [UIColor.lightSalmon.cgColor, UIColor.pale.cgColor])
-        
-        self.navigationController?.navigationBar.backgroundColor = UIColor.black.withAlphaComponent(0) //Set a transparent Bar
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,10 +67,6 @@ class RuleListViewController: UIViewController {
                     break
             }
         }
-    }
-    
-    func setupStyle() {
-        rulesTableView.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
     
     func source(forLocation location: CGPoint) -> RuleTableViewCell? {
@@ -150,7 +135,6 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             rulesTableView.register(UINib(nibName: "OpenVotesTableViewCell", bundle: nil), forCellReuseIdentifier: "allVotations")
             cell = rulesTableView.dequeueReusableCell(withIdentifier: "allVotations") as? OpenVotesTableViewCell
         }
-        cell?.backgroundColor = UIColor.black.withAlphaComponent(0)
         cell?.data = rulesInVoting
         cell?.delegate = self
         cell?.reloadData()
@@ -210,10 +194,10 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
-        headerView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        headerView.backgroundColor = .white
+        
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.sectionText
-        titleLabel.textColor = UIColor.dusk
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.frame = headerView.frame
         switch section {
         case 0:
