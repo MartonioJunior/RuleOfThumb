@@ -183,11 +183,10 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 { //Vote opened
           return 130
         } else if indexPath.section == 1 { //Rule list
-            return 100
+            return 145
         } else { // ?
-            return 100
+            return 145
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
