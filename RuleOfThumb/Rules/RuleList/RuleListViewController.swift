@@ -199,7 +199,8 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = UIColor.clear
         
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.font = UIFont.sectionText
+        titleLabel.textColor = UIColor.dusk
         titleLabel.frame = headerView.frame
         switch section {
         case 0:

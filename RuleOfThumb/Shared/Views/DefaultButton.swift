@@ -18,7 +18,7 @@ class DefaultButton: UIButton {
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         
-        self.backgroundColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 0.0)
+        self.backgroundColor = UIColor.almostWhite
         self.titleLabel?.font = UIFont.actionText
         self.setTitleColor(UIColor.pastelRed90, for: .normal)
     }
