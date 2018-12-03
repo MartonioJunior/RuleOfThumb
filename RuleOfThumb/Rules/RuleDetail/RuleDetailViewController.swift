@@ -85,16 +85,20 @@ class RuleDetailViewController: UIViewController {
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
-        let agree = UIPreviewAction(title: "Agree", style: .default, handler: { (action, viewController) in
-            print("I agree / Update in CloudKit here")
-        })
-        let disagree = UIPreviewAction(title: "Disagree", style: .default, handler:{ (action, viewController) in
-            print("I disagree / Update in CloudKit here")
-        })
-        let cancel = UIPreviewAction(title: "Cancel", style: .destructive, handler:{ (action, viewController) in
-        })
         
-        return[agree, disagree, cancel]
+        if rule?.status == Rule.Status.voting {
+            let agree = UIPreviewAction(title: "Agree", style: .default, handler: { (action, viewController) in
+                print("I agree / Update in CloudKit here")
+            })
+            let disagree = UIPreviewAction(title: "Disagree", style: .default, handler:{ (action, viewController) in
+                print("I disagree / Update in CloudKit here")
+            })
+            let cancel = UIPreviewAction(title: "Cancel", style: .destructive, handler:{ (action, viewController) in
+            })
+            
+            return[agree, disagree, cancel]
+        }
+        return []
     }
 
 }

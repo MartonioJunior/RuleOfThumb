@@ -83,7 +83,7 @@ class RuleListViewController: UIViewController {
     }
     
     @objc func refreshData(_ sender: Any) {
-        ViewController.fetchHome { (house) in
+        AppDelegate.repository.currentHouse { (house) in
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
                 DispatchQueue.main.async {
                     self.rules = allRules.filter {
@@ -231,9 +231,9 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         peekView.rule = displayInfo.rule
         
         let previewRule = RuleDetailViewController()
-        
         previewRule.view.addSubview(peekView)
-        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height*3)
         
         return previewRule
     }

@@ -15,6 +15,7 @@ class DefaultButton: UIButton {
         self.layer.cornerRadius = 2
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.black.cgColor
+        self.layer.frame.size.height = 40
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         

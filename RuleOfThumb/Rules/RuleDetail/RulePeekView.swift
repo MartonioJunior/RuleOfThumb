@@ -33,10 +33,6 @@ class RulePeekView: XibView {
         }
     }
     
-    func getContentViewSize() -> CGSize {
-        return self.mainView.frame.size
-    }
-    
     func setDateAuthorLabel(date: Date?, author: String?) {
         var message = "Created "
         if let date = date {
