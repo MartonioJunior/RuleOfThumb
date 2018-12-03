@@ -25,12 +25,6 @@ class Rule: CKManagedObject {
     var recordID: Data?
     var recordType: String
     
-    // --MARK: Test Votation
-    var peopleAmountAtHome = Int()
-    var votesLeft = Int()
-    var peopleAgreed = Int()
-    var voted: Bool = false
-    
     var number: Int
     var name: String
     var description: String
@@ -48,11 +42,6 @@ class Rule: CKManagedObject {
       
         self.recordType = "Rules"
         self.recordName = self.recordType + "." + UUID().uuidString
-        
-        // --MARK: Test Votation
-        peopleAmountAtHome = house.peopleAmountAtHome
-        votesLeft = Int.random(in: 1...peopleAmountAtHome)
-        peopleAgreed = Int.random(in: 0...peopleAmountAtHome-votesLeft)
         
         let tempId = CKRecord.ID(recordName: self.recordName!)
         self.recordID = self.ckRecordIDToData(recordID: tempId)
@@ -72,11 +61,6 @@ class Rule: CKManagedObject {
         
         let recordID = record.recordID
         self.recordID = self.ckRecordIDToData(recordID: recordID)
-        
-        // --MARK: Test Votation
-        peopleAmountAtHome = 7
-        votesLeft = Int.random(in: 1...peopleAmountAtHome)
-        peopleAgreed = Int.random(in: 0...peopleAmountAtHome-votesLeft)
     }
     
     func toCKRecord() -> CKRecord {
