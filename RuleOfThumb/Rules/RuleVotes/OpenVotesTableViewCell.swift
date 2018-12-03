@@ -16,6 +16,7 @@ class OpenVotesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setDelegate()
+        setupStyle()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,6 +30,11 @@ class OpenVotesTableViewCell: UITableViewCell {
         
         let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
         print(nib)
+    }
+    
+    func setupStyle() {
+        self.contentView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        votesView.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
     
     func reloadData() {
@@ -55,7 +61,16 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.size.width*0.85 , height: 130)
+        
+        let ratio: CGFloat = 0.35
+        
+        let width = CGFloat(309.0)
+        let cellSize = CGSize(width: 309, height: 112)
+        return cellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
