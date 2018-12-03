@@ -91,32 +91,34 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
         votesView.reloadData()
     }
     
-    func ruleApproved(rule: Rule) {
+    func ruleUpvoted(rule: Rule) {
+        // Send Vote to CloudKit
+        CoreDataManager.current.insert(new: rule)
         set(status: .inForce, for: rule)
         sortAndReload()
-        delegate?.ruleApproved(rule: rule)
+        delegate?.ruleUpvoted(rule: rule)
     }
     
-    func ruleRefused(rule: Rule) {
+    func ruleDownvoted(rule: Rule) {
+        CoreDataManager.current.insert(new: rule)
         set(status: .revoked, for: rule)
         sortAndReload()
-        delegate?.ruleRefused(rule: rule)
+        delegate?.ruleDownvoted(rule: rule)
     }
 }
 
 // --MARK: Peek and Pop
 extension OpenVotesTableViewCell: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let displayInfo = source(forLocation: location) else {
+        guard let displayInfo = source(forLocation: location), let rule = displayInfo.rule else {
             return nil
         }
         previewingContext.sourceRect = displayInfo.frame
-        
         let peekView = RulePeekView()
-        peekView.rule = displayInfo.rule
+        peekView.rule = rule
         
         var previewRule: RuleDetailViewController
-        if !displayInfo.voted {
+        if CoreDataManager.current.getVote(rule: rule) == nil {
             previewRule = RuleDetailViewController()
             previewRule.previewActionDelegate = displayInfo
         } else {

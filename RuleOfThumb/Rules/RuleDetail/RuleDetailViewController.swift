@@ -37,7 +37,7 @@ class RuleDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         guard let rule = rule else { return }
         setCreatorLabel(name: rule.house?.name)
-        profileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
+        self.profileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,11 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let defaults = UserDefaults.standard
         guard defaults.string(forKey: "HouseCreated") == nil else { return true }
-        let house = House(name: "De papel")
-        repository.create(house: house) { (house) in
-            defaults.set(house.recordName, forKey: "HouseCreated")
-        }
 
+        self.repository.setupNewHouse(name: "Minha Casa") { (house) in
+            guard house == nil else {
+                return
+            }
+            print("Casa criada com o id \(house?.ckRecordId())")
+        }
+        
         return true
     }
 

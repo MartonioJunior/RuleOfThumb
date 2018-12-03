@@ -9,8 +9,8 @@
 import UIKit
 
 protocol OpenVotesDelegate {
-    func ruleApproved(rule: Rule)
-    func ruleRefused(rule: Rule)
+    func ruleUpvoted(rule: Rule)
+    func ruleDownvoted(rule: Rule)
 }
 
 extension OpenVotesDelegate where Self: UIViewController {

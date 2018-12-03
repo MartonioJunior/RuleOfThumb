@@ -18,6 +18,7 @@
 		300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E021AD6E8300766ECF /* SugestionViewController.swift */; };
 		300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */; };
 		301995C421B5507B00D86396 /* RuleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C321B5507B00D86396 /* RuleModelTests.swift */; };
+		301995C721B5632200D86396 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C621B5632200D86396 /* CoreDataManager.swift */; };
 		301CE39421B0182D006B583E /* RuleDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE39321B0182D006B583E /* RuleDetailDelegate.swift */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
 		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
@@ -57,6 +58,10 @@
 		E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5ED21B0035300EEC7E7 /* VotingPromptViewDelegate.swift */; };
 		E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5EE21B0035300EEC7E7 /* VotingStatusView.swift */; };
 		E507C5FB21B0035D00EEC7E7 /* OpenVotesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5F921B0035C00EEC7E7 /* OpenVotesDelegate.swift */; };
+		E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */; };
+		E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */; };
+		E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */; };
+		E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */; };
 		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
 		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
 		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
@@ -94,6 +99,7 @@
 		300D58E021AD6E8300766ECF /* SugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionViewController.swift; sourceTree = "<group>"; };
 		300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalViewDelegate.swift; sourceTree = "<group>"; };
 		301995C321B5507B00D86396 /* RuleModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleModelTests.swift; sourceTree = "<group>"; };
+		301995C621B5632200D86396 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		301CE39321B0182D006B583E /* RuleDetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleDetailDelegate.swift; sourceTree = "<group>"; };
 		3065BCF921A2E6E30005339A /* RuleOfThumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleOfThumb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BCFC21A2E6E30005339A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +148,10 @@
 		E507C5ED21B0035300EEC7E7 /* VotingPromptViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingPromptViewDelegate.swift; sourceTree = "<group>"; };
 		E507C5EE21B0035300EEC7E7 /* VotingStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingStatusView.swift; sourceTree = "<group>"; };
 		E507C5F921B0035C00EEC7E7 /* OpenVotesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenVotesDelegate.swift; sourceTree = "<group>"; };
+		E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeCreate.storyboard; sourceTree = "<group>"; };
+		E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCreateViewController.swift; sourceTree = "<group>"; };
+		E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoginViewController.swift; sourceTree = "<group>"; };
+		E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLogin.storyboard; sourceTree = "<group>"; };
 		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
 		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
 		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
@@ -213,6 +223,14 @@
 			path = Rules;
 			sourceTree = "<group>";
 		};
+		301995C521B562EB00D86396 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				301995C621B5632200D86396 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		3065BCF021A2E6E30005339A = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +260,7 @@
 				3065BD3021A2EB430005339A /* Meetings */,
 				3065BD2F21A2EB240005339A /* Notifications */,
 				3065BD2E21A2EB1D0005339A /* Rules */,
+				E507C5FC21B00D2800EEC7E7 /* Homes */,
 				3065BD2D21A2EB0E0005339A /* Profile */,
 				3065BCFC21A2E6E30005339A /* AppDelegate.swift */,
 				3065BCFE21A2E6E30005339A /* ViewController.swift */,
@@ -320,6 +339,7 @@
 		5D08B55F21A5965600FBF73A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				301995C521B562EB00D86396 /* CoreData */,
 				300A58B521A5A332000160DF /* Class Extensions */,
 				300A58B221A59C8E000160DF /* Views */,
 				5D08B56321A598AB00FBF73A /* Entities */,
@@ -405,6 +425,17 @@
 				E507C5E721B0035300EEC7E7 /* VotingStatusView.xib */,
 			);
 			path = RuleVotes;
+			sourceTree = "<group>";
+		};
+		E507C5FC21B00D2800EEC7E7 /* Homes */ = {
+			isa = PBXGroup;
+			children = (
+				E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */,
+				E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */,
+				E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */,
+				E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */,
+			);
+			path = Homes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,7 +561,9 @@
 				E507C5F421B0035300EEC7E7 /* RuleVotingCardViewCell.xib in Resources */,
 				E507C5E521B0034800EEC7E7 /* RuleTableViewCell.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
+				E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */,
 				E507C5EF21B0035300EEC7E7 /* OpenVotesTableViewCell.xib in Resources */,
+				E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
 				E507C5F021B0035300EEC7E7 /* VotingStatusView.xib in Resources */,
 				E507C5DC21B0034000EEC7E7 /* RuleDetail.storyboard in Resources */,
@@ -561,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				E507C5E321B0034800EEC7E7 /* RuleListViewController.swift in Sources */,
 				E507C5DA21B0034000EEC7E7 /* RulePeekView.swift in Sources */,
@@ -568,6 +602,7 @@
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				301CE39421B0182D006B583E /* RuleDetailDelegate.swift in Sources */,
 				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
+				E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */,
 				E597836521A83808009FDDCF /* DefaultButton.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */,
@@ -592,6 +627,7 @@
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				300D159821B1578400F23AA0 /* ActionlessRuleDetailViewController.swift in Sources */,
 				E507C5F121B0035300EEC7E7 /* RuleVotingCardViewCell.swift in Sources */,
+				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
 				E507C5F221B0035300EEC7E7 /* VotingPromptView.swift in Sources */,
 				E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */,
 				E507C5F321B0035300EEC7E7 /* OpenVotesTableViewCell.swift in Sources */,

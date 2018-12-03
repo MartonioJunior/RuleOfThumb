@@ -19,10 +19,14 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 
     var rule: Rule? {
         didSet {
-            guard let rule = rule else {return}
+            guard let rule = rule else { return }
             self.setNameLabel(ruleName: rule.name)
-            self.setCreatorLabel(creatorName: "Anne")
-            self.setUpView(voted: rule.status != .voting) // || rule.voted)
+            self.setCreatorLabel(creatorName: rule.house?.name ?? "")
+            guard CoreDataManager.current.getVote(rule: rule) == nil else {
+                self.setUpView(voted: true)
+                return
+            }
+            self.setUpView(voted: rule.status != .voting)
         }
     }
     var voted = false
@@ -36,9 +40,9 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             let voteStatus = VotingStatusView()
             voteStatus.backgroundColor = self.backgroundColor
             voteStatus.frame = votingPrompt.frame
-            //if let votesLeft = rule?.votesLeft {
-                voteStatus.setLabelText(votesLeft: 1) //votesLeft)
-            //}
+            if let votesLeft = rule?.house?.users.count {
+                voteStatus.setLabelText(votesLeft: votesLeft - 1)
+            }
             self.addSubview(voteStatus)
             votingPrompt.removeFromSuperview()
             votingPrompt = voteStatus
@@ -71,16 +75,8 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
     func votedOnRule(agreed: Bool) {
-        guard let rule = rule else {return}
-        let peopleAmountAtHome = 7
-        var votesLeft = Int.random(in: 1...peopleAmountAtHome)
-        var peopleAgreed = Int.random(in: 1...peopleAmountAtHome-votesLeft)
-        voted = true
-        votesLeft -= 1
-        setUpView(voted: voted)
-        if agreed { peopleAgreed += 1 }
-        if votesLeft <= 0 {
-            (peopleAgreed * 2 > peopleAmountAtHome) ? delegate?.ruleApproved(rule: rule) : delegate?.ruleRefused(rule: rule)
-        }
+        guard let rule = rule, let votesLeft = rule.house?.users.count else {return}
+        setUpView(voted: true)
+        agreed ? delegate?.ruleUpvoted(rule: rule) : delegate?.ruleDownvoted(rule: rule)
     }
 }

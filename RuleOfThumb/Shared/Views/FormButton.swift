@@ -15,12 +15,13 @@ class FormButton: UIButton {
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 2.0
         self.layer.borderColor = UIColor.formButton.cgColor
+        self.layer.frame.size.height = 60
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         
         self.backgroundColor = UIColor.gray
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22.0)
-        self.setTitleColor(UIColor.textColor, for: .normal)
+        self.setTitleColor(UIColor.black, for: .normal)
     }
 
 }

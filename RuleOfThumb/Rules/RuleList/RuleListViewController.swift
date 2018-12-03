@@ -85,7 +85,7 @@ class RuleListViewController: UIViewController {
     }
     
     @objc func refreshData(_ sender: Any) {
-        ViewController.fetchHome { (house) in
+        AppDelegate.repository.currentHouse { (house) in
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
                 DispatchQueue.main.async {
                     self.rules = allRules.filter {
@@ -235,7 +235,8 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         
         let previewRule = ActionlessRuleDetailViewController()
         previewRule.view.addSubview(peekView)
-        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height*3)
         
         return previewRule
     }
@@ -291,7 +292,7 @@ extension RuleListViewController: UISearchBarDelegate {
 
 // --MARK: Rule List View Controller Delegate
 extension RuleListViewController: OpenVotesDelegate {
-    func ruleApproved(rule: Rule) {
+    func ruleUpvoted(rule: Rule) {
         rules.append(rule)
         searchRules.append(rule)
         rulesInVoting = rulesInVoting.filter {
@@ -301,8 +302,7 @@ extension RuleListViewController: OpenVotesDelegate {
         performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
     }
     
-    func ruleRefused(rule: Rule) {
-        rule.status = .revoked
+    func ruleDownvoted(rule: Rule) {
         rulesInVoting = rulesInVoting.filter {
             return $0.status == Rule.Status.voting
         }
@@ -315,13 +315,17 @@ extension RuleListViewController: OpenVotesDelegate {
 extension RuleListViewController: RuleDetailDelegate {
     func ruleArchived(rule: Rule) {
         rule.status = .revoked
-        rules = rules.filter {
-            return $0.status == Rule.Status.inForce
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            DispatchQueue.main.async {
+                self.rules = self.rules.filter {
+                    return $0.status == Rule.Status.inForce
+                }
+                self.rulesInVoting = self.rulesInVoting.filter {
+                    return $0.status == Rule.Status.voting
+                }
+                self.searchRules = self.rules
+                self.rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
+            }
         }
-        rulesInVoting = rulesInVoting.filter {
-            return $0.status == Rule.Status.voting
-        }
-        searchRules = rules
-        rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
     }
 }
