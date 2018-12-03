@@ -33,6 +33,9 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
+		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
+		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
 		E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */; };
 		E507C5D421B0033600EEC7E7 /* RuleCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */; };
 		E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */; };
@@ -107,7 +110,6 @@
 		3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleOfThumbUITests.swift; sourceTree = "<group>"; };
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,9 @@
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
 		E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateDelegate.swift; sourceTree = "<group>"; };
 		E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateViewController.swift; sourceTree = "<group>"; };
 		E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RuleCreate.storyboard; sourceTree = "<group>"; };
@@ -244,6 +249,7 @@
 		3065BD1321A2E6E50005339A /* RuleOfThumbTests */ = {
 			isa = PBXGroup;
 			children = (
+				5D2B433021B1832F00A80354 /* CloudKit */,
 				3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */,
 				3065BD1621A2E6E50005339A /* Info.plist */,
 			);
@@ -282,7 +288,7 @@
 		3065BD2F21A2EB240005339A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				3065BD3321A2EC000005339A /* .gitkeep */,
+				5D2B432721B1828400A80354 /* NotificationManager.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -326,11 +332,20 @@
 		5D08B56321A598AB00FBF73A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5D2B432921B1828B00A80354 /* User.swift */,
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		5D2B433021B1832F00A80354 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */,
+			);
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 		E507C5CA21AF161600EEC7E7 /* RuleList */ = {
@@ -554,6 +569,7 @@
 				E507C5E421B0034800EEC7E7 /* RuleTableViewCell.swift in Sources */,
 				300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */,
 				E507C5DB21B0034000EEC7E7 /* RuleDetailViewController.swift in Sources */,
+				5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */,
 				E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */,
 				301CE39221B00CD8006B583E /* HouseSignupViewController.swift in Sources */,
 				E507C5FB21B0035D00EEC7E7 /* OpenVotesDelegate.swift in Sources */,
@@ -563,6 +579,7 @@
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
 				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */,
+				5D2B432A21B1828B00A80354 /* User.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
@@ -580,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */,
 				3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

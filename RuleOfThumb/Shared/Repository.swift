@@ -17,4 +17,5 @@ protocol RulesRepository {
 
 protocol HousesRepository {
     func create(house: House, then completion: @escaping ((_ house: House) -> Void))
+    func currentHouse(_ completion: @escaping ((_ house: House) -> Void))
 }

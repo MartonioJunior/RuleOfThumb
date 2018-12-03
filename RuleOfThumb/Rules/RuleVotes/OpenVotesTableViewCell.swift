@@ -116,7 +116,7 @@ extension OpenVotesTableViewCell: UIViewControllerPreviewingDelegate {
         peekView.rule = displayInfo.rule
         
         var previewRule: RuleDetailViewController
-        if let rule = displayInfo.rule, !rule.voted {
+        if !displayInfo.voted {
             previewRule = RuleDetailViewController()
             previewRule.previewActionDelegate = displayInfo
         } else {

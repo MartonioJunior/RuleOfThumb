@@ -13,7 +13,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var votingPrompt: XibView!
     @IBOutlet weak var view: UIView!
-
+    
     var voteStatus: VotingStatusView?
     var delegate: OpenVotesDelegate?
 
@@ -22,9 +22,10 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             guard let rule = rule else {return}
             self.setNameLabel(ruleName: rule.name)
             self.setCreatorLabel(creatorName: "Anne")
-            self.setUpView(voted: rule.status != .voting || rule.voted)
+            self.setUpView(voted: rule.status != .voting) // || rule.voted)
         }
     }
+    var voted = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,9 +36,9 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             let voteStatus = VotingStatusView()
             voteStatus.backgroundColor = self.backgroundColor
             voteStatus.frame = votingPrompt.frame
-            if let votesLeft = rule?.votesLeft {
-                voteStatus.setLabelText(votesLeft: votesLeft)
-            }
+            //if let votesLeft = rule?.votesLeft {
+                voteStatus.setLabelText(votesLeft: 1) //votesLeft)
+            //}
             self.addSubview(voteStatus)
             votingPrompt.removeFromSuperview()
             votingPrompt = voteStatus
@@ -71,12 +72,15 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
     func votedOnRule(agreed: Bool) {
         guard let rule = rule else {return}
-        rule.voted = true
-        rule.votesLeft -= 1
-        setUpView(voted: rule.voted)
-        if agreed { rule.peopleAgreed += 1 }
-        if rule.votesLeft <= 0 {
-            (rule.peopleAgreed * 2 > rule.peopleAmountAtHome) ? delegate?.ruleApproved(rule: rule) : delegate?.ruleRefused(rule: rule)
+        let peopleAmountAtHome = 7
+        var votesLeft = Int.random(in: 1...peopleAmountAtHome)
+        var peopleAgreed = Int.random(in: 1...peopleAmountAtHome-votesLeft)
+        voted = true
+        votesLeft -= 1
+        setUpView(voted: voted)
+        if agreed { peopleAgreed += 1 }
+        if votesLeft <= 0 {
+            (peopleAgreed * 2 > peopleAmountAtHome) ? delegate?.ruleApproved(rule: rule) : delegate?.ruleRefused(rule: rule)
         }
     }
 }
