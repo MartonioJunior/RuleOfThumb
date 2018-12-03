@@ -49,6 +49,8 @@ class House: CKManagedObject {
         
         group.enter()
         CloudKitRepository.fetchById(ckReference.recordID) { (houseRecord) in
+            guard let houseRecord = houseRecord else { return }
+            
             record = houseRecord
             group.leave()
         }
@@ -58,7 +60,12 @@ class House: CKManagedObject {
     }
     
     func toCKRecord(_ completion: @escaping ((CKRecord) -> Void)) {
-        CloudKitRepository.fetchById(self.ckRecordId()) { (record) in
+        var record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
+        
+        CloudKitRepository.fetchById(self.ckRecordId()) { (fetched) in
+            if let fetched = fetched {
+                record = fetched
+            }
             record["name"] = self.name as CKRecordValue
             record["openKey"] = self.openKey as CKRecordValue
             record["users"] = self.users as CKRecordValue
@@ -67,6 +74,7 @@ class House: CKManagedObject {
         }
     }
     
+    // TODO: Remover essa função e usar a de cima.
     func createCKRecord() -> CKRecord {
         let record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
         

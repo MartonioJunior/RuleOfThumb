@@ -73,6 +73,8 @@ class RuleCreateViewController: UIViewController {
     func saveRule(name: String, reason: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         AppDelegate.repository.currentHouse { (house) in
+            guard let house = house else { return }
+            
             let newRule = Rule(name: name, description: reason, house: house)
             appDelegate.repository.save(rule: newRule, then: { (rule) in
                 self.delegate?.proposedNewRule(rule)

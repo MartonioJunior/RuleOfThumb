@@ -21,10 +21,11 @@ class CloudKitRepository {
         self.publicDB = self.container.publicCloudDatabase
     }
     
-    static func fetchById(_ id: CKRecord.ID, then completion: @escaping ((CKRecord) -> Void)) {
+    static func fetchById(_ id: CKRecord.ID, then completion: @escaping ((CKRecord?) -> Void)) {
         CKContainer.default().publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
             guard let record = record, error == nil else {
                 print("On CloudKitRepository: \(error!.localizedDescription)")
+                completion(nil)
                 return
             }
             
@@ -90,18 +91,20 @@ extension CloudKitRepository: RulesRepository {
     }
     
     func save(rule: Rule, then completion: @escaping ((Rule) -> Void)) {
-        let record = rule.toCKRecord()
-        
-        self.publicDB?.save(record, completionHandler: { (saved, error) in
-            guard let saved = saved, error == nil else {
-                print(error!.localizedDescription)
-                return
+        rule.toCKRecord { (ruleRecord) in
+            self.publicDB?.save(ruleRecord) { (saved, error) in
+                guard let saved = saved, error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                print("Rule \(String(describing: saved.recordID)) saved")
+                
+                let updatedRule = Rule(from: saved)
+                
+                completion(updatedRule)
             }
-            
-            print("Rule \(String(describing: saved.recordID)) saved")
-            
-            completion(rule)
-        })
+        }
     }
     
     func delete(rule: Rule, then completion: @escaping ((Bool) -> Void)) {
@@ -123,16 +126,20 @@ extension CloudKitRepository: RulesRepository {
 // - MARK: HousesRepository protocol implementation.
 extension CloudKitRepository: HousesRepository {    
 
-    func currentHouse(_ completion: @escaping ((House) -> Void)) {
+    func currentHouse(_ completion: @escaping ((House?) -> Void)) {
         let defaults = UserDefaults.standard
         
         // Teoricamente quando chamar essa função, já deve estar inicializada.
         if let houseCreated = defaults.string(forKey: "HouseCreated") {
             CloudKitRepository.fetchById(CKRecord.ID(recordName: houseCreated)) { (record) in
+                guard let record = record else { return }
+                
                 let house = House(from: record)
                 
                 completion(house)
             }
+        } else {
+            completion(nil)
         }
     }
     
@@ -154,7 +161,6 @@ extension CloudKitRepository: HousesRepository {
         })
     }
     
-    // TODO: Reescrever isso para usar a abstração de House.
     func getHouse(by openkey: String, then completion: @escaping ((House?) -> Void)) {
         let recordName = "Houses." + openkey
         

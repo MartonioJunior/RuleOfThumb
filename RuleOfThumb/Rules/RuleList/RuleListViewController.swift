@@ -84,6 +84,9 @@ class RuleListViewController: UIViewController {
     
     @objc func refreshData(_ sender: Any) {
         AppDelegate.repository.currentHouse { (house) in
+            // FIXME: Tratar isso é uma boa.
+            guard let house = house else { return }
+            
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
                 DispatchQueue.main.async {
                     self.rules = allRules.filter {

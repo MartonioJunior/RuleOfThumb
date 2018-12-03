@@ -76,18 +76,28 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
         data.sort(by: {a,b in
             return a.status == Rule.Status.voting
         })
-        votesView.reloadData()
+        DispatchQueue.main.async {
+            self.votesView.reloadData()
+        }
     }
     
     func ruleApproved(rule: Rule) {
-        set(status: .inForce, for: rule)
-        sortAndReload()
-        delegate?.ruleApproved(rule: rule)
+//        set(status: .inForce, for: rule)
+        rule.upVotes += 1
+        
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            self.sortAndReload()
+            self.delegate?.ruleApproved(rule: rule)
+        }
     }
     
     func ruleRefused(rule: Rule) {
-        set(status: .revoked, for: rule)
-        sortAndReload()
-        delegate?.ruleRefused(rule: rule)
+//        set(status: .revoked, for: rule)
+        rule.downVotes += 1
+
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            self.sortAndReload()
+            self.delegate?.ruleRefused(rule: rule)
+        }
     }
 }
