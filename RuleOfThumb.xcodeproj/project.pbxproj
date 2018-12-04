@@ -62,7 +62,6 @@
 		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
 		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
 		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
-		E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836421A83808009FDDCF /* SecondaryButton.swift */; };
 		E597836721A839B3009FDDCF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836621A839B3009FDDCF /* UIColor.swift */; };
 		E597836921A83AA5009FDDCF /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836821A83AA5009FDDCF /* FormButton.swift */; };
 /* End PBXBuildFile section */
@@ -150,7 +149,6 @@
 		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
 		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
 		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
-		E597836421A83808009FDDCF /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		E597836621A839B3009FDDCF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E597836821A83AA5009FDDCF /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 				300A58AF21A5996D000160DF /* PromptView.xib */,
 				300A58A921A586A8000160DF /* XibView.swift */,
 				300A5C4321AC1B0700C6013D /* XibView.xib */,
-				E597836421A83808009FDDCF /* SecondaryButton.swift */,
 				E597835E21A82695009FDDCF /* SugestionModalView.xib */,
 				E597836021A8270D009FDDCF /* SugestionModalView.swift */,
 				300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */,
@@ -590,7 +587,6 @@
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
-				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
