@@ -33,6 +33,10 @@ class RuleCreateViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width * 2, height: scrollView.frame.height)
         scrollView.contentOffset = CGPoint.zero
+        
+        self.navigationController?.navigationBar.setTransparentBackground()
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

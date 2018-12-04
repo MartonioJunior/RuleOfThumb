@@ -18,6 +18,8 @@
 		2BD3948D21B6B8FE00813EAC /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948B21B6B8FE00813EAC /* HeaderCell.swift */; };
 		2BD3948E21B6B8FE00813EAC /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BD3948C21B6B8FE00813EAC /* HeaderCell.xib */; };
 		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
+		2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949121B6D61300813EAC /* CAGradientLayer.swift */; };
+		2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949321B6D72F00813EAC /* UINavigationBar.swift */; };
 		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
 		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
@@ -114,6 +116,8 @@
 		2BD3948B21B6B8FE00813EAC /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		2BD3948C21B6B8FE00813EAC /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		2BD3948F21B6C32F00813EAC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2BD3949121B6D61300813EAC /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
+		2BD3949321B6D72F00813EAC /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
 		3004AE5521A44E3E0020629B /* CreatorProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorProfileView.xib; sourceTree = "<group>"; };
 		300A58A921A586A8000160DF /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				E597836621A839B3009FDDCF /* UIColor.swift */,
 				2B257B6121B180AA00D56DEC /* UIFont.swift */,
 				2BD3948F21B6C32F00813EAC /* UIView.swift */,
+				2BD3949121B6D61300813EAC /* CAGradientLayer.swift */,
+				2BD3949321B6D72F00813EAC /* UINavigationBar.swift */,
 			);
 			path = "Class Extensions";
 			sourceTree = "<group>";
@@ -679,10 +685,12 @@
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				301CE39421B0182D006B583E /* RuleDetailDelegate.swift in Sources */,
+				2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */,
 				E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */,
 				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
 				E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */,
 				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
+				2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,

@@ -25,13 +25,14 @@ class RulePeekView: XibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupStyle()
+        
     }
     
     override func layoutSubviews() {
         self.contentView.frame = self.mainView.frame
         mainView.addRoundedBorder()
         contentView.addRoundedBorder()
+        setupStyle()
     }
     
     override var nibName: String {

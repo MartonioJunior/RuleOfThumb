@@ -18,9 +18,9 @@ class VotingStatusView: XibView {
             return "VotingStatusView"
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+        
+    override func layoutSubviews() {
+        super.layoutSubviews()
         setupStyle()
     }
     

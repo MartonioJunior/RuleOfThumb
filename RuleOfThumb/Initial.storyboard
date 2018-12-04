@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,6 +95,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LFa-lU-4Ic">
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="34"/>
+                            <color key="textColor" name="dusk"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ifj-j4-RXs" kind="relationship" relationship="rootViewController" id="oPu-im-Ey3"/>
@@ -130,5 +135,8 @@
     </scenes>
     <resources>
         <image name="initial_bg" width="1000" height="667"/>
+        <namedColor name="dusk">
+            <color red="0.33700001239776611" green="0.29399999976158142" blue="0.42699998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

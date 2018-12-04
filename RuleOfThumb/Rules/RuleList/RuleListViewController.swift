@@ -29,8 +29,8 @@ class RuleListViewController: UIViewController {
         rulesTableView.dataSource = self
         
         searchController.searchBar.delegate = self
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
+        navigationController?.navigationBar.prefersLargeTitles = false
+//        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         
@@ -41,6 +41,15 @@ class RuleListViewController: UIViewController {
         registerForPreviewing(with: self, sourceView: rulesTableView)
         
         rulesTableView.backgroundColor = UIColor.clear
+        
+//        self.navigationController?.navigationBar.setGradientBackground(colors: [UIColor.lightSalmon, UIColor.pale])
+        
+        self.navigationController?.navigationBar.backgroundColor = nil
+        navigationController?.navigationController?.navigationBar.setGradientBackground(colors: [UIColor.pale, UIColor.lightSalmon])
+        
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.navigationBar.isOpaque = false
+//        self.navigationController?.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -210,9 +219,6 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
-//        headerView.backgroundColor = UIColor.clear
-        
         var headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
         
         if headerCell == nil {
