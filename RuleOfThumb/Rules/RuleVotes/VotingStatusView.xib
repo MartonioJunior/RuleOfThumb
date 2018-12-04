@@ -44,18 +44,18 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="85h-34-gea" firstAttribute="leading" secondItem="mr1-19-7DO" secondAttribute="leading" id="LBh-C4-rE8"/>
-                        <constraint firstItem="85h-34-gea" firstAttribute="top" secondItem="mr1-19-7DO" secondAttribute="top" id="Pbj-UO-qnJ"/>
-                        <constraint firstAttribute="trailing" secondItem="85h-34-gea" secondAttribute="trailing" id="cBx-PK-JxD"/>
-                        <constraint firstAttribute="bottom" secondItem="85h-34-gea" secondAttribute="bottom" id="li5-MS-Qub"/>
+                        <constraint firstAttribute="bottom" secondItem="85h-34-gea" secondAttribute="bottom" id="01I-rE-Mre"/>
+                        <constraint firstAttribute="trailing" secondItem="85h-34-gea" secondAttribute="trailing" id="4an-oC-gze"/>
+                        <constraint firstItem="85h-34-gea" firstAttribute="leading" secondItem="mr1-19-7DO" secondAttribute="leading" id="THh-5r-ddr"/>
+                        <constraint firstItem="85h-34-gea" firstAttribute="top" secondItem="mr1-19-7DO" secondAttribute="top" id="rCL-16-YC4"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mr1-19-7DO" secondAttribute="bottom" id="TkE-Zg-ns1"/>
-                <constraint firstItem="mr1-19-7DO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zix-mg-tkj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mr1-19-7DO" secondAttribute="trailing" id="mlN-O9-8Zt"/>
-                <constraint firstItem="mr1-19-7DO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="seq-qF-Fec"/>
+                <constraint firstItem="mr1-19-7DO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Io5-AA-PJK"/>
+                <constraint firstItem="mr1-19-7DO" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="aua-aq-fkw"/>
+                <constraint firstItem="mr1-19-7DO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sUN-tk-Kfm"/>
+                <constraint firstItem="mr1-19-7DO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="wej-nU-Hz3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

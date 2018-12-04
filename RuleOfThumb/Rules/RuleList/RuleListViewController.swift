@@ -197,7 +197,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 { //Vote opened
-          return 130
+          return 134
         } else if indexPath.section == 1 { //Rule list
             return 145
         } else { // ?
@@ -206,30 +206,39 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
+        return 26
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
-        headerView.backgroundColor = UIColor.clear
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
+//        headerView.backgroundColor = UIColor.clear
         
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.sectionText
-        titleLabel.textColor = UIColor.dusk
-        titleLabel.frame = headerView.frame
+        var headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
+        
+        if headerCell == nil {
+            rulesTableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
+            headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
+        }
+        
+//        let titleLabel = UILabel()
+        headerCell?.headerTitleLabel.font = UIFont.sectionText
+        headerCell?.headerTitleLabel.textColor = UIColor.dusk
+//        titleLabel.frame = headerView.frame
+        
+//        headerView.addSubview(titleLabel)
+
         switch section {
         case 0:
-            titleLabel.text = "Vote opened"
+             headerCell?.headerTitleLabel.text = "Vote opened"
             break
         case 1:
-            titleLabel.text = "Rule List"
+             headerCell?.headerTitleLabel.text = "Rule List"
             break
         default:
             break
         }
-        headerView.addSubview(titleLabel)
         
-        return headerView
+        return headerCell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -27,7 +27,7 @@ class SecondaryButton: UIButton {
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         
-        self.backgroundColor = UIColor.almostWhite
+        self.backgroundColor = UIColor.white
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         self.setTitleColor(UIColor.pastelRed90, for: .normal)
     }

@@ -25,7 +25,7 @@ class RuleTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addRoundedBorder(to: cardView)
+        cardView.addRoundedBorder()
     }
     
     override func awakeFromNib() {
@@ -37,24 +37,6 @@ class RuleTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    func addRoundedBorder(to view: UIView) {
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.masksToBounds = false
-            
-            shadowLayer.path = UIBezierPath(roundedRect: view.bounds, cornerRadius: 12).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.2
-            shadowLayer.shadowRadius = 3
-            
-            view.layer.insertSublayer(shadowLayer, at: 0)
-        }
     }
     
     func setupStyle() {

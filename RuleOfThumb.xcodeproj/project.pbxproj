@@ -15,6 +15,9 @@
 		2B257B8D21B1865800D56DEC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */; };
 		2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8021B1865800D56DEC /* Nunito-Black.ttf */; };
 		2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */; };
+		2BD3948D21B6B8FE00813EAC /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948B21B6B8FE00813EAC /* HeaderCell.swift */; };
+		2BD3948E21B6B8FE00813EAC /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BD3948C21B6B8FE00813EAC /* HeaderCell.xib */; };
+		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
 		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
 		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
@@ -108,6 +111,9 @@
 		2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		2B257B8021B1865800D56DEC /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		2BD3948B21B6B8FE00813EAC /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		2BD3948C21B6B8FE00813EAC /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		2BD3948F21B6C32F00813EAC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
 		3004AE5521A44E3E0020629B /* CreatorProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorProfileView.xib; sourceTree = "<group>"; };
 		300A58A921A586A8000160DF /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 				300A58B321A5A32B000160DF /* UIAlertController.swift */,
 				E597836621A839B3009FDDCF /* UIColor.swift */,
 				2B257B6121B180AA00D56DEC /* UIFont.swift */,
+				2BD3948F21B6C32F00813EAC /* UIView.swift */,
 			);
 			path = "Class Extensions";
 			sourceTree = "<group>";
@@ -443,6 +450,8 @@
 				E507C5DF21B0034800EEC7E7 /* RuleListViewController.swift */,
 				E507C5E021B0034800EEC7E7 /* RuleTableViewCell.swift */,
 				E507C5E121B0034800EEC7E7 /* RuleTableViewCell.xib */,
+				2BD3948B21B6B8FE00813EAC /* HeaderCell.swift */,
+				2BD3948C21B6B8FE00813EAC /* HeaderCell.xib */,
 			);
 			path = RuleList;
 			sourceTree = "<group>";
@@ -616,6 +625,7 @@
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				E507C5E221B0034800EEC7E7 /* RuleList.storyboard in Resources */,
 				E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */,
+				2BD3948E21B6B8FE00813EAC /* HeaderCell.xib in Resources */,
 				E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */,
@@ -682,10 +692,12 @@
 				300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */,
 				E507C60E21B605BD00EEC7E7 /* PrimaryButton.swift in Sources */,
 				E507C5DB21B0034000EEC7E7 /* RuleDetailViewController.swift in Sources */,
+				2BD3948D21B6B8FE00813EAC /* HeaderCell.swift in Sources */,
 				5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */,
 				E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */,
 				E507C5FB21B0035D00EEC7E7 /* OpenVotesDelegate.swift in Sources */,
 				2B257B6221B180AA00D56DEC /* UIFont.swift in Sources */,
+				2BD3949021B6C32F00813EAC /* UIView.swift in Sources */,
 				5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */,
 				3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,

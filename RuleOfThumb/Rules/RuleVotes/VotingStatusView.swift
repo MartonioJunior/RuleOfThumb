@@ -21,7 +21,6 @@ class VotingStatusView: XibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupStyle()
     }
     

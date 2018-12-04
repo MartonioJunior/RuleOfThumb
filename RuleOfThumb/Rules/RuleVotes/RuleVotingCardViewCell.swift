@@ -47,7 +47,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addRoundedBorder(to: view)
+        view.addRoundedBorder()
     }
     
     override func awakeFromNib() {
@@ -102,9 +102,9 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         creatorLabel.text = "Proposed by " + creatorName
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
     
     func setupStyle() {
         nameLabel.font = UIFont.primaryText
@@ -114,23 +114,6 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         creatorLabel.textColor = UIColor.dusk80
     }
     
-    func addRoundedBorder(to view: UIView) {
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.masksToBounds = false
-            
-            shadowLayer.path = UIBezierPath(roundedRect: view.bounds, cornerRadius: 12).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.2
-            shadowLayer.shadowRadius = 3
-            
-            view.layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
 }
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
