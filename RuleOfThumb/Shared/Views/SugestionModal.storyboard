@@ -12,7 +12,7 @@
         <!--Sugestion View Controller-->
         <scene sceneID="bI8-jQ-6ql">
             <objects>
-                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXR-N4-xxT" customClass="SugestionViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PXR-N4-xxT" customClass="SugestionViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="VvD-TN-vso">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

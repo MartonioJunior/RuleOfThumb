@@ -35,36 +35,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9lb-Ne-rid">
-                                <rect key="frame" x="16" y="96" width="343" height="183.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="188-GA-JmK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="293"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKG-YM-Ge4" customClass="PromptView" customModule="RuleOfThumb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="80" width="375" height="133"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <viewLayoutGuide key="safeArea" id="5VN-zf-Dug"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pws-mD-N5k" customClass="FormButton" customModule="RuleOfThumb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="149.5" width="343" height="34"/>
-                                        <state key="normal" title="Continue">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionButtonClicked:" destination="5KV-cd-aKT" eventType="touchUpInside" id="4Lp-aQ-QIE"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Pws-mD-N5k" firstAttribute="width" secondItem="9lb-Ne-rid" secondAttribute="width" id="N1Y-Ad-j1O"/>
+                                    <constraint firstAttribute="trailing" secondItem="mKG-YM-Ge4" secondAttribute="trailing" id="0wv-2E-AWD"/>
+                                    <constraint firstItem="mKG-YM-Ge4" firstAttribute="leading" secondItem="188-GA-JmK" secondAttribute="leading" id="eVd-ji-iSW"/>
+                                    <constraint firstItem="mKG-YM-Ge4" firstAttribute="centerX" secondItem="188-GA-JmK" secondAttribute="centerX" id="sQn-cu-COY"/>
+                                    <constraint firstItem="mKG-YM-Ge4" firstAttribute="centerY" secondItem="188-GA-JmK" secondAttribute="centerY" id="w7f-lX-kpm"/>
                                 </constraints>
-                            </stackView>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pws-mD-N5k" customClass="FormButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="357" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rJP-Xh-0sY"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionButtonClicked:" destination="5KV-cd-aKT" eventType="touchUpInside" id="4Lp-aQ-QIE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MGC-Oc-XcB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9lb-Ne-rid" secondAttribute="bottom" constant="272" id="5CG-2m-et8"/>
-                            <constraint firstItem="9lb-Ne-rid" firstAttribute="top" secondItem="MGC-Oc-XcB" secondAttribute="top" constant="32" id="RzK-wM-eXt"/>
-                            <constraint firstItem="9lb-Ne-rid" firstAttribute="leading" secondItem="MGC-Oc-XcB" secondAttribute="leading" constant="16" id="gns-3U-FCe"/>
-                            <constraint firstItem="mKG-YM-Ge4" firstAttribute="height" secondItem="tfq-O4-Dsq" secondAttribute="height" multiplier="0.2" id="jUW-MQ-Xr4"/>
-                            <constraint firstItem="MGC-Oc-XcB" firstAttribute="trailing" secondItem="9lb-Ne-rid" secondAttribute="trailing" constant="16" id="me7-7r-Fpn"/>
+                            <constraint firstAttribute="bottom" secondItem="Pws-mD-N5k" secondAttribute="bottom" constant="260" id="0eL-Mi-08a"/>
+                            <constraint firstItem="188-GA-JmK" firstAttribute="top" secondItem="MGC-Oc-XcB" secondAttribute="top" id="HnS-YH-nle"/>
+                            <constraint firstItem="Pws-mD-N5k" firstAttribute="leading" secondItem="MGC-Oc-XcB" secondAttribute="leading" id="PgJ-Np-ElJ"/>
+                            <constraint firstItem="mKG-YM-Ge4" firstAttribute="height" secondItem="tfq-O4-Dsq" secondAttribute="height" multiplier="0.2" id="WPL-0h-TSB"/>
+                            <constraint firstItem="Pws-mD-N5k" firstAttribute="trailing" secondItem="MGC-Oc-XcB" secondAttribute="trailing" id="a11-Ay-NBM"/>
+                            <constraint firstItem="Pws-mD-N5k" firstAttribute="top" secondItem="188-GA-JmK" secondAttribute="bottom" id="oa4-P6-1qu"/>
+                            <constraint firstItem="MGC-Oc-XcB" firstAttribute="trailing" secondItem="188-GA-JmK" secondAttribute="trailing" id="rJ0-OQ-fod"/>
+                            <constraint firstItem="188-GA-JmK" firstAttribute="leading" secondItem="MGC-Oc-XcB" secondAttribute="leading" id="vy1-rO-8ek"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MGC-Oc-XcB"/>
                     </view>

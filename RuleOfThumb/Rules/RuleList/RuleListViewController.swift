@@ -27,12 +27,17 @@ class RuleListViewController: UIViewController {
         super.viewDidLoad()
         rulesTableView.delegate = self
         rulesTableView.dataSource = self
+        
         searchController.searchBar.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
         setRefreshControl()
         rulesTableView.refreshControl = refreshControl
         refreshData(self)
+        
         registerForPreviewing(with: self, sourceView: rulesTableView)
     }
     
@@ -86,17 +91,25 @@ class RuleListViewController: UIViewController {
     
     @objc func refreshData(_ sender: Any) {
         AppDelegate.repository.currentHouse { (house) in
+            // FIXME: Tratar isso é uma boa.
+            guard let house = house else {
+                print("*ERROR* Could not find currentHouse in refreshData of RuleListViewController\n")
+                return
+            }
+            
+            print("-OK- Refreshing data from RuleListViewController\n")
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
+                self.rules = allRules.filter {
+                    return $0.status == Rule.Status.inForce
+                }
+                self.rulesInVoting = allRules.filter {
+                    return $0.status == Rule.Status.voting
+                }
+                self.searchRules = self.rules
+                
                 DispatchQueue.main.async {
-                    self.rules = allRules.filter {
-                        return $0.status == Rule.Status.inForce
-                    }
-                    self.rulesInVoting = allRules.filter {
-                        return $0.status == Rule.Status.voting
-                    }
-                    self.searchRules = self.rules
-                    self.rulesTableView.reloadData()
                     self.refreshControl.endRefreshing()
+                    self.rulesTableView.reloadData()
                 }
             })
         }
@@ -236,7 +249,7 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         let previewRule = ActionlessRuleDetailViewController()
         previewRule.view.addSubview(peekView)
         
-        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height*3)
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height/2)
         
         return previewRule
     }
@@ -292,17 +305,23 @@ extension RuleListViewController: UISearchBarDelegate {
 
 // --MARK: Rule List View Controller Delegate
 extension RuleListViewController: OpenVotesDelegate {
-    func ruleUpvoted(rule: Rule) {
+    func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void)) {
         rules.append(rule)
         searchRules.append(rule)
+        
         rulesInVoting = rulesInVoting.filter {
             return $0.status == Rule.Status.voting
         }
-        rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
-        performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
+        
+        DispatchQueue.main.sync {
+            // why not "refresh"?
+            rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
+            performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
+        }
+        completion(0)
     }
     
-    func ruleDownvoted(rule: Rule) {
+    func ruleRejected(rule: Rule) {
         rulesInVoting = rulesInVoting.filter {
             return $0.status == Rule.Status.voting
         }

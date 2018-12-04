@@ -26,14 +26,14 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="845-OA-Wki">
                             <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ue-J0-wep" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ue-J0-wep" customClass="SecondaryButton" customModule="RuleOfThumb" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="34"/>
                                     <state key="normal" title="Disagree"/>
                                     <connections>
                                         <action selector="disagreeToRule:" destination="-1" eventType="touchUpInside" id="GvE-Qg-dTT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-P1-GDa" customClass="DefaultButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-P1-GDa" customClass="SecondaryButton" customModule="RuleOfThumb" customModuleProvider="target">
                                     <rect key="frame" x="170" y="0.0" width="154" height="34"/>
                                     <state key="normal" title="Agree"/>
                                     <connections>

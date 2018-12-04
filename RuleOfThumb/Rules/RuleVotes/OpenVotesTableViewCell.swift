@@ -28,8 +28,8 @@ class OpenVotesTableViewCell: UITableViewCell {
         votesView.dataSource = self
         votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
         
-        let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
-        print(nib)
+//        let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
+//        print(nib)
     }
     
     func source(forLocation location: CGPoint) -> RuleVotingCardViewCell? {
@@ -77,6 +77,7 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
 
 // --MARK: Open Votes Delegate
 extension OpenVotesTableViewCell: OpenVotesDelegate {
+    
     func set(status: Rule.Status, for rule: Rule) {
         guard let votedRule = data.first(where: {
             return $0.recordID == rule.recordID
@@ -88,22 +89,46 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
         data.sort(by: {a,b in
             return a.status == Rule.Status.voting
         })
-        votesView.reloadData()
+        DispatchQueue.main.async {
+            self.votesView.reloadData()
+        }
     }
     
-    func ruleUpvoted(rule: Rule) {
-        // Send Vote to CloudKit
-        CoreDataManager.current.insert(new: rule)
-        set(status: .inForce, for: rule)
-        sortAndReload()
-        delegate?.ruleUpvoted(rule: rule)
+    func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void))  {
+        rule.upVotes += 1
+        
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            // check if everybody already voted
+            guard let allUsersFromHome = rule.house?.users.count else {return}
+            
+            if rule.upVotes >= allUsersFromHome {
+                self.set(status: Rule.Status.inForce, for: rule)
+                self.delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
+                })
+            }
+            
+            let votesLeft = allUsersFromHome - rule.upVotes + rule.downVotes
+            completion(votesLeft)
+            
+            DispatchQueue.main.async {
+                self.sortAndReload()
+            }
+        }
     }
     
-    func ruleDownvoted(rule: Rule) {
-        CoreDataManager.current.insert(new: rule)
-        set(status: .revoked, for: rule)
-        sortAndReload()
-        delegate?.ruleDownvoted(rule: rule)
+    func ruleRejected(rule: Rule) {
+        rule.downVotes += 1
+        
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            DispatchQueue.main.async {
+                self.sortAndReload()
+                
+                self.set(status: Rule.Status.revoked , for: rule)
+                
+                // just save and show approved modal
+                self.delegate?.ruleRejected(rule: rule)
+            }
+        }
     }
 }
 

@@ -32,6 +32,11 @@ class SugestionViewController: UIViewController, SugestionModalViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         modalView.setDelegate(self)
+        self.tabBarController?.tabBar.layer.zPosition = -1
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.layer.zPosition = -0
     }
 
     func pressedLeftButton() {

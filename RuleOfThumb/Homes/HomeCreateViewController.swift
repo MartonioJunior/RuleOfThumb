@@ -55,16 +55,9 @@ class HomeCreateViewController: UIViewController {
                 return
             }
             
+            //save home and go to next step
+            IJProgressView.shared.showProgressView()
             saveHome(name: text)
-            
-            
-            UIView.animate(withDuration: 0.5) {
-                self.scrollView.contentOffset = CGPoint(x: self.scrollView.frame.size.width, y: 0)
-            }
-            
-            // setup next step
-            promptStep2.inputTextField.text = homeCreated?.openKey
-            self.actionButton.setTitle("Copy Key", for: .normal)
 
             break
         case 1:
@@ -72,7 +65,7 @@ class HomeCreateViewController: UIViewController {
             pageControl.currentPage = currentPage
             
             if (copiedKey) {
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: false, completion: nil)
             } else {
                 //copy text of key
                 copy(text: promptStep2.inputTextField.text)
@@ -90,7 +83,16 @@ class HomeCreateViewController: UIViewController {
         AppDelegate.repository.setupNewHouse(name: homeName) { (home) in
             self.homeCreated = home
             DispatchQueue.main.sync {
-                self.showAlert(text: "Your home's been created and you're logged in")
+                UIView.animate(withDuration: 0.5) {
+                    self.scrollView.contentOffset = CGPoint(x: self.scrollView.frame.size.width, y: 0)
+                    self.pageControl.currentPage = 1
+                }
+                
+                // setup next step
+                self.actionButton.setTitle("Copy Key", for: .normal)
+                self.promptStep2.inputTextField.text = self.homeCreated?.openKey
+                
+                IJProgressView.shared.hideProgressView()
             }
         }
     }
@@ -101,7 +103,7 @@ class HomeCreateViewController: UIViewController {
         let alertCopy = UIAlertController(title: nil , message: "Key copied!", preferredStyle: .alert)
         self.present(alertCopy, animated: true, completion: nil)
         
-        let when = DispatchTime.now() + 3
+        let when = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: when){
             alertCopy.dismiss(animated: true, completion: nil)
             self.copiedKey = true

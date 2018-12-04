@@ -32,6 +32,7 @@ class HomeLoginViewController: UIViewController {
             return
         }
         
+        IJProgressView.shared.showProgressView()
         loginHome(key: text)
     }
     
@@ -47,11 +48,13 @@ class HomeLoginViewController: UIViewController {
             AppDelegate.repository.addUser(to: currentHouse) { (sucess) in
                 if (sucess) {
                     DispatchQueue.main.sync {
-                        self.showAlert(text: "You were logged in.")
+                        IJProgressView.shared.hideProgressView()
+                        self.dismiss(animated: true, completion: nil)
                         print("User logged in current house.")
                     }
                 } else {
                     DispatchQueue.main.sync {
+                        IJProgressView.shared.hideProgressView()
                         self.showAlert(text: "Can't log you in.")
                         print("Can't login user in current house.")
                     }
@@ -65,9 +68,10 @@ class HomeLoginViewController: UIViewController {
         let alert = UIAlertController(title: nil , message: text, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         
-        let when = DispatchTime.now() + 3
+        let when = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: when){
             alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

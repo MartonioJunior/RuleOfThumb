@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="zBU-Nn-HtS">
-                                <rect key="frame" x="0.0" y="80" width="375" height="133.5"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="133.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IC-Hf-GAi" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="133.5"/>
@@ -73,22 +73,25 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-ND-zOi">
-                                <rect key="frame" x="16" y="229.5" width="343" height="87"/>
+                                <rect key="frame" x="0.0" y="261.5" width="375" height="96.5"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Share this key with your homemates so they can enter the house." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-Sc-bUq">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="vkU-hz-36K">
-                                        <rect key="frame" x="160" y="0.0" width="23" height="37"/>
+                                        <rect key="frame" x="176" y="0.0" width="23" height="30.5"/>
                                         <color key="pageIndicatorTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-ya-Np9" customClass="FormButton" customModule="RuleOfThumb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="53" width="343" height="34"/>
-                                        <state key="normal" title="Continue">
+                                        <rect key="frame" x="0.0" y="46.5" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="FL3-eX-X1F"/>
+                                        </constraints>
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -105,15 +108,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zBU-Nn-HtS" firstAttribute="width" secondItem="5wc-9F-HOF" secondAttribute="width" id="2qN-Pq-hGU"/>
-                            <constraint firstItem="zM6-ND-zOi" firstAttribute="leading" secondItem="nMS-xP-ty3" secondAttribute="leading" constant="16" id="4Rv-km-xTh"/>
+                            <constraint firstItem="zM6-ND-zOi" firstAttribute="leading" secondItem="nMS-xP-ty3" secondAttribute="leading" id="4Rv-km-xTh"/>
                             <constraint firstItem="zBU-Nn-HtS" firstAttribute="centerX" secondItem="zM6-ND-zOi" secondAttribute="centerX" id="89N-zN-TfR"/>
-                            <constraint firstItem="nMS-xP-ty3" firstAttribute="trailing" secondItem="zM6-ND-zOi" secondAttribute="trailing" constant="16" id="IiR-ie-Wsj"/>
+                            <constraint firstItem="nMS-xP-ty3" firstAttribute="trailing" secondItem="zM6-ND-zOi" secondAttribute="trailing" id="IiR-ie-Wsj"/>
                             <constraint firstItem="d1M-jb-nGI" firstAttribute="width" secondItem="nMS-xP-ty3" secondAttribute="width" id="L3c-Fc-UDt"/>
-                            <constraint firstItem="zM6-ND-zOi" firstAttribute="top" secondItem="zBU-Nn-HtS" secondAttribute="bottom" constant="16" id="Lxn-SY-HuA"/>
-                            <constraint firstItem="nMS-xP-ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zM6-ND-zOi" secondAttribute="bottom" constant="272" id="N75-bK-hGq"/>
+                            <constraint firstItem="zM6-ND-zOi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zBU-Nn-HtS" secondAttribute="bottom" constant="32" id="Lxn-SY-HuA"/>
+                            <constraint firstItem="nMS-xP-ty3" firstAttribute="bottom" secondItem="zM6-ND-zOi" secondAttribute="bottom" constant="260" id="N75-bK-hGq"/>
                             <constraint firstItem="CKv-S0-e0k" firstAttribute="width" secondItem="nMS-xP-ty3" secondAttribute="width" id="NKl-RE-35k"/>
                             <constraint firstItem="zBU-Nn-HtS" firstAttribute="height" secondItem="5wc-9F-HOF" secondAttribute="height" multiplier="0.2" id="WB3-cE-OSk"/>
-                            <constraint firstItem="zBU-Nn-HtS" firstAttribute="top" secondItem="nMS-xP-ty3" secondAttribute="top" constant="16" id="arg-Vy-SOg"/>
+                            <constraint firstItem="zBU-Nn-HtS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nMS-xP-ty3" secondAttribute="top" constant="32" id="arg-Vy-SOg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nMS-xP-ty3"/>
                     </view>

@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="JhK-LG-wbX">
-                                <rect key="frame" x="0.0" y="80" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-Qv-BeT" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="200"/>
@@ -71,16 +71,19 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3a7-Ni-SVX">
-                                <rect key="frame" x="16" y="296" width="343" height="87"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="79"/>
                                 <subviews>
                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="tgy-ZP-icN">
-                                        <rect key="frame" x="160" y="0.0" width="23" height="37"/>
+                                        <rect key="frame" x="176" y="0.0" width="23" height="13"/>
                                         <color key="pageIndicatorTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSB-uh-IN1" customClass="FormButton" customModule="RuleOfThumb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="53" width="343" height="34"/>
-                                        <state key="normal" title="Continuar">
+                                        <rect key="frame" x="0.0" y="29" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="O9I-D2-zPe"/>
+                                        </constraints>
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -96,15 +99,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JhK-LG-wbX" firstAttribute="centerX" secondItem="3a7-Ni-SVX" secondAttribute="centerX" id="0Ng-we-4yY"/>
-                            <constraint firstItem="3a7-Ni-SVX" firstAttribute="top" secondItem="JhK-LG-wbX" secondAttribute="bottom" constant="16" id="28V-Za-eU1"/>
+                            <constraint firstItem="3a7-Ni-SVX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JhK-LG-wbX" secondAttribute="bottom" constant="32" id="28V-Za-eU1"/>
                             <constraint firstItem="rLW-3w-CZ1" firstAttribute="width" secondItem="lWb-XC-iAo" secondAttribute="width" id="7yx-O7-saA"/>
-                            <constraint firstItem="JhK-LG-wbX" firstAttribute="top" secondItem="lWb-XC-iAo" secondAttribute="top" constant="16" id="FYZ-QZ-9ne"/>
+                            <constraint firstItem="JhK-LG-wbX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lWb-XC-iAo" secondAttribute="top" constant="32" id="FYZ-QZ-9ne"/>
                             <constraint firstItem="RIg-jF-hbq" firstAttribute="width" secondItem="lWb-XC-iAo" secondAttribute="width" id="Fea-uS-r0Q"/>
-                            <constraint firstItem="lWb-XC-iAo" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3a7-Ni-SVX" secondAttribute="bottom" constant="272" id="Vi3-hD-5h4"/>
+                            <constraint firstItem="lWb-XC-iAo" firstAttribute="bottom" secondItem="3a7-Ni-SVX" secondAttribute="bottom" constant="260" id="Vi3-hD-5h4"/>
                             <constraint firstItem="JhK-LG-wbX" firstAttribute="width" secondItem="uZG-We-mAM" secondAttribute="width" id="hsS-wZ-coo"/>
-                            <constraint firstItem="3a7-Ni-SVX" firstAttribute="leading" secondItem="lWb-XC-iAo" secondAttribute="leading" constant="16" id="i0P-n6-HWi"/>
+                            <constraint firstItem="3a7-Ni-SVX" firstAttribute="leading" secondItem="lWb-XC-iAo" secondAttribute="leading" id="i0P-n6-HWi"/>
                             <constraint firstItem="JhK-LG-wbX" firstAttribute="height" secondItem="uZG-We-mAM" secondAttribute="height" multiplier="0.3" id="oKe-mo-XNh"/>
-                            <constraint firstItem="lWb-XC-iAo" firstAttribute="trailing" secondItem="3a7-Ni-SVX" secondAttribute="trailing" constant="16" id="s4z-Ju-dNU"/>
+                            <constraint firstItem="lWb-XC-iAo" firstAttribute="trailing" secondItem="3a7-Ni-SVX" secondAttribute="trailing" id="s4z-Ju-dNU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lWb-XC-iAo"/>
                     </view>

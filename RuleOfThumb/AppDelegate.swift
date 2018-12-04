@@ -28,15 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationManager.requestAuthorization()
         application.registerForRemoteNotifications()
 
-        let defaults = UserDefaults.standard
-        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
-
-        self.repository.setupNewHouse(name: "Minha Casa") { (house) in
-            guard house == nil else {
-                return
-            }
-            print("Casa criada com o id \(house?.ckRecordId())")
-        }
+//        let defaults = UserDefaults.standard
+//        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
+//
+//        self.repository.setupNewHouse(name: "Minha Casa") { (house) in
+//            guard house == nil else {
+//                return
+//            }
+//            print("Casa criada com o id \(house?.ckRecordId())")
+//        }
         
         return true
     }

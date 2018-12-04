@@ -104,21 +104,10 @@
                                 <action selector="returnButton:" destination="RA9-TY-XDp" id="gLP-yk-hpK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="iLH-wa-hfR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TRJ-TD-Rcy">
-                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Archive"/>
-                                <connections>
-                                    <action selector="archiveRule:" destination="RA9-TY-XDp" eventType="touchUpInside" id="Nwe-Fv-DGU"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="organize" id="iLH-wa-hfR"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="archiveRuleButton" destination="TRJ-TD-Rcy" id="VgU-Zm-Efz"/>
                         <outlet property="createdAtLabel" destination="8xM-Fv-HpB" id="VQK-qG-eur"/>
                         <outlet property="descriptionLabel" destination="e59-Gg-GnM" id="Yiy-Pz-t9A"/>
                         <outlet property="profileView" destination="7g2-Ab-D9f" id="pJx-qu-Wri"/>
