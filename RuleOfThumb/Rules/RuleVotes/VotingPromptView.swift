@@ -28,4 +28,10 @@ class VotingPromptView: XibView {
         delegate?.votedOnRule(agreed: false)
         print("I disagree / Update in CloudKit here")
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.view.layoutIfNeeded()
+    }
+    
 }

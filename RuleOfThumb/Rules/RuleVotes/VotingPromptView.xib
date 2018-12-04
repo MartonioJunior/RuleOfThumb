@@ -42,7 +42,13 @@
                                 </button>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="5ue-J0-wep" firstAttribute="top" secondItem="845-OA-Wki" secondAttribute="top" id="9T7-8h-xbv"/>
+                                <constraint firstAttribute="trailing" secondItem="oNW-P1-GDa" secondAttribute="trailing" id="DKG-rb-J34"/>
+                                <constraint firstItem="oNW-P1-GDa" firstAttribute="top" secondItem="845-OA-Wki" secondAttribute="top" id="GoE-wf-k0d"/>
+                                <constraint firstItem="5ue-J0-wep" firstAttribute="leading" secondItem="845-OA-Wki" secondAttribute="leading" id="ckC-m4-IDp"/>
+                                <constraint firstAttribute="bottom" secondItem="oNW-P1-GDa" secondAttribute="bottom" id="e6l-S5-ZqT"/>
                                 <constraint firstItem="5ue-J0-wep" firstAttribute="width" secondItem="oNW-P1-GDa" secondAttribute="width" id="oMR-ps-k9m"/>
+                                <constraint firstAttribute="bottom" secondItem="5ue-J0-wep" secondAttribute="bottom" id="uZ6-b2-3KW"/>
                             </constraints>
                         </stackView>
                     </subviews>

@@ -12,36 +12,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="RuleTableViewCell" customModule="RuleOfThumb" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="137"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="136.5"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWZ-va-pcd">
-                        <rect key="frame" x="8" y="16" width="327" height="20"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDl-wf-NLz">
-                        <rect key="frame" x="8" y="44" width="327" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2V-Dc-pI7">
+                        <rect key="frame" x="16" y="0.0" width="343" height="136.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWZ-va-pcd">
+                                <rect key="frame" x="8" y="16" width="327" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDl-wf-NLz">
+                                <rect key="frame" x="8" y="40" width="343" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cWZ-va-pcd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="86A-wH-rAd"/>
-                    <constraint firstAttribute="trailing" secondItem="cWZ-va-pcd" secondAttribute="trailing" constant="8" id="DIy-zA-5Ex"/>
-                    <constraint firstItem="pDl-wf-NLz" firstAttribute="top" secondItem="cWZ-va-pcd" secondAttribute="bottom" constant="8" id="QfF-sd-Vdj"/>
-                    <constraint firstItem="pDl-wf-NLz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Rkl-df-p5o"/>
-                    <constraint firstAttribute="trailing" secondItem="pDl-wf-NLz" secondAttribute="trailing" constant="8" id="cCM-FJ-jFk"/>
-                    <constraint firstItem="cWZ-va-pcd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vea-b5-YUv"/>
+                    <constraint firstAttribute="bottom" secondItem="T2V-Dc-pI7" secondAttribute="bottom" id="dYr-pp-VjI"/>
+                    <constraint firstItem="T2V-Dc-pI7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hee-tG-NoZ"/>
+                    <constraint firstAttribute="trailing" secondItem="T2V-Dc-pI7" secondAttribute="trailing" constant="16" id="qnx-Bb-gdb"/>
+                    <constraint firstItem="T2V-Dc-pI7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xa9-Ch-Fdb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cardView" destination="T2V-Dc-pI7" id="ci7-ck-Ajr"/>
                 <outlet property="ruleDescriptionLabel" destination="pDl-wf-NLz" id="zyP-eo-zwM"/>
                 <outlet property="ruleTitleLabel" destination="cWZ-va-pcd" id="EZP-9K-wXd"/>
             </connections>

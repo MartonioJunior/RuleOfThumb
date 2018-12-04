@@ -12,6 +12,8 @@ class RuleTableViewCell: UITableViewCell {
     @IBOutlet weak var ruleTitleLabel: UILabel!
     @IBOutlet weak var ruleDescriptionLabel: UILabel!
     
+    @IBOutlet weak var cardView: UIView!
+    
     var shadowLayer: CAShapeLayer!
     
     var rule: Rule? {
@@ -21,11 +23,16 @@ class RuleTableViewCell: UITableViewCell {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addRoundedBorder(to: cardView)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupStyle()
-        addRoundedBorder(to: contentView)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +44,7 @@ class RuleTableViewCell: UITableViewCell {
             shadowLayer = CAShapeLayer()
             shadowLayer.masksToBounds = false
             
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
+            shadowLayer.path = UIBezierPath(roundedRect: view.bounds, cornerRadius: 12).cgPath
             shadowLayer.fillColor = UIColor.white.cgColor
             
             shadowLayer.shadowColor = UIColor.black.cgColor

@@ -42,8 +42,7 @@ class OpenVotesTableViewCell: UITableViewCell {
 // - MARK: CollectionView Delegate & Data Source
 extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return data.count
-        return 1
+        return  data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,14 +51,14 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
             votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
             cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
         }
-        let rule = Rule(name: "AAAAAAA", description: "BBBBB", house: House(name: "MERDA"))
+        let rule = data[indexPath.row]
         cell?.rule = rule
         cell?.delegate = self
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 323 , height: 112)
+        return CGSize(width: 339 , height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

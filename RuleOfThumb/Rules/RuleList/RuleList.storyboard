@@ -19,17 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-mO-gYq">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" name="white"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
                             <constraint firstItem="OKr-mO-gYq" firstAttribute="top" secondItem="FnZ-L0-ymC" secondAttribute="top" constant="20" symbolic="YES" id="1d0-Nm-wUf"/>
-                            <constraint firstItem="jsp-zs-9vF" firstAttribute="trailing" secondItem="OKr-mO-gYq" secondAttribute="trailing" constant="16" id="2RF-pX-LdM"/>
+                            <constraint firstItem="jsp-zs-9vF" firstAttribute="trailing" secondItem="OKr-mO-gYq" secondAttribute="trailing" id="2RF-pX-LdM"/>
                             <constraint firstItem="OKr-mO-gYq" firstAttribute="bottom" secondItem="FnZ-L0-ymC" secondAttribute="bottom" id="88L-gT-1s7"/>
-                            <constraint firstItem="OKr-mO-gYq" firstAttribute="leading" secondItem="jsp-zs-9vF" secondAttribute="leading" constant="16" id="yIf-lq-KdQ"/>
+                            <constraint firstItem="OKr-mO-gYq" firstAttribute="leading" secondItem="jsp-zs-9vF" secondAttribute="leading" id="yIf-lq-KdQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jsp-zs-9vF"/>
                     </view>

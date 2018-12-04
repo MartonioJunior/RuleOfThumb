@@ -86,7 +86,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             shadowLayer = CAShapeLayer()
             shadowLayer.masksToBounds = false
             
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
+            shadowLayer.path = UIBezierPath(roundedRect: view.bounds, cornerRadius: 12).cgPath
             shadowLayer.fillColor = UIColor.white.cgColor
             
             shadowLayer.shadowColor = UIColor.black.cgColor
