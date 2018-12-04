@@ -22,8 +22,12 @@
 		300A58B021A5996D000160DF /* PromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300A58AF21A5996D000160DF /* PromptView.xib */; };
 		300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58B321A5A32B000160DF /* UIAlertController.swift */; };
 		300A5C4421AC1B0700C6013D /* XibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300A5C4321AC1B0700C6013D /* XibView.xib */; };
+		300D159821B1578400F23AA0 /* ActionlessRuleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */; };
 		300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E021AD6E8300766ECF /* SugestionViewController.swift */; };
 		300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */; };
+		301995C421B5507B00D86396 /* RuleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C321B5507B00D86396 /* RuleModelTests.swift */; };
+		301995C721B5632200D86396 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C621B5632200D86396 /* CoreDataManager.swift */; };
+		301CE39421B0182D006B583E /* RuleDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE39321B0182D006B583E /* RuleDetailDelegate.swift */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
 		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
 		3065BD0221A2E6E30005339A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
@@ -38,6 +42,9 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
+		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
+		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
 		E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */; };
 		E507C5D421B0033600EEC7E7 /* RuleCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */; };
 		E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */; };
@@ -59,9 +66,18 @@
 		E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5ED21B0035300EEC7E7 /* VotingPromptViewDelegate.swift */; };
 		E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5EE21B0035300EEC7E7 /* VotingStatusView.swift */; };
 		E507C5FB21B0035D00EEC7E7 /* OpenVotesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5F921B0035C00EEC7E7 /* OpenVotesDelegate.swift */; };
+		E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */; };
+		E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */; };
+		E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */; };
+		E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */; };
+		E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C60721B5577200EEC7E7 /* Initial.storyboard */; };
+		E507C60A21B5620F00EEC7E7 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60921B5620F00EEC7E7 /* InitialViewController.swift */; };
+		E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60B21B56FBF00EEC7E7 /* IJProgressView.swift */; };
+		E507C60E21B605BD00EEC7E7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60D21B605BD00EEC7E7 /* PrimaryButton.swift */; };
 		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
 		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
 		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
+		E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836421A83808009FDDCF /* SecondaryButton.swift */; };
 		E597836721A839B3009FDDCF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836621A839B3009FDDCF /* UIColor.swift */; };
 		E597836921A83AA5009FDDCF /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836821A83AA5009FDDCF /* FormButton.swift */; };
 /* End PBXBuildFile section */
@@ -99,8 +115,12 @@
 		300A58AF21A5996D000160DF /* PromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptView.xib; sourceTree = "<group>"; };
 		300A58B321A5A32B000160DF /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		300A5C4321AC1B0700C6013D /* XibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibView.xib; sourceTree = "<group>"; };
+		300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionlessRuleDetailViewController.swift; sourceTree = "<group>"; };
 		300D58E021AD6E8300766ECF /* SugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionViewController.swift; sourceTree = "<group>"; };
 		300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalViewDelegate.swift; sourceTree = "<group>"; };
+		301995C321B5507B00D86396 /* RuleModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleModelTests.swift; sourceTree = "<group>"; };
+		301995C621B5632200D86396 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		301CE39321B0182D006B583E /* RuleDetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleDetailDelegate.swift; sourceTree = "<group>"; };
 		3065BCF921A2E6E30005339A /* RuleOfThumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleOfThumb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BCFC21A2E6E30005339A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3065BCFE21A2E6E30005339A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +136,6 @@
 		3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleOfThumbUITests.swift; sourceTree = "<group>"; };
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		3065BD3321A2EC000005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -125,6 +144,9 @@
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
 		E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateDelegate.swift; sourceTree = "<group>"; };
 		E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCreateViewController.swift; sourceTree = "<group>"; };
 		E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RuleCreate.storyboard; sourceTree = "<group>"; };
@@ -146,9 +168,18 @@
 		E507C5ED21B0035300EEC7E7 /* VotingPromptViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingPromptViewDelegate.swift; sourceTree = "<group>"; };
 		E507C5EE21B0035300EEC7E7 /* VotingStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingStatusView.swift; sourceTree = "<group>"; };
 		E507C5F921B0035C00EEC7E7 /* OpenVotesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenVotesDelegate.swift; sourceTree = "<group>"; };
+		E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeCreate.storyboard; sourceTree = "<group>"; };
+		E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCreateViewController.swift; sourceTree = "<group>"; };
+		E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoginViewController.swift; sourceTree = "<group>"; };
+		E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLogin.storyboard; sourceTree = "<group>"; };
+		E507C60721B5577200EEC7E7 /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		E507C60921B5620F00EEC7E7 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		E507C60B21B56FBF00EEC7E7 /* IJProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJProgressView.swift; sourceTree = "<group>"; };
+		E507C60D21B605BD00EEC7E7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
 		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
 		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
+		E597836421A83808009FDDCF /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		E597836621A839B3009FDDCF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E597836821A83AA5009FDDCF /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +254,9 @@
 				300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */,
 				E597836221A837E0009FDDCF /* SugestionModal.storyboard */,
 				300D58E021AD6E8300766ECF /* SugestionViewController.swift */,
+				E507C60B21B56FBF00EEC7E7 /* IJProgressView.swift */,
+				E597836421A83808009FDDCF /* SecondaryButton.swift */,
+				E507C60D21B605BD00EEC7E7 /* PrimaryButton.swift */,
 				E597836821A83AA5009FDDCF /* FormButton.swift */,
 			);
 			path = Views;
@@ -236,6 +270,22 @@
 				2B257B6121B180AA00D56DEC /* UIFont.swift */,
 			);
 			path = "Class Extensions";
+			sourceTree = "<group>";
+		};
+		301995C021B5500500D86396 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				301995C321B5507B00D86396 /* RuleModelTests.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		301995C521B562EB00D86396 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				301995C621B5632200D86396 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		3065BCF021A2E6E30005339A = {
@@ -268,6 +318,7 @@
 				3065BD3021A2EB430005339A /* Meetings */,
 				3065BD2F21A2EB240005339A /* Notifications */,
 				3065BD2E21A2EB1D0005339A /* Rules */,
+				E507C5FC21B00D2800EEC7E7 /* Homes */,
 				3065BD2D21A2EB0E0005339A /* Profile */,
 				3065BCFC21A2E6E30005339A /* AppDelegate.swift */,
 				3065BCFE21A2E6E30005339A /* ViewController.swift */,
@@ -276,6 +327,8 @@
 				3065BD0821A2E6E50005339A /* LaunchScreen.storyboard */,
 				3065BD0B21A2E6E50005339A /* Info.plist */,
 				3065BD0321A2E6E30005339A /* RuleOfThumb.xcdatamodeld */,
+				E507C60721B5577200EEC7E7 /* Initial.storyboard */,
+				E507C60921B5620F00EEC7E7 /* InitialViewController.swift */,
 			);
 			path = RuleOfThumb;
 			sourceTree = "<group>";
@@ -283,6 +336,8 @@
 		3065BD1321A2E6E50005339A /* RuleOfThumbTests */ = {
 			isa = PBXGroup;
 			children = (
+				301995C021B5500500D86396 /* Rules */,
+				5D2B433021B1832F00A80354 /* CloudKit */,
 				3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */,
 				3065BD1621A2E6E50005339A /* Info.plist */,
 			);
@@ -320,7 +375,7 @@
 		3065BD2F21A2EB240005339A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				3065BD3321A2EC000005339A /* .gitkeep */,
+				5D2B432721B1828400A80354 /* NotificationManager.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -344,6 +399,7 @@
 		5D08B55F21A5965600FBF73A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				301995C521B562EB00D86396 /* CoreData */,
 				300A58B521A5A332000160DF /* Class Extensions */,
 				300A58B221A59C8E000160DF /* Views */,
 				5D08B56321A598AB00FBF73A /* Entities */,
@@ -364,11 +420,20 @@
 		5D08B56321A598AB00FBF73A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5D2B432921B1828B00A80354 /* User.swift */,
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		5D2B433021B1832F00A80354 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */,
+			);
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 		E507C5CA21AF161600EEC7E7 /* RuleList */ = {
@@ -396,7 +461,9 @@
 			isa = PBXGroup;
 			children = (
 				E507C5D821B0034000EEC7E7 /* RuleDetail.storyboard */,
+				300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */,
 				E507C5D721B0034000EEC7E7 /* RuleDetailViewController.swift */,
+				301CE39321B0182D006B583E /* RuleDetailDelegate.swift */,
 				E507C5D621B0034000EEC7E7 /* RulePeekView.swift */,
 				E507C5D921B0034000EEC7E7 /* RulePeekView.xib */,
 			);
@@ -418,6 +485,17 @@
 				E507C5E721B0035300EEC7E7 /* VotingStatusView.xib */,
 			);
 			path = RuleVotes;
+			sourceTree = "<group>";
+		};
+		E507C5FC21B00D2800EEC7E7 /* Homes */ = {
+			isa = PBXGroup;
+			children = (
+				E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */,
+				E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */,
+				E507C60521B1784200EEC7E7 /* HomeLogin.storyboard */,
+				E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */,
+			);
+			path = Homes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +615,7 @@
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				E507C5E221B0034800EEC7E7 /* RuleList.storyboard in Resources */,
+				E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */,
 				E507C5D521B0033600EEC7E7 /* RuleCreate.storyboard in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */,
@@ -548,7 +627,9 @@
 				E507C5E521B0034800EEC7E7 /* RuleTableViewCell.xib in Resources */,
 				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */,
+				E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */,
 				E507C5EF21B0035300EEC7E7 /* OpenVotesTableViewCell.xib in Resources */,
+				E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
 				E507C5F021B0035300EEC7E7 /* VotingStatusView.xib in Resources */,
 				E507C5DC21B0034000EEC7E7 /* RuleDetail.storyboard in Resources */,
@@ -581,12 +662,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				E507C5E321B0034800EEC7E7 /* RuleListViewController.swift in Sources */,
 				E507C5DA21B0034000EEC7E7 /* RulePeekView.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
+				301CE39421B0182D006B583E /* RuleDetailDelegate.swift in Sources */,
+				E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */,
 				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
+				E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */,
+				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
 				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				E507C5F721B0035300EEC7E7 /* VotingStatusView.swift in Sources */,
 				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
@@ -594,7 +680,9 @@
 				5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */,
 				E507C5E421B0034800EEC7E7 /* RuleTableViewCell.swift in Sources */,
 				300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */,
+				E507C60E21B605BD00EEC7E7 /* PrimaryButton.swift in Sources */,
 				E507C5DB21B0034000EEC7E7 /* RuleDetailViewController.swift in Sources */,
+				5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */,
 				E507C5D321B0033600EEC7E7 /* RuleCreateDelegate.swift in Sources */,
 				E507C5FB21B0035D00EEC7E7 /* OpenVotesDelegate.swift in Sources */,
 				2B257B6221B180AA00D56DEC /* UIFont.swift in Sources */,
@@ -604,10 +692,14 @@
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
 				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */,
+				5D2B432A21B1828B00A80354 /* User.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
+				E507C60A21B5620F00EEC7E7 /* InitialViewController.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
+				300D159821B1578400F23AA0 /* ActionlessRuleDetailViewController.swift in Sources */,
 				E507C5F121B0035300EEC7E7 /* RuleVotingCardViewCell.swift in Sources */,
+				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
 				E507C5F221B0035300EEC7E7 /* VotingPromptView.swift in Sources */,
 				E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */,
 				E507C5F321B0035300EEC7E7 /* OpenVotesTableViewCell.swift in Sources */,
@@ -620,7 +712,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */,
 				3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */,
+				301995C421B5507B00D86396 /* RuleModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

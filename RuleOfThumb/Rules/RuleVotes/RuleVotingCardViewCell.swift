@@ -13,7 +13,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var votingPrompt: XibView!
     @IBOutlet weak var view: UIView!
-
+    
     var voteStatus: VotingStatusView?
     var delegate: OpenVotesDelegate?
     
@@ -21,10 +21,27 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 
     var rule: Rule? {
         didSet {
-            guard let rule = rule else {return}
+            guard let rule = rule else { return }
+            
+            //Set the values of the current rule
             self.setNameLabel(ruleName: rule.name)
-            self.setCreatorLabel(creatorName: "Anne")
-            self.setUpView(voted: rule.status != .voting)
+            self.setCreatorLabel(creatorName: rule.house?.name ?? "")
+            
+            // Check in core data if rule was already voted by current user
+            guard CoreDataManager.current.getVote(rule: rule) == nil else {
+                self.setUpView(voted: true)
+                return
+            }
+            
+            // get the actual rule and check if it was already voted
+            guard let ruleRecordName = rule.recordName else { return }
+            let rulesVoted = CoreDataManager.current.fetch(predicate: "ruleRecordName == %@", arg: ruleRecordName)
+            if rulesVoted.count > 0 {
+                self.setUpView(voted: true)
+            } else {
+                self.setUpView(voted: false)
+            }
+            
         }
     }
     
@@ -37,23 +54,35 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         super.awakeFromNib()
         setupStyle()
     }
+    // By default, user haven't vote yet
+    var voted = false
     
+    var votesLeft = 1
+    
+    // setup the current cardview cell
     func setUpView(voted: Bool) {
         if voted {
             let voteStatus = VotingStatusView()
-            voteStatus.backgroundColor = self.backgroundColor
             voteStatus.frame = votingPrompt.frame
-            voteStatus.setLabelText(votesLeft: 6)
+            
+            // If there's still some user left to vote
+            voteStatus.setLabelText(votesLeft: self.votesLeft)
+            
+            // replace the current votingPrompt to voteStatus
             self.addSubview(voteStatus)
             votingPrompt.removeFromSuperview()
             votingPrompt = voteStatus
         } else {
             let votePrompt = VotingPromptView()
-            votePrompt.backgroundColor = self.backgroundColor
+            //votePrompt.backgroundColor = self.backgroundColor
             votePrompt.frame = votingPrompt.frame
+            
+            // replace the current votingPrompt to voteStatus
             self.addSubview(votePrompt)
             votingPrompt.removeFromSuperview()
             votingPrompt = votePrompt
+            
+            // set delegate of votePrompt view (to handle click in "agree" or "disagree")
             setDelegate()
         }
     }
@@ -70,7 +99,11 @@ class RuleVotingCardViewCell: UICollectionViewCell{
     }
     
     func setCreatorLabel(creatorName: String) {
-        creatorLabel.text = "Proposed by "+creatorName
+        creatorLabel.text = "Proposed by " + creatorName
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     func setupStyle() {
@@ -101,10 +134,28 @@ class RuleVotingCardViewCell: UICollectionViewCell{
 }
 
 extension RuleVotingCardViewCell: VotingPromptViewDelegate {
-    
     func votedOnRule(agreed: Bool) {
-        setUpView(voted: true)
-        guard let rule = rule else {return}
-        agreed ? delegate?.ruleApproved(rule: rule) : delegate?.ruleRefused(rule: rule)
+        //IJProgressView.shared.showProgressView()
+        
+        guard let rule = self.rule else {return}
+        
+        // insert the view voted to core data
+        CoreDataManager.current.insert(new: rule)
+        
+        if (agreed) {
+            delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
+                self.votesLeft = votesLeft
+                
+                DispatchQueue.main.sync {
+                    // show the "people left view"
+                    self.setUpView(voted: true)
+                    //IJProgressView.shared.hideProgressView()
+                }
+            })
+        } else {
+            delegate?.ruleRejected(rule: rule)
+            //IJProgressView.shared.hideProgressView()
+        }
+        
     }
 }

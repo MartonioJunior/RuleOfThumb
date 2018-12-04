@@ -27,12 +27,17 @@ class RuleListViewController: UIViewController {
         super.viewDidLoad()
         rulesTableView.delegate = self
         rulesTableView.dataSource = self
+        
         searchController.searchBar.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
         setRefreshControl()
         rulesTableView.refreshControl = refreshControl
         refreshData(self)
+        
         registerForPreviewing(with: self, sourceView: rulesTableView)
         
         rulesTableView.backgroundColor = UIColor.clear
@@ -43,6 +48,8 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? RuleDetailViewController else { return }
             let rule = sender as! Rule
             destination.rule = rule
+            destination.delegate = self
+            destination.delegate = self
         } else if segue.identifier == "create" {
             guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? RuleCreateViewController else { return }
             destination.delegate = self
@@ -50,19 +57,19 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? SugestionViewController, let modalType = sender as? ModalType else { return }
             switch modalType {
                 case .ruleCreated:
-                    destination.modalTitle = "Your rule has been created!"
+                    destination.modalTitle = "Your rule has been proposed!"
                     destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleApproved:
-                    destination.modalTitle = "Your rule has been approved!"
-                    destination.modalDescription = "Your rule got the majority of votes and now everyone must follow it"
+                    destination.modalTitle = "The rule has been approved!"
+                    destination.modalDescription = "The rule got the majority of votes and now everyone must follow it"
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleRejected:
-                    destination.modalTitle = "Your rule has been rejected!"
+                    destination.modalTitle = "The rule has been rejected!"
                     destination.modalDescription = "Sorry, but the house doesn't agree with the rule. Talk to the other members to know what's going on."
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
@@ -85,18 +92,26 @@ class RuleListViewController: UIViewController {
     }
     
     @objc func refreshData(_ sender: Any) {
-        ViewController.fetchHome { (house) in
+        AppDelegate.repository.currentHouse { (house) in
+            // FIXME: Tratar isso é uma boa.
+            guard let house = house else {
+                print("*ERROR* Could not find currentHouse in refreshData of RuleListViewController\n")
+                return
+            }
+            
+            print("-OK- Refreshing data from RuleListViewController\n")
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
+                self.rules = allRules.filter {
+                    return $0.status == Rule.Status.inForce
+                }
+                self.rulesInVoting = allRules.filter {
+                    return $0.status == Rule.Status.voting
+                }
+                self.searchRules = self.rules
+                
                 DispatchQueue.main.async {
-                    self.rules = allRules.filter {
-                        return $0.status == Rule.Status.inForce
-                    }
-                    self.rulesInVoting = allRules.filter {
-                        return $0.status == Rule.Status.voting
-                    }
-                    self.searchRules = self.rules
-                    self.rulesTableView.reloadData()
                     self.refreshControl.endRefreshing()
+                    self.rulesTableView.reloadData()
                 }
             })
         }
@@ -140,6 +155,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.data = rulesInVoting
         cell?.delegate = self
         cell?.reloadData()
+        registerForPreviewing(with: cell!, sourceView: cell!.votesView)
         return cell!
     }
     
@@ -232,10 +248,10 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
         let peekView = RulePeekView()
         peekView.rule = displayInfo.rule
         
-        let previewRule = RuleDetailViewController()
-        
+        let previewRule = ActionlessRuleDetailViewController()
         previewRule.view.addSubview(peekView)
-        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height/2)
         
         return previewRule
     }
@@ -291,15 +307,46 @@ extension RuleListViewController: UISearchBarDelegate {
 
 // --MARK: Rule List View Controller Delegate
 extension RuleListViewController: OpenVotesDelegate {
-    func ruleApproved(rule: Rule) {
+    func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void)) {
         rules.append(rule)
         searchRules.append(rule)
-        rulesTableView.reloadSections(IndexSet(integer: 1), with: .fade)
-        performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
+        
+        rulesInVoting = rulesInVoting.filter {
+            return $0.status == Rule.Status.voting
+        }
+        
+        DispatchQueue.main.sync {
+            // why not "refresh"?
+            rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
+            performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
+        }
+        completion(0)
     }
     
-    func ruleRefused(rule: Rule) {
-        rule.status = .revoked
+    func ruleRejected(rule: Rule) {
+        rulesInVoting = rulesInVoting.filter {
+            return $0.status == Rule.Status.voting
+        }
+        rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
         performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
+    }
+}
+
+// --MARK: Rule Archivation Delegate
+extension RuleListViewController: RuleDetailDelegate {
+    func ruleArchived(rule: Rule) {
+        rule.status = .revoked
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            DispatchQueue.main.async {
+                self.rules = self.rules.filter {
+                    return $0.status == Rule.Status.inForce
+                }
+                self.rulesInVoting = self.rulesInVoting.filter {
+                    return $0.status == Rule.Status.voting
+                }
+                self.searchRules = self.rules
+                self.rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
+            }
+        }
     }
 }

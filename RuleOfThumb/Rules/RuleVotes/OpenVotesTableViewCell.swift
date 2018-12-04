@@ -11,7 +11,8 @@ import UIKit
 class OpenVotesTableViewCell: UITableViewCell {
     @IBOutlet weak var votesView: UICollectionView!
     var data = [Rule]()
-    var delegate: OpenVotesDelegate?
+    var delegate: RuleListViewController?
+    var highlightedIndex = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +31,15 @@ class OpenVotesTableViewCell: UITableViewCell {
         votesView.dataSource = self
         votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
         
-        let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
-        print(nib)
+//        let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
+//        print(nib)
+    }
+    
+    func source(forLocation location: CGPoint) -> RuleVotingCardViewCell? {
+        guard let indexPath = votesView.indexPathForItem(at: location), let cell = votesView.cellForItem(at: indexPath) as? RuleVotingCardViewCell else {
+            return nil
+        }
+        return cell
     }
     
     func reloadData() {
@@ -62,12 +70,17 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        delegate?.seeRuleInVotation(rule: data[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        highlightedIndex = indexPath.row
     }
 }
 
 // --MARK: Open Votes Delegate
 extension OpenVotesTableViewCell: OpenVotesDelegate {
+    
     func set(status: Rule.Status, for rule: Rule) {
         guard let votedRule = data.first(where: {
             return $0.recordID == rule.recordID
@@ -79,18 +92,73 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
         data.sort(by: {a,b in
             return a.status == Rule.Status.voting
         })
-        votesView.reloadData()
+        DispatchQueue.main.async {
+            self.votesView.reloadData()
+        }
     }
     
-    func ruleApproved(rule: Rule) {
-        set(status: .inForce, for: rule)
-        sortAndReload()
-        delegate?.ruleApproved(rule: rule)
+    func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void))  {
+        rule.upVotes += 1
+        
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            // check if everybody already voted
+            guard let allUsersFromHome = rule.house?.users.count else {return}
+            
+            if rule.upVotes >= allUsersFromHome {
+                self.set(status: Rule.Status.inForce, for: rule)
+                self.delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
+                })
+            }
+            
+            let votesLeft = allUsersFromHome - rule.upVotes + rule.downVotes
+            completion(votesLeft)
+            
+            DispatchQueue.main.async {
+                self.sortAndReload()
+            }
+        }
     }
     
-    func ruleRefused(rule: Rule) {
-        set(status: .revoked, for: rule)
-        sortAndReload()
-        delegate?.ruleRefused(rule: rule)
+    func ruleRejected(rule: Rule) {
+        rule.downVotes += 1
+        
+        AppDelegate.repository.save(rule: rule) { (rule) in
+            DispatchQueue.main.async {
+                self.sortAndReload()
+                
+                self.set(status: Rule.Status.revoked , for: rule)
+                
+                // just save and show approved modal
+                self.delegate?.ruleRejected(rule: rule)
+            }
+        }
+    }
+}
+
+// --MARK: Peek and Pop
+extension OpenVotesTableViewCell: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let displayInfo = source(forLocation: location), let rule = displayInfo.rule else {
+            return nil
+        }
+        previewingContext.sourceRect = displayInfo.frame
+        let peekView = RulePeekView()
+        peekView.rule = rule
+        
+        var previewRule: RuleDetailViewController
+        if CoreDataManager.current.getVote(rule: rule) == nil {
+            previewRule = RuleDetailViewController()
+            previewRule.previewActionDelegate = displayInfo
+        } else {
+            previewRule = ActionlessRuleDetailViewController()
+        }
+        previewRule.view.addSubview(peekView)
+        previewRule.preferredContentSize = CGSize(width: 0, height:  peekView.mainView.frame.height)
+        
+        return previewRule
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        delegate?.seeRuleInVotation(rule: data[highlightedIndex])
     }
 }

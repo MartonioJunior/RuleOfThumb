@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lista de Regras-->
+        <!--Rules-->
         <scene sceneID="gfk-AW-RhB">
             <objects>
-                <viewController title="Lista de Regras" id="Mf6-hm-LnX" customClass="RuleListViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mf6-hm-LnX" customClass="RuleListViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FnZ-L0-ymC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                         <viewLayoutGuide key="safeArea" id="jsp-zs-9vF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rules" id="gUC-1Y-JHt">
-                        <barButtonItem key="rightBarButtonItem" title="Propose Rule" id="fao-Ge-a5n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fao-Ge-a5n">
                             <connections>
                                 <segue destination="9pc-sD-8rc" kind="presentation" identifier="create" id="mSz-JP-aap"/>
                             </connections>
@@ -42,7 +42,7 @@
                     <connections>
                         <outlet property="rulesTableView" destination="OKr-mO-gYq" id="s3u-K3-VTw"/>
                         <segue destination="7KS-h6-ba1" kind="show" identifier="detail" id="TqG-es-ZAX"/>
-                        <segue destination="NWi-NF-aR2" kind="presentation" identifier="modal" id="UrN-sH-mGV"/>
+                        <segue destination="NWi-NF-aR2" kind="presentation" identifier="modal" animates="NO" id="UrN-sH-mGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sa6-w8-sh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
