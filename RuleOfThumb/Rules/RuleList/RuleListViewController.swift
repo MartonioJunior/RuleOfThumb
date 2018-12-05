@@ -16,6 +16,7 @@ enum ModalType {
 
 class RuleListViewController: UIViewController {
     @IBOutlet weak var rulesTableView: UITableView!
+    var allRules = [Rule]()
     var rules = [Rule]()
     var searchRules = [Rule]()
     var rulesInVoting = [Rule]()
@@ -99,19 +100,25 @@ class RuleListViewController: UIViewController {
             
             print("-OK- Refreshing data from RuleListViewController\n")
             AppDelegate.repository.fetchAllRules(from: house, then: { (allRules) in
-                self.rules = allRules.filter {
-                    return $0.status == Rule.Status.inForce
-                }
-                self.rulesInVoting = allRules.filter {
-                    return $0.status == Rule.Status.voting
-                }
-                self.searchRules = self.rules
-                
+                self.allRules = allRules
                 DispatchQueue.main.async {
+                    self.updateRuleList()
                     self.refreshControl.endRefreshing()
-                    self.rulesTableView.reloadData()
                 }
             })
+        }
+    }
+    
+    func updateRuleList() {
+        self.rules = self.allRules.filter {
+            return $0.status == Rule.Status.inForce
+        }
+        self.rulesInVoting = self.allRules.filter {
+            return $0.status == Rule.Status.voting
+        }
+        self.searchRules = self.rules
+        DispatchQueue.main.async {
+            self.rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
         }
     }
 }
@@ -264,10 +271,10 @@ extension RuleListViewController: UIViewControllerPreviewingDelegate {
 // -- MARK: Rule Creation Delegate
 extension RuleListViewController: RuleCreateDelegate {
     func proposedNewRule(_ rule: Rule) {
-        rulesInVoting.insert(rule, at: 0)
+        allRules.insert(rule, at: 0)
+        updateRuleList()
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "modal", sender: ModalType.ruleCreated)
-            self.rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
         }
     }
 }
@@ -304,29 +311,33 @@ extension RuleListViewController: UISearchBarDelegate {
 }
 
 // --MARK: Rule List View Controller Delegate
-extension RuleListViewController: OpenVotesDelegate {
-    func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void)) {
-        rules.append(rule)
-        searchRules.append(rule)
-        
-        rulesInVoting = rulesInVoting.filter {
-            return $0.status == Rule.Status.voting
+extension RuleListViewController: RuleListDelegate {
+    func replaceRule(rule: Rule) {
+        guard let index = allRules.firstIndex(where: {
+            return $0.recordName == rule.recordName
+        }) else {
+            return
         }
-        
-        DispatchQueue.main.sync {
-            // why not "refresh"?
-            rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
-            performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
-        }
-        completion(0)
+        allRules[index] = rule
+        updateRuleList()
     }
     
-    func ruleRejected(rule: Rule) {
-        rulesInVoting = rulesInVoting.filter {
-            return $0.status == Rule.Status.voting
+    func ruleVoting(rule: Rule) {
+        replaceRule(rule: rule)
+    }
+    
+    func ruleInForce(rule: Rule) {
+        replaceRule(rule: rule)
+        DispatchQueue.main.sync {
+            self.performSegue(withIdentifier: "modal", sender: ModalType.ruleApproved)
         }
-        rulesTableView.reloadSections(IndexSet(integer: 0), with: .fade)
-        performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
+    }
+    
+    func ruleRevoked(rule: Rule) {
+        replaceRule(rule: rule)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "modal", sender: ModalType.ruleRejected)
+        }
     }
 }
 
