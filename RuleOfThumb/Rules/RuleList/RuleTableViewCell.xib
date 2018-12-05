@@ -35,7 +35,19 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yc-US-Cy3" customClass="CreatorProfileView" customModule="RuleOfThumb" customModuleProvider="target">
+                                <rect key="frame" x="8" y="89" width="139" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="iGx-45-H5w"/>
+                                    <constraint firstAttribute="height" constant="32" id="xo4-j7-2MU"/>
+                                </constraints>
+                            </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0yc-US-Cy3" secondAttribute="bottom" constant="15.5" id="A90-ZZ-th3"/>
+                            <constraint firstItem="0yc-US-Cy3" firstAttribute="leading" secondItem="T2V-Dc-pI7" secondAttribute="leading" constant="8" id="Xqd-Mg-qT2"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -48,6 +60,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardView" destination="T2V-Dc-pI7" id="ci7-ck-Ajr"/>
+                <outlet property="createProfileView" destination="0yc-US-Cy3" id="kUg-51-qOQ"/>
                 <outlet property="ruleDescriptionLabel" destination="pDl-wf-NLz" id="zyP-eo-zwM"/>
                 <outlet property="ruleTitleLabel" destination="cWZ-va-pcd" id="EZP-9K-wXd"/>
             </connections>

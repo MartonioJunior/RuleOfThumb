@@ -11,6 +11,7 @@ import UIKit
 class RuleTableViewCell: UITableViewCell {
     @IBOutlet weak var ruleTitleLabel: UILabel!
     @IBOutlet weak var ruleDescriptionLabel: UILabel!
+    @IBOutlet weak var createProfileView: CreatorProfileView!
     
     @IBOutlet weak var cardView: UIView!
     
@@ -28,6 +29,8 @@ class RuleTableViewCell: UITableViewCell {
         cardView.addRoundedBorder()
         setupStyle()
         
+        createProfileView.setProfileLabel(text: "Nao sei")
+        createProfileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

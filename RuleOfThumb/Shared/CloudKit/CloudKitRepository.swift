@@ -39,7 +39,8 @@ class CloudKitRepository {
     /// - Parameters:
     ///   - recordType: nome do Record Type
     ///   - house: objeto da casa do usuário salva no dispositivo.
-    func subscription(in recordType: String, with house: House) {
+    // FIXME: Refatorar isso para usar uma mesma função para os dois tipos de subscriptions
+    func recordCreatedSubscription(in recordType: String, with house: House) {
         let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
         let subscription = CKQuerySubscription(
             recordType: recordType,
@@ -50,6 +51,7 @@ class CloudKitRepository {
         info.alertLocalizationKey = "New record on \(recordType): %@"
         info.alertLocalizationArgs = ["name"]
         info.shouldSendContentAvailable = false
+        info.shouldSendMutableContent = true
         info.category = "RecordAdded"
         
         subscription.notificationInfo = info
@@ -63,7 +65,34 @@ class CloudKitRepository {
             print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
         })
     }
-
+    
+    func recordUpdatedSubscription(in recordType: String, with house: House) {
+        let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
+        let subscription = CKQuerySubscription(
+            recordType: recordType,
+            predicate: NSPredicate(format: "house == %@", reference),
+            options: [.firesOnRecordUpdate])
+        
+        let info = CKSubscription.NotificationInfo()
+        info.alertLocalizationKey = "Record updated on \(recordType): %@"
+        info.alertLocalizationArgs = ["name"]
+        info.shouldSendContentAvailable = false
+        info.shouldSendMutableContent = true
+        info.desiredKeys = ["status"]
+        info.category = "RecordUpdated"
+        
+        subscription.notificationInfo = info
+        
+        self.publicDB?.save(subscription, completionHandler: { (subscription, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
+        })
+    }
+    
 }
 
 // - MARK: RulesRepository protocol implementation.
@@ -241,7 +270,8 @@ extension CloudKitRepository {
                             
                             defaults.set(houseRecord?.recordID.recordName, forKey: "HouseCreated")
                             
-                            self.subscription(in: "Rules", with: house)
+                            self.recordCreatedSubscription(in: "Rules", with: house)
+                            self.recordUpdatedSubscription(in: "Rules", with: house)
                             
                             completion(house)
                         }
@@ -294,7 +324,8 @@ extension CloudKitRepository {
                         
                         print("User: \(userRecord.recordID) added to house: \(houseRecord.recordID)")
                         
-                        self.subscription(in: "Rules", with: house)
+                        self.recordCreatedSubscription(in: "Rules", with: house)
+                        self.recordUpdatedSubscription(in: "Rules", with: house)
                         
                         defaults.set(houseRecord.recordID.recordName, forKey: "HouseCreated")
                         
