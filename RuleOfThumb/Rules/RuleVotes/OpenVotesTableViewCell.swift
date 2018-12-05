@@ -80,7 +80,7 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
     
     func sortAndReload() {
         data.sort(by: {a,b in
-            return a.status == Rule.Status.voting
+            return CoreDataManager.current.getVote(rule: a) != nil
         })
         DispatchQueue.main.async {
             self.votesView.reloadData()

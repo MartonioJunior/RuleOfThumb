@@ -30,6 +30,8 @@
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
 		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
 		30ABEA5921B6BC6E008C03A3 /* RuleListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */; };
+		30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */; };
+		30ABEA6521B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
 		5D08B56521A598C900FBF73A /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56421A598C900FBF73A /* Rule.swift */; };
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
@@ -90,7 +92,28 @@
 			remoteGlobalIDString = 3065BCF821A2E6E30005339A;
 			remoteInfo = RuleOfThumb;
 		};
+		30ABEA6321B7F8A2008C03A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3065BCF121A2E6E30005339A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30ABEA5D21B7F8A2008C03A3;
+			remoteInfo = RuleOfThumbNotificationService;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30ABEA6921B7F8A2008C03A3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				30ABEA6521B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
@@ -125,6 +148,9 @@
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListDelegate.swift; sourceTree = "<group>"; };
+		30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuleOfThumbNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		30ABEA6221B7F8A2008C03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D08B56121A5968E00FBF73A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5D08B56421A598C900FBF73A /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -193,6 +219,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30ABEA5B21B7F8A2008C03A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -249,6 +282,7 @@
 				3065BCFB21A2E6E30005339A /* RuleOfThumb */,
 				3065BD1321A2E6E50005339A /* RuleOfThumbTests */,
 				3065BD1E21A2E6E50005339A /* RuleOfThumbUITests */,
+				30ABEA5F21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
 				3065BCFA21A2E6E30005339A /* Products */,
 				3065BD3A21A2EEBF0005339A /* Frameworks */,
 			);
@@ -260,6 +294,7 @@
 				3065BCF921A2E6E30005339A /* RuleOfThumb.app */,
 				3065BD1021A2E6E50005339A /* RuleOfThumbTests.xctest */,
 				3065BD1B21A2E6E50005339A /* RuleOfThumbUITests.xctest */,
+				30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +383,15 @@
 				3065BD3B21A2EEBF0005339A /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30ABEA5F21B7F8A2008C03A3 /* RuleOfThumbNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */,
+				30ABEA6221B7F8A2008C03A3 /* Info.plist */,
+			);
+			path = RuleOfThumbNotificationService;
 			sourceTree = "<group>";
 		};
 		5D08B55F21A5965600FBF73A /* Shared */ = {
@@ -463,10 +507,12 @@
 				3065BCF521A2E6E30005339A /* Sources */,
 				3065BCF621A2E6E30005339A /* Frameworks */,
 				3065BCF721A2E6E30005339A /* Resources */,
+				30ABEA6921B7F8A2008C03A3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				30ABEA6421B7F8A2008C03A3 /* PBXTargetDependency */,
 			);
 			name = RuleOfThumb;
 			productName = RuleOfThumb;
@@ -509,6 +555,23 @@
 			productReference = 3065BD1B21A2E6E50005339A /* RuleOfThumbUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		30ABEA5D21B7F8A2008C03A3 /* RuleOfThumbNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30ABEA6621B7F8A2008C03A3 /* Build configuration list for PBXNativeTarget "RuleOfThumbNotificationService" */;
+			buildPhases = (
+				30ABEA5A21B7F8A2008C03A3 /* Sources */,
+				30ABEA5B21B7F8A2008C03A3 /* Frameworks */,
+				30ABEA5C21B7F8A2008C03A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuleOfThumbNotificationService;
+			productName = RuleOfThumbNotificationService;
+			productReference = 30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -538,6 +601,9 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 3065BCF821A2E6E30005339A;
 					};
+					30ABEA5D21B7F8A2008C03A3 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
 			buildConfigurationList = 3065BCF421A2E6E30005339A /* Build configuration list for PBXProject "RuleOfThumb" */;
@@ -556,6 +622,7 @@
 				3065BCF821A2E6E30005339A /* RuleOfThumb */,
 				3065BD0F21A2E6E50005339A /* RuleOfThumbTests */,
 				3065BD1A21A2E6E50005339A /* RuleOfThumbUITests */,
+				30ABEA5D21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -597,6 +664,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3065BD1921A2E6E50005339A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30ABEA5C21B7F8A2008C03A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -674,6 +748,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30ABEA5A21B7F8A2008C03A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -686,6 +768,11 @@
 			isa = PBXTargetDependency;
 			target = 3065BCF821A2E6E30005339A /* RuleOfThumb */;
 			targetProxy = 3065BD1C21A2E6E50005339A /* PBXContainerItemProxy */;
+		};
+		30ABEA6421B7F8A2008C03A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30ABEA5D21B7F8A2008C03A3 /* RuleOfThumbNotificationService */;
+			targetProxy = 30ABEA6321B7F8A2008C03A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -828,6 +915,7 @@
 		3065BD2521A2E6E50005339A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -847,6 +935,7 @@
 		3065BD2621A2E6E50005339A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -945,6 +1034,44 @@
 			};
 			name = Release;
 		};
+		30ABEA6721B7F8A2008C03A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb.RuleOfThumbNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30ABEA6821B7F8A2008C03A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb.RuleOfThumbNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -980,6 +1107,15 @@
 			buildConfigurations = (
 				3065BD2B21A2E6E50005339A /* Debug */,
 				3065BD2C21A2E6E50005339A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30ABEA6621B7F8A2008C03A3 /* Build configuration list for PBXNativeTarget "RuleOfThumbNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30ABEA6721B7F8A2008C03A3 /* Debug */,
+				30ABEA6821B7F8A2008C03A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

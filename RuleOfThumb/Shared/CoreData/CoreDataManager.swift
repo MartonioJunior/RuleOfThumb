@@ -57,6 +57,7 @@ class CoreDataManager {
         let voteRegister = Vote(context: persistentContainer.viewContext)
         voteRegister.ruleRecordName = recordName
         saveContext()
+        AppDelegate.notificationManager.removeNotifications(ofProposed: rule)
     }
     
     func remove(vote: Vote) {

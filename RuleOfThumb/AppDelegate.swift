@@ -20,10 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return AppDelegate.repository
         }
     }
+    static let notificationManager = NotificationManager()
+    var notificationManager: NotificationManager {
+        get {
+            return AppDelegate.notificationManager
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let notificationManager = NotificationManager()
         
         notificationManager.requestAuthorization()
         application.registerForRemoteNotifications()
@@ -54,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let recordID = queryNotification.recordID
                 
                 CloudKitRepository.fetchById(recordID!) { (record) in
+                    guard let record = record else { return }
                     print(record)
                 }
             }
