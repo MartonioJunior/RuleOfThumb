@@ -88,12 +88,7 @@ class RuleDetailViewController: UIViewController {
     func setCreatorLabel(name: String?) {
         guard let name = name else { return }
         let message = "Created by\n"+name
-        let creatorString = NSMutableAttributedString(string: message, attributes: nil)
-        creatorString.addAttribute(.font, value: UIFont.primaryTextCentralized, range: NSRange(location: 0, length: creatorString.string.count))
-        creatorString.addAttribute(.foregroundColor, value: UIColor.dusk80, range: NSRange(location: 0, length: creatorString.string.count))
-        creatorString.addAttribute(.kern, value: -0.43, range: NSRange(location: 0, length: creatorString.string.count))
-        creatorString.addAttribute(.font, value: UIFont.terciaryTextCentralized, range: NSRange(location: 0, length: 11))
-        profileView.setProfileLabel(text: creatorString)
+        profileView.setProfileLabel(text: message)
     }
     
     func confirmArchive() {

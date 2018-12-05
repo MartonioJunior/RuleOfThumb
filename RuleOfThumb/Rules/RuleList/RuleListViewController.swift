@@ -43,6 +43,9 @@ class RuleListViewController: UIViewController {
         rulesTableView.backgroundColor = UIColor.clear
         
         self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
+        
+//        self.navigationController?.navigationBar.a largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.dusk]
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
