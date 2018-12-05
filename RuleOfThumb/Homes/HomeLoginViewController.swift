@@ -19,6 +19,8 @@ class HomeLoginViewController: UIViewController {
         super.viewDidLoad()
         promptStep1.set(title: "What's your home key?")
         promptStep1.set(delegate: self)
+        
+        self.navigationController?.navigationBar.setTransparentBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {

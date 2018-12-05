@@ -35,7 +35,6 @@ class RuleCreateViewController: UIViewController {
         scrollView.contentOffset = CGPoint.zero
         
         self.navigationController?.navigationBar.setTransparentBackground()
-
         
     }
     

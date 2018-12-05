@@ -15,6 +15,9 @@
 		2B257B8D21B1865800D56DEC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */; };
 		2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8021B1865800D56DEC /* Nunito-Black.ttf */; };
 		2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */; };
+		2B281D8421B84C950000695F /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
+		2B281D8521B84C950000695F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
+		2B281D8621B84C950000695F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
 		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
 		2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949121B6D61300813EAC /* CAGradientLayer.swift */; };
 		2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949321B6D72F00813EAC /* UINavigationBar.swift */; };
@@ -45,7 +48,6 @@
 		2BD394E221B8142900813EAC /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD394CA21B8142900813EAC /* RuleTableViewCell.swift */; };
 		2BD394E421B814B100813EAC /* RuleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD394E321B814B100813EAC /* RuleList.storyboard */; };
 		2BD394E621B8238B00813EAC /* RuleListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD394E521B8238B00813EAC /* RuleListDelegate.swift */; };
-		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
 		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
 		300A58AE21A5995F000160DF /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58AD21A5995F000160DF /* PromptView.swift */; };
@@ -57,8 +59,6 @@
 		301995C421B5507B00D86396 /* RuleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C321B5507B00D86396 /* RuleModelTests.swift */; };
 		301995C721B5632200D86396 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C621B5632200D86396 /* CoreDataManager.swift */; };
 		3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFC21A2E6E30005339A /* AppDelegate.swift */; };
-		3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
-		3065BD0221A2E6E30005339A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
 		3065BD0521A2E6E30005339A /* RuleOfThumb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD0321A2E6E30005339A /* RuleOfThumb.xcdatamodeld */; };
 		3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0621A2E6E50005339A /* Assets.xcassets */; };
 		3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0821A2E6E50005339A /* LaunchScreen.storyboard */; };
@@ -591,7 +591,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "So Many Deadlines";
 				TargetAttributes = {
 					3065BCF821A2E6E30005339A = {
@@ -647,12 +647,11 @@
 				2BD394DE21B8142900813EAC /* HeaderCell.xib in Resources */,
 				E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */,
 				2BD394D721B8142900813EAC /* OpenVotesTableViewCell.xib in Resources */,
-				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
+				2B281D8621B84C950000695F /* Main.storyboard in Resources */,
 				2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */,
 				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
 				2B257B7421B1863D00D56DEC /* Lato-Regular.ttf in Resources */,
 				E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */,
-				3065BD0221A2E6E30005339A /* Main.storyboard in Resources */,
 				2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */,
 				E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */,
 				E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */,
@@ -698,8 +697,8 @@
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				2BD394DD21B8142900813EAC /* RuleVotingCardViewCell.swift in Sources */,
 				2BD394CD21B8142900813EAC /* RuleCreateViewController.swift in Sources */,
-				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
-				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
+				2B281D8421B84C950000695F /* CreatorProfileView.swift in Sources */,
+				2B281D8521B84C950000695F /* ViewController.swift in Sources */,
 				2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */,
 				E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */,
 				2BD394E121B8142900813EAC /* RuleListViewController.swift in Sources */,
@@ -710,8 +709,6 @@
 				2BD394D121B8142900813EAC /* ActionlessRuleDetailViewController.swift in Sources */,
 				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
 				2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */,
-				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
-				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				2BD394DA21B8142900813EAC /* VotingStatusView.swift in Sources */,
 				5D08B56521A598C900FBF73A /* Rule.swift in Sources */,
 				5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */,
@@ -849,7 +846,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -904,7 +901,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

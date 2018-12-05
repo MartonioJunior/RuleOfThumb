@@ -31,8 +31,6 @@ class OpenVotesTableViewCell: UITableViewCell {
         votesView.dataSource = self
         votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
         sortAndReload()
-//        let nib = UINib(nibName: "RuleVotingCardViewCell", bundle: nil)
-//        print(nib)
     }
     
     func source(forLocation location: CGPoint) -> RuleVotingCardViewCell? {

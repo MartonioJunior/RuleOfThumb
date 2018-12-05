@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             [NSAttributedString.Key.foregroundColor: UIColor.dusk,
              NSAttributedString.Key.font: UIFont(name: "Nunito-Black", size: 34) ??
                 UIFont.systemFont(ofSize: 30)]
-        
+    
         UINavigationBar.appearance().tintColor = UIColor.dusk
         
         return true
