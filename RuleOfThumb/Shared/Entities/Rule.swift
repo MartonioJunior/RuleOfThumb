@@ -36,12 +36,9 @@ class Rule: CKManagedObject {
     var status: Status
     var validFrom: Date?
     var house: House?
-    var upVotes: Int {
-        didSet { self.checkVotes() }
-    }
-    var downVotes: Int {
-        didSet { self.checkVotes() }
-    }
+    var remainingVotes: Int
+    var upVotes: Int
+    var downVotes: Int
     
     init(name: String, description: String, house: House) {
         self.name = name
@@ -49,6 +46,7 @@ class Rule: CKManagedObject {
         self.house = house
         self.number = 1111
         self.status = .voting
+        self.remainingVotes = house.users.count
         self.upVotes = 0
         self.downVotes = 0
       
@@ -68,6 +66,7 @@ class Rule: CKManagedObject {
         self.description = record["description"] as! String
         self.status = Rule.Status(rawValue: record["status"] as! Int)!
         self.validFrom = record["validFrom"] as? Date
+        self.remainingVotes = record["remainingVotes"] as! Int
         self.upVotes = record["upVotes"] as! Int
         self.downVotes = record["downVotes"] as! Int
         
@@ -77,22 +76,6 @@ class Rule: CKManagedObject {
         let recordID = record.recordID
         self.recordID = self.ckRecordIDToData(recordID: recordID)
     }
-    
-//    func toCKRecord() -> CKRecord {
-//        let record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
-//
-//        record["name"] = self.name as CKRecordValue
-//        record["number"] = self.number as CKRecordValue
-//        record["description"] = self.description as CKRecordValue
-//        record["validFrom"] = self.validFrom as CKRecordValue?
-//        record["status"] = self.status.rawValue as CKRecordValue
-//
-//        if let houseID = self.house?.ckRecordId() {
-//            record["house"] = CKRecord.Reference(recordID: houseID, action: .deleteSelf)
-//        }
-//
-//        return record
-//    }
     
     func toCKRecord(_ completion: @escaping ((CKRecord) -> Void)) {
         var record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
@@ -107,6 +90,7 @@ class Rule: CKManagedObject {
             record["description"] = self.description as CKRecordValue
             record["validFrom"] = self.validFrom as CKRecordValue?
             record["status"] = self.status.rawValue as CKRecordValue
+            record["remainingVotes"] = self.remainingVotes as CKRecordValue
             record["upVotes"] = self.upVotes as CKRecordValue
             record["downVotes"] = self.downVotes as CKRecordValue
             
@@ -119,7 +103,6 @@ class Rule: CKManagedObject {
     }
 
     // Função auxiliar, não é a melhor solução, vai ficar por agora.
-    // FIXME: Talvez essa funcao não esteja executando na ordem certa.
     private func updateFromCloudKit(then completion: @escaping ((Bool) -> Void)) {
         CloudKitRepository.fetchById(self.ckRecordId()) { (record) in
             guard let record = record else { return }
@@ -129,6 +112,7 @@ class Rule: CKManagedObject {
             self.description = record["description"] as! String
             self.status = Rule.Status(rawValue: record["status"] as! Int)!
             self.validFrom = record["validFrom"] as? Date
+            self.remainingVotes = record["remainingVotes"] as! Int
             self.upVotes = record["upVotes"] as! Int
             self.downVotes = record["downVotes"] as! Int
             
@@ -152,12 +136,13 @@ class Rule: CKManagedObject {
         }
         
         group.notify(queue: .main) {
-            print("CHEGOU AQUI")
             if vote == .downVote {
                 self.downVotes = 1
+                self.remainingVotes = 0
                 self.status = .revoked
             } else {
                 self.upVotes += 1
+                self.remainingVotes -= 1
                 let totalUsers = self.house?.users.count
                 
                 if totalUsers == self.upVotes {
@@ -167,20 +152,6 @@ class Rule: CKManagedObject {
             }
             
             completion(true)
-        }
-    }
-    
-    private func checkVotes() {
-        guard self.status == .voting else { return }
-        
-        // FIXME: Isso pode dar um erro caso a casa esteja desatualizada.
-        let totalUsers = self.house?.users.count
-        
-        if self.downVotes != 0 {
-            self.status = .revoked
-        } else if totalUsers == self.upVotes {
-            self.status = .inForce
-            self.validFrom = Date()
         }
     }
     
