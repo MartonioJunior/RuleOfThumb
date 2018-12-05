@@ -11,37 +11,30 @@ import UIKit
 @IBDesignable
 class PrimaryButton: UIButton {
     let gradientLayer = CAGradientLayer()
+    var firstTimeRendering = true
     
-    @IBInspectable
-    var topGradientColor: UIColor? {
-        didSet {
-            setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
-        }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
     
-    @IBInspectable
-    var bottomGradientColor: UIColor? {
-        didSet {
-            setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
     
-    private func setGradient(topGradientColor: UIColor?, bottomGradientColor: UIColor?) {
-        if let topGradientColor = topGradientColor, let bottomGradientColor = bottomGradientColor {
-            gradientLayer.frame = bounds
-            gradientLayer.colors = [topGradientColor.cgColor, bottomGradientColor.cgColor]
-            gradientLayer.borderColor = layer.borderColor
-            gradientLayer.borderWidth = layer.borderWidth
-            gradientLayer.cornerRadius = layer.cornerRadius
-            
-            let gradientOffset = self.bounds.height / self.bounds.width / 2
-            self.gradientLayer.startPoint = CGPoint(x: 0, y: 0.5 + gradientOffset)
-            self.gradientLayer.endPoint = CGPoint(x: 1, y: 0.5 - gradientOffset)
-            //gradientLayer.locations = [0.0, 1.0]
-            layer.insertSublayer(gradientLayer, at: 0)
-        } else {
-            gradientLayer.removeFromSuperlayer()
-        }
+    private func setup() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.layer.frame.height / 2
+        
+        self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
+        
+//        var image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
+//        self.backgroundColor = UIColor.init(patternImage: image!)
+        
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        self.setTitleColor(UIColor.white, for: .normal)
+    
+        
     }
-
 }

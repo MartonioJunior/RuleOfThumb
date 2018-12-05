@@ -55,7 +55,7 @@
                                                 <action selector="firstButtonAction:" destination="-1" eventType="touchUpInside" id="aM8-VH-c28"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-Tm-e2J" customClass="SecondaryButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-Tm-e2J" customClass="PrimaryButton" customModule="RuleOfThumb" customModuleProvider="target">
                                             <rect key="frame" x="187.5" y="0.0" width="155.5" height="30"/>
                                             <state key="normal" title="Yes, I'm sure"/>
                                             <connections>

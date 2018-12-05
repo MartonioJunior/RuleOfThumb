@@ -45,13 +45,9 @@ class RuleVotingCardViewCell: UICollectionViewCell{
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        view.addRoundedBorder()
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        view.addRoundedBorder()
         setupStyle()
     }
     // By default, user haven't vote yet

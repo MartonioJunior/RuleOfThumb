@@ -12,31 +12,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VoteCard" id="f1w-gB-HRq" customClass="RuleVotingCardViewCell" customModule="RuleOfThumb" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="339" height="134"/>
+            <rect key="frame" x="0.0" y="0.0" width="339" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="339" height="134"/>
+                <rect key="frame" x="0.0" y="0.0" width="339" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-lV-J7U">
-                        <rect key="frame" x="16" y="12" width="323" height="110"/>
+                        <rect key="frame" x="16" y="6" width="319" height="108"/>
                         <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-NU-NGT" customClass="XibView" customModule="RuleOfThumb" customModuleProvider="target">
-                                <rect key="frame" x="24" y="72.5" width="291" height="35.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="proposed by Anne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw1-hs-F9L">
-                                <rect key="frame" x="8" y="32.5" width="307" height="16"/>
+                                <rect key="frame" x="8" y="32.5" width="303" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't leave wet towel on the bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-zV-iE0">
-                                <rect key="frame" x="8" y="12" width="307" height="20.5"/>
+                                <rect key="frame" x="8" y="12" width="303" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-NU-NGT" customClass="XibView" customModule="RuleOfThumb" customModuleProvider="target">
+                                <rect key="frame" x="24" y="63" width="287" height="36.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sqJ-zV-iE0" secondAttribute="trailing" constant="8" id="9fL-fv-fAc"/>
@@ -46,18 +46,18 @@
                             <constraint firstItem="zWi-NU-NGT" firstAttribute="trailing" secondItem="sqJ-zV-iE0" secondAttribute="trailing" id="e13-7i-4Rr"/>
                             <constraint firstAttribute="trailing" secondItem="gw1-hs-F9L" secondAttribute="trailing" constant="8" id="idA-BL-JDA"/>
                             <constraint firstItem="zWi-NU-NGT" firstAttribute="leading" secondItem="sqJ-zV-iE0" secondAttribute="leading" constant="16" id="jRd-ud-qP6"/>
-                            <constraint firstItem="zWi-NU-NGT" firstAttribute="top" secondItem="gw1-hs-F9L" secondAttribute="bottom" constant="24" id="nWf-Vr-IPc"/>
-                            <constraint firstAttribute="bottom" secondItem="zWi-NU-NGT" secondAttribute="bottom" constant="2" id="sMN-qn-w4U"/>
+                            <constraint firstItem="zWi-NU-NGT" firstAttribute="top" secondItem="gw1-hs-F9L" secondAttribute="bottom" constant="14.5" id="nWf-Vr-IPc"/>
+                            <constraint firstAttribute="bottom" secondItem="zWi-NU-NGT" secondAttribute="bottom" constant="8.5" id="sMN-qn-w4U"/>
                             <constraint firstItem="gw1-hs-F9L" firstAttribute="top" secondItem="sqJ-zV-iE0" secondAttribute="bottom" id="vk0-ta-fAs"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Ih7-lV-J7U" secondAttribute="bottom" constant="12" id="0Es-ej-zxo"/>
+                <constraint firstAttribute="bottom" secondItem="Ih7-lV-J7U" secondAttribute="bottom" constant="6" id="0Es-ej-zxo"/>
                 <constraint firstItem="Ih7-lV-J7U" firstAttribute="leading" secondItem="f1w-gB-HRq" secondAttribute="leading" constant="16" id="2C4-bC-AYf"/>
-                <constraint firstItem="Ih7-lV-J7U" firstAttribute="top" secondItem="f1w-gB-HRq" secondAttribute="top" constant="12" id="D8c-cp-QPf"/>
-                <constraint firstAttribute="trailing" secondItem="Ih7-lV-J7U" secondAttribute="trailing" id="c8q-8R-K3K"/>
+                <constraint firstItem="Ih7-lV-J7U" firstAttribute="top" secondItem="f1w-gB-HRq" secondAttribute="top" constant="6" id="D8c-cp-QPf"/>
+                <constraint firstAttribute="trailing" secondItem="Ih7-lV-J7U" secondAttribute="trailing" constant="4" id="c8q-8R-K3K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="iOv-G5-g45"/>
             <size key="customSize" width="323" height="121"/>

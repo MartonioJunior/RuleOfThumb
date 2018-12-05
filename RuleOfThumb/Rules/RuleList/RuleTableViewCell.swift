@@ -23,14 +23,9 @@ class RuleTableViewCell: UITableViewCell {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        cardView.addRoundedBorder()
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        cardView.addRoundedBorder()
         setupStyle()
         
     }

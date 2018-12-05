@@ -38,14 +38,13 @@ class RuleDetailViewController: UIViewController {
         
         setupStyle()
         
-        self.navigationController?.navigationBar.setGradientBackground(colors: [UIColor.pale, UIColor.lightSalmon])
-        self.navigationController?.navigationBar.barTintColor = UIColor.red
     }
     
     override func viewWillAppear(_ animated: Bool) {
         guard let rule = rule else { return }
         setCreatorLabel(name: rule.house?.name)
         self.profileView.setCircleImageView(#imageLiteral(resourceName: "user-default"))
+        self.navigationController?.navigationBar.setTransparentBackground()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -29,8 +29,8 @@ class RuleListViewController: UIViewController {
         rulesTableView.dataSource = self
         
         searchController.searchBar.delegate = self
-        navigationController?.navigationBar.prefersLargeTitles = false
-//        navigationItem.searchController = searchController
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         
@@ -42,14 +42,11 @@ class RuleListViewController: UIViewController {
         
         rulesTableView.backgroundColor = UIColor.clear
         
-//        self.navigationController?.navigationBar.setGradientBackground(colors: [UIColor.lightSalmon, UIColor.pale])
-        
-        self.navigationController?.navigationBar.backgroundColor = nil
-        navigationController?.navigationController?.navigationBar.setGradientBackground(colors: [UIColor.pale, UIColor.lightSalmon])
-        
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.navigationBar.isOpaque = false
-//        self.navigationController?.
+        self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

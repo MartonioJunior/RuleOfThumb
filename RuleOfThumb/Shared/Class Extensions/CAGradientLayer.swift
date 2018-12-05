@@ -23,13 +23,13 @@ extension CAGradientLayer {
         endPoint = CGPoint(x: 1, y: 0)
     }
     
-    func createGradienteImage() -> UIImage? {
-        var image: UIImage? = nil
+    func createGradienteImage() -> UIImage {
+        var image: UIImage = UIImage()
         
         UIGraphicsBeginImageContext(bounds.size)
         if let context = UIGraphicsGetCurrentContext() {
             render(in: context)
-            image = UIGraphicsGetImageFromCurrentImageContext()
+            image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
         }
         UIGraphicsEndImageContext()
         

@@ -23,6 +23,12 @@ class SugestionModalView: XibView {
     }
     var delegate: SugestionModalViewDelegate?
     
+    override func layoutSubviews() {
+        let image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
+        
+        self.secondActionButton.backgroundColor = UIColor.init(patternImage: image!)
+    }
+    
     func setDelegate(_ del: SugestionModalViewDelegate) {
         delegate = del
     }
