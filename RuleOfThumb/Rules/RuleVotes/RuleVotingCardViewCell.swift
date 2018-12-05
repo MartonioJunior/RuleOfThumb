@@ -102,19 +102,8 @@ extension RuleVotingCardViewCell: VotingPromptViewDelegate {
         
         guard let rule = self.rule else {return}
         
-        // insert the view voted to core data
-        CoreDataManager.current.insert(new: rule)
-        
         if (agreed) {
-            delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
-                self.votesLeft = votesLeft
-                
-                DispatchQueue.main.sync {
-                    // show the "people left view"
-                    self.setUpView(voted: true)
-                    //IJProgressView.shared.hideProgressView()
-                }
-            })
+            delegate?.ruleApproved(rule: rule)
         } else {
             delegate?.ruleRejected(rule: rule)
             //IJProgressView.shared.hideProgressView()

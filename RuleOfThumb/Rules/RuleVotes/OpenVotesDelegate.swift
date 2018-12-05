@@ -9,13 +9,7 @@
 import UIKit
 
 protocol OpenVotesDelegate {
-    func ruleApproved(rule: Rule, completion: @escaping ((_ votesLeft : Int ) -> Void))
+    func ruleApproved(rule: Rule)
     func ruleRejected(rule: Rule)
     
-}
-
-extension OpenVotesDelegate where Self: UIViewController {
-    func seeRuleInVotation(rule: Rule) {
-        performSegue(withIdentifier: "detail", sender: rule)
-    }
 }
