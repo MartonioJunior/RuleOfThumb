@@ -245,7 +245,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        return headerCell
+        return headerCell?.contentView
     }
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
