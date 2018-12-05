@@ -44,6 +44,7 @@
 		2BD394E121B8142900813EAC /* RuleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD394C921B8142900813EAC /* RuleListViewController.swift */; };
 		2BD394E221B8142900813EAC /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD394CA21B8142900813EAC /* RuleTableViewCell.swift */; };
 		2BD394E421B814B100813EAC /* RuleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD394E321B814B100813EAC /* RuleList.storyboard */; };
+		2BD394E621B8238B00813EAC /* RuleListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD394E521B8238B00813EAC /* RuleListDelegate.swift */; };
 		3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3004AE5521A44E3E0020629B /* CreatorProfileView.xib */; };
 		300A58AA21A586A8000160DF /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58A921A586A8000160DF /* XibView.swift */; };
@@ -64,7 +65,6 @@
 		3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */; };
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
 		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
-		30ABEA5921B6BC6E008C03A3 /* RuleListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */; };
 		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
 		5D08B56521A598C900FBF73A /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56421A598C900FBF73A /* Rule.swift */; };
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
@@ -144,6 +144,7 @@
 		2BD394C921B8142900813EAC /* RuleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleListViewController.swift; sourceTree = "<group>"; };
 		2BD394CA21B8142900813EAC /* RuleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
 		2BD394E321B814B100813EAC /* RuleList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RuleList.storyboard; sourceTree = "<group>"; };
+		2BD394E521B8238B00813EAC /* RuleListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleListDelegate.swift; sourceTree = "<group>"; };
 		3004AE5421A44E3E0020629B /* CreatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorProfileView.swift; sourceTree = "<group>"; };
 		3004AE5521A44E3E0020629B /* CreatorProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorProfileView.xib; sourceTree = "<group>"; };
 		300A58A921A586A8000160DF /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -173,7 +174,6 @@
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListDelegate.swift; sourceTree = "<group>"; };
 		5D08B56121A5968E00FBF73A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5D08B56421A598C900FBF73A /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -316,6 +316,7 @@
 		2BD394C521B8142900813EAC /* RuleList */ = {
 			isa = PBXGroup;
 			children = (
+				2BD394E521B8238B00813EAC /* RuleListDelegate.swift */,
 				2BD394E321B814B100813EAC /* RuleList.storyboard */,
 				2BD394C621B8142900813EAC /* HeaderCell.xib */,
 				2BD394C721B8142900813EAC /* RuleTableViewCell.xib */,
@@ -514,58 +515,6 @@
 				5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */,
 			);
 			path = CloudKit;
-			sourceTree = "<group>";
-		};
-		E507C5CA21AF161600EEC7E7 /* RuleList */ = {
-			isa = PBXGroup;
-			children = (
-				E507C5DE21B0034800EEC7E7 /* RuleList.storyboard */,
-				E507C5DF21B0034800EEC7E7 /* RuleListViewController.swift */,
-				E507C5E021B0034800EEC7E7 /* RuleTableViewCell.swift */,
-				E507C5E121B0034800EEC7E7 /* RuleTableViewCell.xib */,
-				30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */,
-			);
-			path = RuleList;
-			sourceTree = "<group>";
-		};
-		E507C5CB21AF162500EEC7E7 /* RuleCreate */ = {
-			isa = PBXGroup;
-			children = (
-				E507C5D221B0033600EEC7E7 /* RuleCreate.storyboard */,
-				E507C5D021B0033600EEC7E7 /* RuleCreateDelegate.swift */,
-				E507C5D121B0033600EEC7E7 /* RuleCreateViewController.swift */,
-			);
-			path = RuleCreate;
-			sourceTree = "<group>";
-		};
-		E507C5CC21AF163200EEC7E7 /* RuleDetail */ = {
-			isa = PBXGroup;
-			children = (
-				E507C5D821B0034000EEC7E7 /* RuleDetail.storyboard */,
-				300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */,
-				E507C5D721B0034000EEC7E7 /* RuleDetailViewController.swift */,
-				301CE39321B0182D006B583E /* RuleDetailDelegate.swift */,
-				E507C5D621B0034000EEC7E7 /* RulePeekView.swift */,
-				E507C5D921B0034000EEC7E7 /* RulePeekView.xib */,
-			);
-			path = RuleDetail;
-			sourceTree = "<group>";
-		};
-		E507C5CD21AF164D00EEC7E7 /* RuleVotes */ = {
-			isa = PBXGroup;
-			children = (
-				E507C5EA21B0035300EEC7E7 /* OpenVotesTableViewCell.swift */,
-				E507C5E621B0035300EEC7E7 /* OpenVotesTableViewCell.xib */,
-				E507C5F921B0035C00EEC7E7 /* OpenVotesDelegate.swift */,
-				E507C5E821B0035300EEC7E7 /* RuleVotingCardViewCell.swift */,
-				E507C5EB21B0035300EEC7E7 /* RuleVotingCardViewCell.xib */,
-				E507C5E921B0035300EEC7E7 /* VotingPromptView.swift */,
-				E507C5EC21B0035300EEC7E7 /* VotingPromptView.xib */,
-				E507C5ED21B0035300EEC7E7 /* VotingPromptViewDelegate.swift */,
-				E507C5EE21B0035300EEC7E7 /* VotingStatusView.swift */,
-				E507C5E721B0035300EEC7E7 /* VotingStatusView.xib */,
-			);
-			path = RuleVotes;
 			sourceTree = "<group>";
 		};
 		E507C5FC21B00D2800EEC7E7 /* Homes */ = {
@@ -786,6 +735,7 @@
 				2BD394D521B8142900813EAC /* VotingPromptViewDelegate.swift in Sources */,
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				E507C60A21B5620F00EEC7E7 /* InitialViewController.swift in Sources */,
+				2BD394E621B8238B00813EAC /* RuleListDelegate.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,

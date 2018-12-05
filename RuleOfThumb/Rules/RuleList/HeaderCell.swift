@@ -14,13 +14,13 @@ class HeaderCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.headerTitleLabel.font = UIFont.sectionText
+        self.headerTitleLabel.textColor = UIColor.dusk
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

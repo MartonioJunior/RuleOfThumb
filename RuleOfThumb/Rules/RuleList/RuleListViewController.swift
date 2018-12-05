@@ -232,13 +232,6 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             rulesTableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
             headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
         }
-        
-//        let titleLabel = UILabel()
-        headerCell?.headerTitleLabel.font = UIFont.sectionText
-        headerCell?.headerTitleLabel.textColor = UIColor.dusk
-//        titleLabel.frame = headerView.frame
-        
-//        headerView.addSubview(titleLabel)
 
         switch section {
         case 0:
@@ -249,14 +242,15 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             break
         default:
             break
+            
         }
         
         return headerCell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ""
+//    }
 }
 
 // - MARK: Peek and Pop
