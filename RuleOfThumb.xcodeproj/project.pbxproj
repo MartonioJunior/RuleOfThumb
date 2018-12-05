@@ -919,13 +919,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -939,13 +939,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

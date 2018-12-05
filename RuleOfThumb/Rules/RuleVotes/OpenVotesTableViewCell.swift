@@ -88,41 +88,41 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
     }
     
     func ruleApproved(rule: Rule)  {
-        rule.upVotes += 1
-        // insert the rule voted to core data
-        CoreDataManager.current.insert(new: rule)
+        rule.addVote(.upVote) { (success) in
+            if success {
         
-        AppDelegate.repository.save(rule: rule) { (rule) in
-            if rule.status == Rule.Status.voting {
-                self.delegate?.ruleVoting(rule: rule)
-            } else {
-                self.delegate?.ruleInForce(rule: rule)
-            // check if everybody already voted
-//            guard let allUsersFromHome = rule.house?.users.count else {return}
-//
-//            if rule.upVotes >= allUsersFromHome {
-//                self.set(status: Rule.Status.inForce, for: rule)
-//                })
-//            }
-//
-//            let votesLeft = allUsersFromHome - (rule.upVotes + rule.downVotes)
-//            completion(votesLeft)
-//
-//            DispatchQueue.main.async {
-//                self.sortAndReload()
+                AppDelegate.repository.save(rule: rule) { (rule) in
+                    DispatchQueue.main.sync {
+                        // insert the rule voted to core data
+                        CoreDataManager.current.insert(new: rule)
+                    }
+                    
+                    if rule.status == Rule.Status.voting {
+                        self.delegate?.ruleVoting(rule: rule)
+                    } else {
+                        self.delegate?.ruleInForce(rule: rule)
+                    }
+                }
             }
         }
     }
     
     func ruleRejected(rule: Rule) {
-        rule.downVotes += 1
-        // insert the rule voted to core data
-        CoreDataManager.current.insert(new: rule)
-        
-        AppDelegate.repository.save(rule: rule) { (rule) in
-            self.delegate?.ruleRevoked(rule: rule)
+        rule.addVote(.downVote) { (success) in
+            if success {
+                AppDelegate.repository.save(rule: rule) { (rule) in
+                    DispatchQueue.main.sync {
+                        // insert the rule voted to core data
+                        CoreDataManager.current.insert(new: rule)
+                    }
+                    
+                    self.delegate?.ruleRevoked(rule: rule)
+                }
+            }
         }
     }
+    
+    
 }
 
 // --MARK: Peek and Pop
