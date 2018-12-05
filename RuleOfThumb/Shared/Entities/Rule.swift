@@ -15,9 +15,14 @@ import CloudKit
 /// - Métodos para transformar e criar a partir de um CKRecord
 class Rule: CKManagedObject {
     enum Status: Int {
-        case voting
-        case revoked
-        case inForce
+        case voting = 0
+        case revoked = 1
+        case inForce = 2
+    }
+    
+    enum VoteType {
+        case upVote
+        case downVote
     }
     
     // CK default fields
@@ -73,21 +78,21 @@ class Rule: CKManagedObject {
         self.recordID = self.ckRecordIDToData(recordID: recordID)
     }
     
-    func toCKRecord() -> CKRecord {
-        let record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
-        
-        record["name"] = self.name as CKRecordValue
-        record["number"] = self.number as CKRecordValue
-        record["description"] = self.description as CKRecordValue
-        record["validFrom"] = self.validFrom as CKRecordValue?
-        record["status"] = self.status.rawValue as CKRecordValue
-        
-        if let houseID = self.house?.ckRecordId() {
-            record["house"] = CKRecord.Reference(recordID: houseID, action: .deleteSelf)
-        }
-        
-        return record
-    }
+//    func toCKRecord() -> CKRecord {
+//        let record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
+//
+//        record["name"] = self.name as CKRecordValue
+//        record["number"] = self.number as CKRecordValue
+//        record["description"] = self.description as CKRecordValue
+//        record["validFrom"] = self.validFrom as CKRecordValue?
+//        record["status"] = self.status.rawValue as CKRecordValue
+//
+//        if let houseID = self.house?.ckRecordId() {
+//            record["house"] = CKRecord.Reference(recordID: houseID, action: .deleteSelf)
+//        }
+//
+//        return record
+//    }
     
     func toCKRecord(_ completion: @escaping ((CKRecord) -> Void)) {
         var record = CKRecord(recordType: self.recordType, recordID: self.ckRecordId())
@@ -114,7 +119,8 @@ class Rule: CKManagedObject {
     }
 
     // Função auxiliar, não é a melhor solução, vai ficar por agora.
-    private func updateFromCloudKit() {
+    // FIXME: Talvez essa funcao não esteja executando na ordem certa.
+    private func updateFromCloudKit(then completion: @escaping ((Bool) -> Void)) {
         CloudKitRepository.fetchById(self.ckRecordId()) { (record) in
             guard let record = record else { return }
             
@@ -128,13 +134,44 @@ class Rule: CKManagedObject {
             
             let houseReference = record["house"] as! CKRecord.Reference
             self.house = House(from: houseReference)
+            
+            completion(true)
+        }
+    }
+    
+    func addVote(_ vote: VoteType, then completion: @escaping ((Bool) -> Void)) {
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.global(qos: .default).async {
+            self.updateFromCloudKit { (success) in
+                if success {
+                    group.leave()
+                }
+            }
+        }
+        
+        group.notify(queue: .main) {
+            print("CHEGOU AQUI")
+            if vote == .downVote {
+                self.downVotes = 1
+                self.status = .revoked
+            } else {
+                self.upVotes += 1
+                let totalUsers = self.house?.users.count
+                
+                if totalUsers == self.upVotes {
+                    self.status = .inForce
+                    self.validFrom = Date()
+                }
+            }
+            
+            completion(true)
         }
     }
     
     private func checkVotes() {
-        guard self.status != .revoked else { return }
-        
-        self.updateFromCloudKit()
+        guard self.status == .voting else { return }
         
         // FIXME: Isso pode dar um erro caso a casa esteja desatualizada.
         let totalUsers = self.house?.users.count

@@ -95,40 +95,46 @@ extension OpenVotesTableViewCell: OpenVotesDelegate {
     }
     
     func ruleApproved(rule: Rule, completion: @escaping ((Int) -> Void))  {
-        rule.upVotes += 1
-        
-        AppDelegate.repository.save(rule: rule) { (rule) in
-            // check if everybody already voted
-            guard let allUsersFromHome = rule.house?.users.count else {return}
-            
-            if rule.upVotes >= allUsersFromHome {
-                self.set(status: Rule.Status.inForce, for: rule)
-                self.delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
-                })
-            }
-            
-            let votesLeft = allUsersFromHome - rule.upVotes + rule.downVotes
-            completion(votesLeft)
-            
-            DispatchQueue.main.async {
-                self.sortAndReload()
+        rule.addVote(.upVote) { (success) in
+            if success {
+                AppDelegate.repository.save(rule: rule) { (rule) in
+                    // check if everybody already voted
+                    guard let allUsersFromHome = rule.house?.users.count else {return}
+                    
+                    if rule.upVotes >= allUsersFromHome {
+                        self.set(status: Rule.Status.inForce, for: rule)
+                        self.delegate?.ruleApproved(rule: rule, completion: { (votesLeft) in
+                        })
+                    }
+                    
+                    let votesLeft = allUsersFromHome - rule.upVotes + rule.downVotes
+                    completion(votesLeft)
+                    
+                    DispatchQueue.main.async {
+                        self.sortAndReload()
+                    }
+                }
             }
         }
+        
     }
     
     func ruleRejected(rule: Rule) {
-        rule.downVotes += 1
-        
-        AppDelegate.repository.save(rule: rule) { (rule) in
-            DispatchQueue.main.async {
-                self.sortAndReload()
-                
-                self.set(status: Rule.Status.revoked , for: rule)
-                
-                // just save and show approved modal
-                self.delegate?.ruleRejected(rule: rule)
+        rule.addVote(.downVote) { (success) in
+            if success {
+                AppDelegate.repository.save(rule: rule) { (rule) in
+                    DispatchQueue.main.async {
+                        self.sortAndReload()
+                        
+                        self.set(status: Rule.Status.revoked , for: rule)
+                        
+                        // just save and show approved modal
+                        self.delegate?.ruleRejected(rule: rule)
+                    }
+                }
             }
         }
+        
     }
 }
 
