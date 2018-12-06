@@ -56,6 +56,9 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             
             // If there's still some user left to vote
             voteStatus.setLabelText(votesLeft: self.votesLeft)
+            if let rule = self.rule {
+                voteStatus.setLabelText(votesLeft: rule.remainingVotes)
+            }
             
             // replace the current votingPrompt to voteStatus
             self.addSubview(voteStatus)
