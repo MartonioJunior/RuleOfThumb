@@ -87,8 +87,8 @@ class RuleDetailViewController: UIViewController {
     
     func setCreatorLabel(name: String?) {
         guard let name = name else { return }
-        let message = "Created by\n"+name
-        profileView.setProfileLabel(text: message)
+//        let message = "Created by\n"+name
+        profileView.setProfileLabel(text: name)
     }
     
     func confirmArchive() {

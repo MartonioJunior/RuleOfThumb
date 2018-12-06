@@ -18,6 +18,9 @@
 		2B281D8421B84C950000695F /* CreatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004AE5421A44E3E0020629B /* CreatorProfileView.swift */; };
 		2B281D8521B84C950000695F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BCFE21A2E6E30005339A /* ViewController.swift */; };
 		2B281D8621B84C950000695F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0021A2E6E30005339A /* Main.storyboard */; };
+		2B34E96C21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */; };
+		2B34E96D21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */; };
+		2B34E97121B95A1800066DC5 /* MeetingsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */; };
 		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
 		2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949121B6D61300813EAC /* CAGradientLayer.swift */; };
 		2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949321B6D72F00813EAC /* UINavigationBar.swift */; };
@@ -115,6 +118,9 @@
 		2B257B7F21B1865800D56DEC /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		2B257B8021B1865800D56DEC /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		2B257B8221B1865800D56DEC /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleEmptyTableViewCell.xib; sourceTree = "<group>"; };
+		2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeetingsList.storyboard; sourceTree = "<group>"; };
 		2BD3948F21B6C32F00813EAC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2BD3949121B6D61300813EAC /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
 		2BD3949321B6D72F00813EAC /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -254,6 +260,71 @@
 			path = Lato;
 			sourceTree = "<group>";
 		};
+		2B34E96721B94F0C00066DC5 /* RuleTableViewEmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */,
+				2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */,
+			);
+			path = RuleTableViewEmptyCell;
+			sourceTree = "<group>";
+		};
+		2B34E96E21B94F5F00066DC5 /* RuleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394CA21B8142900813EAC /* RuleTableViewCell.swift */,
+				2BD394C721B8142900813EAC /* RuleTableViewCell.xib */,
+			);
+			path = RuleTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B34E96F21B94F7800066DC5 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394C821B8142900813EAC /* HeaderCell.swift */,
+				2BD394C621B8142900813EAC /* HeaderCell.xib */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		2B34E97221B95C3D00066DC5 /* VotingStatus */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394BB21B8142900813EAC /* VotingStatusView.xib */,
+				2BD394C121B8142900813EAC /* VotingStatusView.swift */,
+			);
+			path = VotingStatus;
+			sourceTree = "<group>";
+		};
+		2B34E97321B95C4C00066DC5 /* VotingPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394BC21B8142900813EAC /* VotingPromptViewDelegate.swift */,
+				2BD394BF21B8142900813EAC /* VotingPromptView.xib */,
+				2BD394C021B8142900813EAC /* VotingPromptView.swift */,
+			);
+			path = VotingPrompt;
+			sourceTree = "<group>";
+		};
+		2B34E97421B95C5A00066DC5 /* OpenVotesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394BD21B8142900813EAC /* OpenVotesDelegate.swift */,
+				2BD394BE21B8142900813EAC /* OpenVotesTableViewCell.xib */,
+				2BD394C321B8142900813EAC /* OpenVotesTableViewCell.swift */,
+			);
+			path = OpenVotesTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B34E97721B95C8E00066DC5 /* RuleVotingCardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD394C221B8142900813EAC /* RuleVotingCardViewCell.xib */,
+				2BD394C421B8142900813EAC /* RuleVotingCardViewCell.swift */,
+			);
+			path = RuleVotingCardViewCell;
+			sourceTree = "<group>";
+		};
 		2BD3949721B8132A00813EAC /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,16 +370,10 @@
 		2BD394BA21B8142900813EAC /* RuleVotes */ = {
 			isa = PBXGroup;
 			children = (
-				2BD394BB21B8142900813EAC /* VotingStatusView.xib */,
-				2BD394BC21B8142900813EAC /* VotingPromptViewDelegate.swift */,
-				2BD394BD21B8142900813EAC /* OpenVotesDelegate.swift */,
-				2BD394BE21B8142900813EAC /* OpenVotesTableViewCell.xib */,
-				2BD394BF21B8142900813EAC /* VotingPromptView.xib */,
-				2BD394C021B8142900813EAC /* VotingPromptView.swift */,
-				2BD394C121B8142900813EAC /* VotingStatusView.swift */,
-				2BD394C221B8142900813EAC /* RuleVotingCardViewCell.xib */,
-				2BD394C321B8142900813EAC /* OpenVotesTableViewCell.swift */,
-				2BD394C421B8142900813EAC /* RuleVotingCardViewCell.swift */,
+				2B34E97721B95C8E00066DC5 /* RuleVotingCardViewCell */,
+				2B34E97421B95C5A00066DC5 /* OpenVotesTableViewCell */,
+				2B34E97321B95C4C00066DC5 /* VotingPrompt */,
+				2B34E97221B95C3D00066DC5 /* VotingStatus */,
 			);
 			path = RuleVotes;
 			sourceTree = "<group>";
@@ -318,11 +383,10 @@
 			children = (
 				2BD394E521B8238B00813EAC /* RuleListDelegate.swift */,
 				2BD394E321B814B100813EAC /* RuleList.storyboard */,
-				2BD394C621B8142900813EAC /* HeaderCell.xib */,
-				2BD394C721B8142900813EAC /* RuleTableViewCell.xib */,
-				2BD394C821B8142900813EAC /* HeaderCell.swift */,
+				2B34E96F21B94F7800066DC5 /* HeaderCell */,
+				2B34E96E21B94F5F00066DC5 /* RuleTableViewCell */,
+				2B34E96721B94F0C00066DC5 /* RuleTableViewEmptyCell */,
 				2BD394C921B8142900813EAC /* RuleListViewController.swift */,
-				2BD394CA21B8142900813EAC /* RuleTableViewCell.swift */,
 			);
 			path = RuleList;
 			sourceTree = "<group>";
@@ -465,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				3065BD3121A2EB990005339A /* .gitkeep */,
+				2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */,
 			);
 			path = Meetings;
 			sourceTree = "<group>";
@@ -644,6 +709,7 @@
 				2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */,
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
+				2B34E96D21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib in Resources */,
 				2BD394DE21B8142900813EAC /* HeaderCell.xib in Resources */,
 				E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */,
 				2BD394D721B8142900813EAC /* OpenVotesTableViewCell.xib in Resources */,
@@ -655,6 +721,7 @@
 				2B257B9021B1865800D56DEC /* Nunito-Bold.ttf in Resources */,
 				E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */,
 				E507C60621B1784200EEC7E7 /* HomeLogin.storyboard in Resources */,
+				2B34E97121B95A1800066DC5 /* MeetingsList.storyboard in Resources */,
 				2BD394D821B8142900813EAC /* VotingPromptView.xib in Resources */,
 				2BD394DB21B8142900813EAC /* RuleVotingCardViewCell.xib in Resources */,
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
@@ -725,6 +792,7 @@
 				2BD394E021B8142900813EAC /* HeaderCell.swift in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
+				2B34E96C21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift in Sources */,
 				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */,
 				5D2B432A21B1828B00A80354 /* User.swift in Sources */,

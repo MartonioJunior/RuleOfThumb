@@ -44,11 +44,13 @@ class RuleListViewController: UIViewController {
         
         registerForPreviewing(with: self, sourceView: rulesTableView)
         
-        rulesTableView.backgroundColor = UIColor.clear
-        
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = true
         navigationItem.searchController = searchController
         self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
+        
+        rulesTableView.backgroundColor = UIColor.clear
+//        rulesTableView.topAnchor.constraint(equalTo: self.navigationController?.navigationBar.bottomAnchor ?? self.view.topAnchor).isActive = true
 
     }
     
@@ -100,7 +102,7 @@ class RuleListViewController: UIViewController {
     
     func setRefreshControl() {
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        refreshControl.tintColor = .black
+        refreshControl.tintColor = UIColor.pastelRed90
         refreshControl.attributedTitle = NSAttributedString(string: "Searching new rules...")
     }
     
@@ -148,7 +150,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 return 1
             case 1:
-                return searchRules.count
+                return searchRules.count > 0 ? searchRules.count : 1
             default:
                 return 0
         }
@@ -179,14 +181,27 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func createRuleCell(indexPath: IndexPath) -> UITableViewCell {
-        var cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
-        if cell == nil {
-            rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
-            cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+        
+        if searchRules.count > 0 {
+            var cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+            if cell == nil {
+                rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
+                cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+            }
+            let rule = searchRules[indexPath.row]
+            cell?.rule = rule
+            return cell!
+        } else {
+            var cell = rulesTableView.dequeueReusableCell(withIdentifier: "emptyRule") as? RuleEmptyTableViewCell
+            
+            if cell == nil {
+                rulesTableView.register(UINib(nibName: "RuleEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyRule")
+                cell = rulesTableView.dequeueReusableCell(withIdentifier: "emptyRule") as? RuleEmptyTableViewCell
+            }
+            
+            return cell!
         }
-        let rule = searchRules[indexPath.row]
-        cell?.rule = rule
-        return cell!
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -194,9 +209,9 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 var cell = rulesTableView.cellForRow(at: indexPath) as? RuleTableViewCell
                 
-                UIView.animate(withDuration: 0.3, animations: {
-                    cell?.cardView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                }, completion: nil)
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    cell?.cardView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+//                }, completion: nil)
                 
                 performSegue(withIdentifier: "detail", sender: searchRules[indexPath.row])
                 break
@@ -206,7 +221,14 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return false
+        switch indexPath.section {
+        case 0:
+            return false
+        case 1:
+            return true
+        default:
+            return false
+        }
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
