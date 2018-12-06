@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
         // TODO: Colocar toda essa lógica em outro lugar mais apropriado.
         if let userInfo = userInfo as? [String: NSObject] {
             let notification = CKNotification(fromRemoteNotificationDictionary: userInfo)
@@ -59,7 +58,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 CloudKitRepository.fetchById(recordID!) { (record) in
                     guard let record = record else { return }
-                    print(record)
+                    let rule = Rule(from: record)
+                    switch rule.status {
+                        case .inForce:
+                            self.notificationManager.sendRuleApprovedNotification(rule: rule)
+                            break
+                        case .voting:
+                            self.notificationManager.sendRuleProposalNotification(rule: rule)
+                            break
+                        case .revoked:
+                            self.notificationManager.sendRuleRejectedNotification(rule: rule)
+                            break
+                        
+                    }
                 }
             }
         }

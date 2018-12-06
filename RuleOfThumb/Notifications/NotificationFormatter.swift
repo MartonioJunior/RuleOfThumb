@@ -18,11 +18,10 @@ class NotificationFormatter {
             content.badge = 1
         }
         content.threadIdentifier = "ruleProposed"
-        content.summaryArgument = " new rules proposed"
         
         let agreeAction = UNNotificationAction(identifier: "agree", title: "Agree", options: [])
         let disagreeAction = UNNotificationAction(identifier: "disagree", title: "Disagree", options: [])
-        let category = UNNotificationCategory(identifier: "votation", actions: [agreeAction, disagreeAction], intentIdentifiers: [], options: [])
+        let category = UNNotificationCategory(identifier: "votation", actions: [agreeAction, disagreeAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: nil, categorySummaryFormat: "%u new rules proposed", options: [])
         UNUserNotificationCenter.current().setNotificationCategories([category])
         content.categoryIdentifier = "votation"
         return content
@@ -32,7 +31,9 @@ class NotificationFormatter {
         content.title = "Rule approved"
         content.body = ruleName
         content.threadIdentifier = "ruleApproved"
-        content.summaryArgument = " new rules approved"
+        let category = UNNotificationCategory(identifier: "approval", actions: [], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: nil, categorySummaryFormat: "%u new rules approved", options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        content.categoryIdentifier = "approval"
         return content
     }
     
@@ -40,7 +41,9 @@ class NotificationFormatter {
         content.title = "Rule rejected"
         content.body = ruleName
         content.threadIdentifier = "ruleRejected"
-        content.summaryArgument = " new rules rejected"
+        let category = UNNotificationCategory(identifier: "reject", actions: [], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: nil, categorySummaryFormat: "%u new rules rejected", options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        content.categoryIdentifier = "reject"
         return content
     }
 }

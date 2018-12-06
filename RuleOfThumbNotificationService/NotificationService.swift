@@ -22,8 +22,16 @@ class NotificationService: UNNotificationServiceExtension {
             return
         }
         
-        if queryID.hasPrefix("Rules.") {
-                bestAttemptContent = NotificationFormatter.adaptRuleProposalNotification(ruleID: "", ruleName: "", content: bestAttemptContent)
+        if queryID.hasPrefix("Rules."), let recordArgs = record["af"] as? [String:Any], let ruleName = recordArgs["name"] as? String {
+            if let ruleStatus = recordArgs["status"] as? Int {
+                if ruleStatus == 1 {
+                    bestAttemptContent = NotificationFormatter.adaptRuleRejectionNotification(ruleID: queryID, ruleName: ruleName, content: bestAttemptContent)
+                } else if ruleStatus == 2 {
+                    bestAttemptContent = NotificationFormatter.adaptRuleApprovalNotification(ruleID: queryID, ruleName: ruleName, content: bestAttemptContent)
+                }
+            } else {
+                bestAttemptContent = NotificationFormatter.adaptRuleProposalNotification(ruleID: queryID, ruleName: ruleName, content: bestAttemptContent)
+            }
         }
         
         contentHandler(bestAttemptContent)
