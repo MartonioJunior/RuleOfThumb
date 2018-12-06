@@ -35,6 +35,7 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D15263421B93E56009377F7 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15263321B93E56009377F7 /* Meeting.swift */; };
 		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
 		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
 		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
@@ -130,6 +131,7 @@
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D15263321B93E56009377F7 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
+				5D15263321B93E56009377F7 /* Meeting.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				E507C5F221B0035300EEC7E7 /* VotingPromptView.swift in Sources */,
 				E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */,
 				E507C5F321B0035300EEC7E7 /* OpenVotesTableViewCell.swift in Sources */,
+				5D15263421B93E56009377F7 /* Meeting.swift in Sources */,
 				E507C5D421B0033600EEC7E7 /* RuleCreateViewController.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
 			);
