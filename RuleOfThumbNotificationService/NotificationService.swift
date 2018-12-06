@@ -7,6 +7,7 @@
 //
 
 import UserNotifications
+import CloudKit
 
 class NotificationService: UNNotificationServiceExtension {
 
@@ -17,12 +18,15 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
-        if let bestAttemptContent = bestAttemptContent {
-            // Modify the notification content here...
-            bestAttemptContent.title = "Nova regra: \(bestAttemptContent.title)"
-            
-            contentHandler(bestAttemptContent)
+        guard var bestAttemptContent = bestAttemptContent, let ck = request.content.userInfo["ck"] as? [String:Any], let record = ck["qry"] as? [String:Any], let queryID = record["rid"] as? String else {
+            return
         }
+        
+        if queryID.hasPrefix("Rules.") {
+                bestAttemptContent = NotificationFormatter.adaptRuleProposalNotification(ruleID: "", ruleName: "", content: bestAttemptContent)
+        }
+        
+        contentHandler(bestAttemptContent)
     }
     
     override func serviceExtensionTimeWillExpire() {

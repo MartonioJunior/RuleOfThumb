@@ -34,56 +34,21 @@ class NotificationManager: NSObject {
     }
     
     func sendRuleProposalNotification(rule: Rule) {
-        let notificationContent = self.adaptRuleProposalNotification(rule: rule, content: UNMutableNotificationContent())
+        let notificationContent = NotificationFormatter.adaptRuleProposalNotification(ruleID: rule.recordName, ruleName: rule.name, content: UNMutableNotificationContent())
         guard let recordName = rule.recordName else { return }
         self.addRequestToNotificationCenter(with: notificationContent, forIdentifier: "Proposed.\(recordName)")
     }
     
-    func adaptRuleProposalNotification(rule: Rule, content: UNMutableNotificationContent) -> UNMutableNotificationContent {
-        content.title = "New rule proposed"
-        content.body = rule.name
-        if let numberNotification = content.badge {
-            content.badge = NSNumber(integerLiteral: numberNotification.intValue + 1)
-        } else {
-            content.badge = 1
-        }
-        content.threadIdentifier = "ruleProposed"
-        content.summaryArgument = " new rules proposed"
-        
-        let agreeAction = UNNotificationAction(identifier: "agree", title: "Agree", options: [])
-        let disagreeAction = UNNotificationAction(identifier: "disagree", title: "Disagree", options: [])
-        let category = UNNotificationCategory(identifier: "votation", actions: [agreeAction, disagreeAction], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([category])
-        content.categoryIdentifier = "votation"
-        return content
-    }
-    
     func sendRuleApprovedNotification(rule: Rule) {
-        let notificationContent = adaptRuleApprovalNotification(rule: rule, content: UNMutableNotificationContent())
+        let notificationContent = NotificationFormatter.adaptRuleApprovalNotification(ruleID: rule.recordName, ruleName: rule.name, content: UNMutableNotificationContent())
         guard let recordName = rule.recordName else { return }
         self.addRequestToNotificationCenter(with: notificationContent, forIdentifier: "Approved.\(recordName)")
     }
     
-    func adaptRuleApprovalNotification(rule: Rule, content: UNMutableNotificationContent) -> UNMutableNotificationContent {
-        content.title = "Rule approved"
-        content.body = rule.name
-        content.threadIdentifier = "ruleApproved"
-        content.summaryArgument = " new rules approved"
-        return content
-    }
-    
     func sendRuleRejectedNotification(rule: Rule) {
-        let notificationContent = adaptRuleRejectionNotification(rule: rule, content: UNMutableNotificationContent())
+        let notificationContent = NotificationFormatter.adaptRuleRejectionNotification(ruleID: rule.recordName, ruleName: rule.name, content: UNMutableNotificationContent())
         guard let recordName = rule.recordName else { return }
         self.addRequestToNotificationCenter(with: notificationContent, forIdentifier: "Rejected.\(recordName)")
-    }
-    
-    func adaptRuleRejectionNotification(rule: Rule, content: UNMutableNotificationContent) -> UNMutableNotificationContent {
-        content.title = "Rule rejected"
-        content.body = rule.name
-        content.threadIdentifier = "ruleRejected"
-        content.summaryArgument = " new rules rejected"
-        return content
     }
     
     func removeNotifications(ofProposed rule: Rule) {
