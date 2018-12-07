@@ -11,21 +11,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meetings-->
         <scene sceneID="4Eb-30-Epk">
             <objects>
-                <viewController id="2cO-c1-qiN" sceneMemberID="viewController">
+                <viewController id="2cO-c1-qiN" customClass="MeetingsListViewController" customModule="RuleOfThumb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qn6-Ze-B54">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tdf-Nk-efH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tdf-Nk-efH" firstAttribute="top" secondItem="nBD-FF-dHL" secondAttribute="top" id="abn-VN-qmY"/>
+                            <constraint firstItem="tdf-Nk-efH" firstAttribute="trailing" secondItem="nBD-FF-dHL" secondAttribute="trailing" id="bPd-Z4-pac"/>
+                            <constraint firstItem="tdf-Nk-efH" firstAttribute="leading" secondItem="nBD-FF-dHL" secondAttribute="leading" id="mMt-Ay-2g1"/>
+                            <constraint firstItem="tdf-Nk-efH" firstAttribute="bottom" secondItem="nBD-FF-dHL" secondAttribute="bottom" id="rcg-g6-0Wb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nBD-FF-dHL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qgd-wa-2oG"/>
+                    <navigationItem key="navigationItem" title="Meetings" id="qgd-wa-2oG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a90-ft-MSe">
+                            <color key="tintColor" name="pastelRed90"/>
+                            <connections>
+                                <segue destination="UKy-Bg-30h" kind="presentation" id="Ik5-KK-nJU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="meetingsListTableView" destination="tdf-Nk-efH" id="dqH-7T-3Ou"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXC-po-0AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="53.523238380809602"/>
+        </scene>
+        <!--meetingsCreate-->
+        <scene sceneID="f0d-H0-l4A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MeetingsCreate" referencedIdentifier="meetingsCreate" id="UKy-Bg-30h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceh-S7-8uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="-90"/>
         </scene>
         <!--Meetings-->
         <scene sceneID="SiJ-3x-L6c">
@@ -36,8 +66,8 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="quo-el-mR9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="quo-el-mR9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -53,6 +83,9 @@
     <resources>
         <namedColor name="dusk90">
             <color red="0.33700001239776611" green="0.29399999976158142" blue="0.42699998617172241" alpha="0.89499998092651367" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pastelRed90">
+            <color red="0.90200001001358032" green="0.37599998712539673" blue="0.35699999332427979" alpha="0.90200001001358032" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
