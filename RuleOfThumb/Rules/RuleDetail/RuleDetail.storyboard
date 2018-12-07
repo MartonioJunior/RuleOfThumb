@@ -78,7 +78,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZj-cT-tf2">
-                                        <rect key="frame" x="0.0" y="373" width="262.5" height="20.5"/>
+                                        <rect key="frame" x="65.5" y="373" width="131" height="20.5"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -86,7 +86,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="jZj-cT-tf2" firstAttribute="width" secondItem="iaO-9G-dxa" secondAttribute="width" id="K05-fy-CQx"/>
+                                    <constraint firstItem="jZj-cT-tf2" firstAttribute="width" secondItem="iaO-9G-dxa" secondAttribute="width" multiplier="0.5" id="K05-fy-CQx"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -113,6 +113,10 @@
                         <outlet property="profileView" destination="7g2-Ab-D9f" id="pJx-qu-Wri"/>
                         <outlet property="statusLabel" destination="jZj-cT-tf2" id="djG-hX-3M6"/>
                         <outlet property="titleLabel" destination="56d-WP-Bs4" id="4Oa-sX-q0D"/>
+                        <outletCollection property="separatorViews" destination="tcK-6z-FIh" collectionClass="NSMutableArray" id="CbT-eT-BV7"/>
+                        <outletCollection property="separatorViews" destination="TS2-k7-ZFv" collectionClass="NSMutableArray" id="Ym4-dr-jfo"/>
+                        <outletCollection property="separatorViews" destination="kNS-wf-28y" collectionClass="NSMutableArray" id="ftL-9j-J5g"/>
+                        <outletCollection property="separatorViews" destination="WLa-EL-abQ" collectionClass="NSMutableArray" id="Vr5-Uh-rVi"/>
                         <segue destination="zfI-Zt-4XL" kind="presentation" identifier="modal" id="sqn-CZ-oA4"/>
                     </connections>
                 </viewController>

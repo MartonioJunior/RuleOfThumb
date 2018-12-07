@@ -23,8 +23,16 @@ class RulePeekView: XibView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
     override func layoutSubviews() {
         self.contentView.frame = self.mainView.frame
+        mainView.addRoundedBorder()
+        contentView.addRoundedBorder()
+        setupStyle()
     }
     
     override var nibName: String {
@@ -41,6 +49,17 @@ class RulePeekView: XibView {
             message += "in \(dateFormatter.string(from: date))"
         }
         dateAuthorLabel.text = message+" by "+(author ?? "")
+    }
+    
+    func setupStyle() {
+        ruleTitleLabel.font = UIFont.primaryText
+        ruleTitleLabel.textColor = UIColor.dusk
+        
+        dateAuthorLabel.font = UIFont.terciaryText
+        dateAuthorLabel.textColor = UIColor.dusk80
+        
+        ruleDescriptionLabel.font = UIFont.secondaryText
+        ruleDescriptionLabel.textColor = UIColor.dusk80
     }
     
 }
