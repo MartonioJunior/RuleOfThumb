@@ -60,7 +60,6 @@
 		300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A58B321A5A32B000160DF /* UIAlertController.swift */; };
 		300A5C4421AC1B0700C6013D /* XibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300A5C4321AC1B0700C6013D /* XibView.xib */; };
 		300CCED521B94692002B0527 /* NotificationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300CCED421B94692002B0527 /* NotificationFormatter.swift */; };
-		300D159821B1578400F23AA0 /* ActionlessRuleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */; };
 		300D58E121AD6E8300766ECF /* SugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E021AD6E8300766ECF /* SugestionViewController.swift */; };
 		300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */; };
 		301995C421B5507B00D86396 /* RuleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301995C321B5507B00D86396 /* RuleModelTests.swift */; };
@@ -71,8 +70,6 @@
 		3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0821A2E6E50005339A /* LaunchScreen.storyboard */; };
 		3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */; };
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
-		3065BD3C21A2EEBF0005339A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3065BD3B21A2EEBF0005339A /* CloudKit.framework */; };
-		30ABEA5921B6BC6E008C03A3 /* RuleListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */; };
 		30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */; };
 		30ABEA6521B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
@@ -83,6 +80,9 @@
 		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
 		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
 		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
+		5D4A935421BA962D0027362A /* NotificationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300CCED421B94692002B0527 /* NotificationFormatter.swift */; };
+		5D4A935621BAA20E0027362A /* CloudKitRepository+Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */; };
+		5D4A935821BAAFF10027362A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4A935721BAAFF10027362A /* CloudKit.framework */; };
 		E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */; };
 		E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */; };
 		E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */; };
@@ -189,7 +189,6 @@
 		300A58B321A5A32B000160DF /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		300A5C4321AC1B0700C6013D /* XibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibView.xib; sourceTree = "<group>"; };
 		300CCED421B94692002B0527 /* NotificationFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFormatter.swift; sourceTree = "<group>"; };
-		300D159721B1578400F23AA0 /* ActionlessRuleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionlessRuleDetailViewController.swift; sourceTree = "<group>"; };
 		300D58E021AD6E8300766ECF /* SugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionViewController.swift; sourceTree = "<group>"; };
 		300D58E221AD6FD800766ECF /* SugestionModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalViewDelegate.swift; sourceTree = "<group>"; };
 		301995C321B5507B00D86396 /* RuleModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleModelTests.swift; sourceTree = "<group>"; };
@@ -211,8 +210,6 @@
 		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
-		3065BD3B21A2EEBF0005339A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		30ABEA5821B6BC6E008C03A3 /* RuleListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleListDelegate.swift; sourceTree = "<group>"; };
 		30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuleOfThumbNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		30ABEA6221B7F8A2008C03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +221,8 @@
 		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
+		5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitRepository+Subscriptions.swift"; sourceTree = "<group>"; };
+		5D4A935721BAAFF10027362A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeCreate.storyboard; sourceTree = "<group>"; };
 		E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCreateViewController.swift; sourceTree = "<group>"; };
 		E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoginViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4A935821BAAFF10027362A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,14 +376,6 @@
 			path = RuleVotingEmptyCardViewCell;
 			sourceTree = "<group>";
 		};
-		2BD3949721B8132A00813EAC /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			path = Rules;
-			sourceTree = "<group>";
-		};
 		2BD394AE21B8142900813EAC /* Rules */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +496,7 @@
 				30ABEA5F21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
 				3065BCFA21A2E6E30005339A /* Products */,
 				3065BD3A21A2EEBF0005339A /* Frameworks */,
+				5D4A935B21BABFF50027362A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -573,7 +566,6 @@
 		3065BD2F21A2EB240005339A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				2BD3949721B8132A00813EAC /* New Group */,
 				5D2B432721B1828400A80354 /* NotificationManager.swift */,
 				300CCED421B94692002B0527 /* NotificationFormatter.swift */,
 			);
@@ -592,6 +584,7 @@
 		3065BD3A21A2EEBF0005339A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D4A935721BAAFF10027362A /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -622,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */,
+				5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
@@ -643,6 +637,13 @@
 				5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */,
 			);
 			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		5D4A935B21BABFF50027362A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E507C5FC21B00D2800EEC7E7 /* Homes */ = {
@@ -880,9 +881,7 @@
 				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
 				2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */,
 				2BD394DA21B8142900813EAC /* VotingStatusView.swift in Sources */,
-				3004AE5621A44E3E0020629B /* CreatorProfileView.swift in Sources */,
 				300CCED521B94692002B0527 /* NotificationFormatter.swift in Sources */,
-				3065BCFF21A2E6E30005339A /* ViewController.swift in Sources */,
 				5D08B56521A598C900FBF73A /* Rule.swift in Sources */,
 				5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */,
 				2BD394CE21B8142900813EAC /* RuleDetailDelegate.swift in Sources */,
@@ -910,6 +909,7 @@
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
+				5D4A935621BAA20E0027362A /* CloudKitRepository+Subscriptions.swift in Sources */,
 				2BD394DC21B8142900813EAC /* OpenVotesTableViewCell.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
 				2BD394D321B8142900813EAC /* RuleDetailViewController.swift in Sources */,
@@ -939,6 +939,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */,
+				5D4A935421BA962D0027362A /* NotificationFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,13 +1106,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1125,13 +1126,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1144,7 +1145,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1165,7 +1166,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1185,7 +1186,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1205,7 +1206,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1224,14 +1225,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb.RuleOfThumbNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1243,14 +1244,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = somanydeadlines.RuleOfThumb.RuleOfThumbNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
