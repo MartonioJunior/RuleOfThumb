@@ -22,13 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-default" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-rS-YlK">
-                    <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
+                    <rect key="frame" x="0.0" y="-1" width="45" height="45"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="45" id="aIp-cg-HAp"/>
                         <constraint firstAttribute="width" constant="45" id="hnp-jc-Qem"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-av-Ndx">
-                    <rect key="frame" x="60" y="0.0" width="100" height="44"/>
+                    <rect key="frame" x="60" y="-1" width="100" height="45"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -40,7 +41,6 @@
                 <constraint firstItem="Fvy-rS-YlK" firstAttribute="bottom" secondItem="I5f-av-Ndx" secondAttribute="bottom" id="YDR-lp-ge2"/>
                 <constraint firstItem="Fvy-rS-YlK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gsK-hQ-YIp"/>
                 <constraint firstItem="I5f-av-Ndx" firstAttribute="leading" secondItem="Fvy-rS-YlK" secondAttribute="trailing" constant="15" id="l80-yA-LD6"/>
-                <constraint firstItem="Fvy-rS-YlK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lB5-M2-hjZ"/>
                 <constraint firstItem="Fvy-rS-YlK" firstAttribute="top" secondItem="I5f-av-Ndx" secondAttribute="top" id="soc-ed-sB3"/>
                 <constraint firstItem="Fvy-rS-YlK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="z4f-yC-j8B"/>
             </constraints>

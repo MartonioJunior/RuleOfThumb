@@ -10,6 +10,7 @@ import UIKit
 
 class SugestionViewController: UIViewController, SugestionModalViewDelegate {
     @IBOutlet weak var modalView: SugestionModalView!
+    var modalImage: UIImage = UIImage()
     var modalTitle: String = ""
     var modalDescription: String = ""
     var firstButtonTitle: String = ""
@@ -22,6 +23,7 @@ class SugestionViewController: UIViewController, SugestionModalViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let modalView = modalView else { return }
+        modalView.setModalImageView(modalImage)
         modalView.setTitleLabel(text: modalTitle)
         modalView.setDescriptionLabel(text: modalDescription)
         modalView.setFirstButtonTitle(text: firstButtonTitle)

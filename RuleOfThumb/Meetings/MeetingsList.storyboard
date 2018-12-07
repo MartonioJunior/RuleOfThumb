@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TFk-QC-2UX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4Eb-30-Epk">
+            <objects>
+                <viewController id="2cO-c1-qiN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qn6-Ze-B54">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nBD-FF-dHL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qgd-wa-2oG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXC-po-0AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="53.523238380809602"/>
+        </scene>
+        <!--Meetings-->
+        <scene sceneID="SiJ-3x-L6c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFk-QC-2UX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meetings" id="5pS-Dz-rbp">
+                        <color key="badgeColor" name="dusk90"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="quo-el-mR9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2cO-c1-qiN" kind="relationship" relationship="rootViewController" id="qRd-4G-KFp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k74-6v-Uwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="53.523238380809602"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="dusk90">
+            <color red="0.33700001239776611" green="0.29399999976158142" blue="0.42699998617172241" alpha="0.89499998092651367" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -11,6 +11,7 @@ import UIKit
 class CreatorProfileView: XibView {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileLabel: UILabel!
+    
     override var nibName: String {
         get {
            return "CreatorProfileView"
@@ -26,8 +27,15 @@ class CreatorProfileView: XibView {
         profileImage.image = image
     }
     
-    func setProfileLabel(text: NSAttributedString?) {
-        guard let profileLabel = profileLabel else { return }
-        profileLabel.attributedText = text
+    func setProfileLabel(text: String?) {
+        guard let profileLabel = profileLabel, let text = text else { return }
+        
+        let creatorString = NSMutableAttributedString(string: "Created by\n"+text, attributes: nil)
+        creatorString.addAttribute(.font, value: UIFont.primaryTextCentralized, range: NSRange(location: 0, length: creatorString.string.count))
+        creatorString.addAttribute(.foregroundColor, value: UIColor.dusk80, range: NSRange(location: 0, length: creatorString.string.count))
+        creatorString.addAttribute(.kern, value: -0.43, range: NSRange(location: 0, length: creatorString.string.count))
+        creatorString.addAttribute(.font, value: UIFont.terciaryTextCentralized, range: NSRange(location: 0, length: 11))
+        
+        profileLabel.attributedText = creatorString
     }
 }
