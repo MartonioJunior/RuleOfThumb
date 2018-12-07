@@ -22,7 +22,8 @@ class CloudKitRepository {
     }
     
     static func fetchById(_ id: CKRecord.ID, then completion: @escaping ((CKRecord?) -> Void)) {
-        CKContainer.default().publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
+        let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome")
+        container.publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
             guard let record = record, error == nil else {
                 print("On CloudKitRepository: \(error!.localizedDescription)")
                 completion(nil)

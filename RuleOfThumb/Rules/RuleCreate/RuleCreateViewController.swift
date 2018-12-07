@@ -80,9 +80,13 @@ class RuleCreateViewController: UIViewController {
         AppDelegate.repository.currentHouse { (house) in
             guard let house = house else { return }
             
-            let newRule = Rule(name: name, description: reason, house: house)
-            appDelegate.repository.save(rule: newRule, then: { (rule) in
-                self.delegate?.proposedNewRule(rule)
+            AppDelegate.repository.getUser(then: { (user) in
+                if let username = user.name {
+                    let newRule = Rule(name: name, description: reason, house: house, creatorName: username)
+                    appDelegate.repository.save(rule: newRule, then: { (rule) in
+                        self.delegate?.proposedNewRule(rule)
+                    })
+                }
             })
         }
     }

@@ -19,7 +19,7 @@ class RulePeekView: XibView {
         didSet {
             self.ruleTitleLabel.text = rule?.name
             self.ruleDescriptionLabel.text = rule?.description
-            self.setDateAuthorLabel(date: rule?.validFrom, author: rule?.house?.name)
+            self.setDateAuthorLabel(date: rule?.validFrom, author: rule?.creatorName)
         }
     }
     

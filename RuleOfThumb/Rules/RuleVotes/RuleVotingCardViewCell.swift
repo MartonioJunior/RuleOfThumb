@@ -23,7 +23,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             
             //Set the values of the current rule
             self.setNameLabel(ruleName: rule.name)
-            self.setCreatorLabel(creatorName: rule.house?.name ?? "")
+            self.setCreatorLabel(creatorName: rule.creatorName ?? "")
             
             // Check in core data if rule was already voted by current user
             votesLeft = rule.remainingVotes
