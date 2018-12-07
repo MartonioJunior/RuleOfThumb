@@ -20,6 +20,8 @@ class OpenVotesTableViewCell: UITableViewCell {
         
         contentView.backgroundColor = UIColor.almostWhite
         votesView.backgroundColor = UIColor.almostWhite
+        
+        votesView.register(UINib(nibName: "RuleVotingEmptyCardViewCell", bundle: nil), forCellWithReuseIdentifier: "EmptyVoteCard")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,19 +50,32 @@ class OpenVotesTableViewCell: UITableViewCell {
 // - MARK: CollectionView Delegate & Data Source
 extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  data.count
+        return  data.count > 0 ? data.count : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
-        if cell == nil {
-            votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
-            cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
+        if data.count > 0 {
+            var cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
+            if cell == nil {
+                votesView.register(UINib(nibName: "RuleVotingCardViewCell", bundle: nil), forCellWithReuseIdentifier: "VoteCard")
+                cell = votesView.dequeueReusableCell(withReuseIdentifier: "VoteCard", for: indexPath) as? RuleVotingCardViewCell
+            }
+            let rule = data[indexPath.row]
+            cell?.rule = rule
+            cell?.delegate = self
+            return cell!
+        } else {
+            
+            var cell = votesView.dequeueReusableCell(withReuseIdentifier: "EmptyVoteCard", for: indexPath) as? RuleVotingEmptyCardViewCell
+            
+            if cell == nil {
+                votesView.register(UINib(nibName: "RuleVotingEmptyCardViewCell", bundle: nil), forCellWithReuseIdentifier: "EmptyVoteCard")
+                cell = votesView.dequeueReusableCell(withReuseIdentifier: "EmptyVoteCard", for: indexPath) as? RuleVotingEmptyCardViewCell
+            }
+            
+            return cell!
         }
-        let rule = data[indexPath.row]
-        cell?.rule = rule
-        cell?.delegate = self
-        return cell!
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

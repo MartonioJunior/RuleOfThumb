@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SugestionModalView" customModule="RuleOfThumb" customModuleProvider="target">
             <connections>
+                <outlet property="cardView" destination="JYZ-wk-Lvh" id="mes-lR-BuB"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="UQb-K7-bVa"/>
                 <outlet property="firstActionButton" destination="seU-0S-UPf" id="iIB-Te-gnS"/>
                 <outlet property="modalDescriptionLabel" destination="egx-R3-I7M" id="vvw-Ed-t0T"/>
@@ -75,7 +77,6 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="J64-D8-tSv" firstAttribute="top" secondItem="JYZ-wk-Lvh" secondAttribute="top" constant="16" id="3ek-gB-pEt"/>
                         <constraint firstAttribute="trailing" secondItem="J64-D8-tSv" secondAttribute="trailing" constant="16" id="P73-qp-hbK"/>
@@ -84,7 +85,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JYZ-wk-Lvh" secondAttribute="bottom" id="8ER-fU-TfT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JYZ-wk-Lvh" secondAttribute="trailing" id="XLC-SP-lIh"/>

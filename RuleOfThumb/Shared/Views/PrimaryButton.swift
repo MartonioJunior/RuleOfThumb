@@ -29,10 +29,10 @@ class PrimaryButton: UIButton {
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         
-//        var image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
-//        self.backgroundColor = UIColor.init(patternImage: image!)
+        var image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
+        self.backgroundColor = UIColor.init(patternImage: image!)
         
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        self.titleLabel?.font = UIFont.actionText
         self.setTitleColor(UIColor.white, for: .normal)
     
         

@@ -72,6 +72,7 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? SugestionViewController, let modalType = sender as? ModalType else { return }
             switch modalType {
                 case .ruleCreated:
+                    destination.modalImage = UIImage(named: "voting-feedback-illustration")!
                     destination.modalTitle = "Your rule has been proposed!"
                     destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
                     destination.firstButtonIsHidden = true

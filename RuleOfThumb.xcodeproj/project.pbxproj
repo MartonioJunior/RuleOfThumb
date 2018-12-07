@@ -21,6 +21,8 @@
 		2B34E96C21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */; };
 		2B34E96D21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */; };
 		2B34E97121B95A1800066DC5 /* MeetingsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */; };
+		2BA466C121BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA466BF21BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift */; };
+		2BA466C221BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */; };
 		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
 		2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949121B6D61300813EAC /* CAGradientLayer.swift */; };
 		2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949321B6D72F00813EAC /* UINavigationBar.swift */; };
@@ -121,6 +123,8 @@
 		2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeetingsList.storyboard; sourceTree = "<group>"; };
+		2BA466BF21BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleVotingEmptyCardViewCell.swift; sourceTree = "<group>"; };
+		2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleVotingEmptyCardViewCell.xib; sourceTree = "<group>"; };
 		2BD3948F21B6C32F00813EAC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2BD3949121B6D61300813EAC /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
 		2BD3949321B6D72F00813EAC /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -325,6 +329,15 @@
 			path = RuleVotingCardViewCell;
 			sourceTree = "<group>";
 		};
+		2BA466BE21BA8E3D006DE1BC /* RuleVotingEmptyCardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BA466BF21BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift */,
+				2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */,
+			);
+			path = RuleVotingEmptyCardViewCell;
+			sourceTree = "<group>";
+		};
 		2BD3949721B8132A00813EAC /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +383,7 @@
 		2BD394BA21B8142900813EAC /* RuleVotes */ = {
 			isa = PBXGroup;
 			children = (
+				2BA466BE21BA8E3D006DE1BC /* RuleVotingEmptyCardViewCell */,
 				2B34E97721B95C8E00066DC5 /* RuleVotingCardViewCell */,
 				2B34E97421B95C5A00066DC5 /* OpenVotesTableViewCell */,
 				2B34E97321B95C4C00066DC5 /* VotingPrompt */,
@@ -705,6 +719,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA466C221BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib in Resources */,
 				2B257B8C21B1865800D56DEC /* Nunito-ExtraBold.ttf in Resources */,
 				2B257B8E21B1865800D56DEC /* Nunito-Black.ttf in Resources */,
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
@@ -759,6 +774,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA466C121BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift in Sources */,
 				2BD394D921B8142900813EAC /* VotingPromptView.swift in Sources */,
 				E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
