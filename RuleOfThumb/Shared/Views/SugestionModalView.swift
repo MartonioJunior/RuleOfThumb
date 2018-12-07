@@ -28,7 +28,11 @@ class SugestionModalView: XibView {
         let image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
         
         self.secondActionButton.backgroundColor = UIColor.init(patternImage: image!)
-        cardView.addRoundedBorder()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        cardView.addRoundedBorder()
     }
     
     func setDelegate(_ del: SugestionModalViewDelegate) {
