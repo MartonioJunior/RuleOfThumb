@@ -79,6 +79,7 @@ class RuleListViewController: UIViewController {
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleApproved:
+                    destination.modalImage = UIImage(named: "approved-feedback-illustration")!
                     destination.modalTitle = "The rule has been approved!"
                     destination.modalDescription = "The rule got the majority of votes and now everyone must follow it"
                     destination.firstButtonIsHidden = true
