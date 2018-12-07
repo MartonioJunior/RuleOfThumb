@@ -28,20 +28,8 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             self.setCreatorLabel(creatorName: rule.house?.name ?? "")
             
             // Check in core data if rule was already voted by current user
-            guard CoreDataManager.current.getVote(rule: rule) == nil else {
-                self.setUpView(voted: true)
-                return
-            }
-            
-            // get the actual rule and check if it was already voted
-            guard let ruleRecordName = rule.recordName else { return }
-            let rulesVoted = CoreDataManager.current.fetch(predicate: "ruleRecordName == %@", arg: ruleRecordName)
-            if rulesVoted.count > 0 {
-                self.setUpView(voted: true)
-            } else {
-                self.setUpView(voted: false)
-            }
-            
+            votesLeft = rule.remainingVotes
+            self.setUpView(voted: CoreDataManager.current.getVote(rule: rule) != nil)
         }
     }
     
@@ -63,9 +51,6 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             
             // If there's still some user left to vote
             voteStatus.setLabelText(votesLeft: self.votesLeft)
-            if let rule = self.rule {
-                voteStatus.setLabelText(votesLeft: rule.remainingVotes)
-            }
             
             // replace the current votingPrompt to voteStatus
             self.addSubview(voteStatus)
@@ -73,7 +58,7 @@ class RuleVotingCardViewCell: UICollectionViewCell{
             votingPrompt = voteStatus
         } else {
             let votePrompt = VotingPromptView()
-            //votePrompt.backgroundColor = self.backgroundColor
+            //votePrompt.ba ckgroundColor = self.backgroundColor
             votePrompt.frame = votingPrompt.frame
             
             // replace the current votingPrompt to voteStatus
