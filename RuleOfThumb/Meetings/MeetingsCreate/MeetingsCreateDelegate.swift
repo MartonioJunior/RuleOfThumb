@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MeetingsCreateDelegate {
-    func proposedNewMeeting(_ meeting: Rule)
+    func proposedNewMeeting(_ meeting: Meeting)
 }

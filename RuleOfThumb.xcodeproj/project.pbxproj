@@ -234,7 +234,6 @@
 		3065BD1B21A2E6E50005339A /* RuleOfThumbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuleOfThumbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleOfThumbUITests.swift; sourceTree = "<group>"; };
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuleOfThumbNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -667,7 +666,6 @@
 				2B9E2DCD21BB1577008423F1 /* MeetingsDetail */,
 				2B9E2DC121BAAB79008423F1 /* MeetingsCreate */,
 				2B9E2DBC21BAA98A008423F1 /* MeetingsListEmptyTableViewCell */,
-				3065BD3121A2EB990005339A /* .gitkeep */,
 				2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */,
 				2BAD436321BAA09000C11834 /* MeetingsListViewController.swift */,
 				2B9E2DB721BAA70E008423F1 /* MeetingsListTableViewCell */,
@@ -1010,11 +1008,7 @@
 				2BAD435F21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
-				E507C5F221B0035300EEC7E7 /* VotingPromptView.swift in Sources */,
-				E507C5F621B0035300EEC7E7 /* VotingPromptViewDelegate.swift in Sources */,
-				E507C5F321B0035300EEC7E7 /* OpenVotesTableViewCell.swift in Sources */,
 				5D15263421B93E56009377F7 /* Meeting.swift in Sources */,
-				E507C5D421B0033600EEC7E7 /* RuleCreateViewController.swift in Sources */,
 				2BD394DC21B8142900813EAC /* OpenVotesTableViewCell.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
 				2BD394D321B8142900813EAC /* RuleDetailViewController.swift in Sources */,
@@ -1211,13 +1205,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1231,13 +1225,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1250,7 +1244,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1271,7 +1265,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1291,7 +1285,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1311,7 +1305,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U3BJSYBS9R;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1330,14 +1324,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo.RuleOfThumbNotificationService";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1349,14 +1343,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7DWMQ39T;
+				DEVELOPMENT_TEAM = Y93JMM3H2T;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Paulo.RuleOfThumbNotificationService";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;

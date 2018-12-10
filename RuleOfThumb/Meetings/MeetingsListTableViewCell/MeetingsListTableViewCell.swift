@@ -30,6 +30,19 @@ class MeetingsListTableViewCell: UITableViewCell {
         cardView.addRoundedBorder()
     }
 
+    func setupCell(with meeting: Meeting) {
+        self.detailLabel.text = meeting.title
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        formatter.dateFormat = "dd/MM/yyyy"
+        self.dateLabel.text = formatter.string(from: meeting.dateScheduled)
+        
+        formatter.dateFormat = "HH:mm a"
+        self.timeLabel.text = formatter.string(from: meeting.dateScheduled)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -19,9 +19,18 @@ class MeetingsDetailViewController: UIViewController {
     @IBOutlet weak var profileView: CreatorProfileView!
     
     var gradientLayer: CAGradientLayer!
+    var meeting: Meeting?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let meeting = self.meeting {
+            self.meetingTitleLabel.text = meeting.title
+            self.whyDescriptionLabel.text = meeting.agenda
+            self.profileView.setProfileLabel(text: meeting.creatorName)
+            self.setTimeLabel(date: meeting.dateScheduled)
+            self.setScheduleLabel(date: meeting.dateScheduled)
+        }
         
         setupStyle()
     }

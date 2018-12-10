@@ -37,12 +37,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="a90-ft-MSe">
                             <color key="tintColor" name="pastelRed90"/>
                             <connections>
-                                <segue destination="UKy-Bg-30h" kind="presentation" id="Ik5-KK-nJU"/>
+                                <segue destination="UKy-Bg-30h" kind="presentation" identifier="create" id="Ik5-KK-nJU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="meetingsListTableView" destination="tdf-Nk-efH" id="dqH-7T-3Ou"/>
+                        <segue destination="rkt-4R-Yyz" kind="presentation" identifier="modal" modalPresentationStyle="overFullScreen" id="bOz-aS-MlZ"/>
+                        <segue destination="lAL-DV-lgH" kind="show" identifier="details" id="B7n-yI-2qu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXC-po-0AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,7 +57,23 @@
                 <viewControllerPlaceholder storyboardName="MeetingsCreate" referencedIdentifier="meetingsCreate" id="UKy-Bg-30h" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceh-S7-8uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="-90"/>
+            <point key="canvasLocation" x="1711" y="-33"/>
+        </scene>
+        <!--meetingDetails-->
+        <scene sceneID="m66-5G-mNt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MeetingsDetail" referencedIdentifier="meetingDetails" id="lAL-DV-lgH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xuu-7M-NVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="77"/>
+        </scene>
+        <!--modal-->
+        <scene sceneID="rjo-Yr-AZe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SugestionModal" referencedIdentifier="modal" id="rkt-4R-Yyz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0a-dU-YYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="206"/>
         </scene>
         <!--Meetings-->
         <scene sceneID="SiJ-3x-L6c">
