@@ -33,6 +33,9 @@ class RuleCreateViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width * 2, height: scrollView.frame.height)
         scrollView.contentOffset = CGPoint.zero
+        
+        self.navigationController?.navigationBar.setTransparentBackground()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +50,7 @@ class RuleCreateViewController: UIViewController {
                     return
                 }
                 ruleName = text
-                UIView.animate(withDuration: 0.5) {
+                UIView.animate(withDuration: 0.3) {
                     self.scrollView.contentOffset = CGPoint(x: self.scrollView.frame.size.width, y: 0)
                 }
                 self.actionButton.setTitle("Propose", for: .normal)

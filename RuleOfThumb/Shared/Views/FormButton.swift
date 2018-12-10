@@ -27,9 +27,14 @@ class FormButton: UIButton {
         
         self.titleEdgeInsets = UIEdgeInsets(top: 15.0, left: 5.0, bottom: 15.0, right: 5.0)
         
-        self.layer.backgroundColor = UIColor(red: 235/255, green: 185/255, blue: 170/255, alpha: 1.0).cgColor
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22.0)
-        self.setTitleColor(UIColor.almostWhite, for: .normal)
+//        self.layer.backgroundColor = UIColor(red: 235/255, green: 185/255, blue: 170/255, alpha: 1.0).cgColor
+        self.titleLabel?.font = UIFont.actionText
+        self.setTitleColor(UIColor.white, for: .normal)
+        
+        let bgImage = UIImage().imageWithGradient(startColor: UIColor.lightSalmon, endColor: UIColor.pale, size: self.layer.bounds.size)
+        self.backgroundColor = UIColor(patternImage: bgImage!)
+        
+        
     }
 
 }

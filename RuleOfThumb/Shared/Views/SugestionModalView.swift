@@ -10,6 +10,7 @@ import UIKit
 
 class SugestionModalView: XibView {
     
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var modalImage: UIImageView!
     @IBOutlet weak var modalTitleLabel: UILabel!
     @IBOutlet weak var modalDescriptionLabel: UILabel!
@@ -22,6 +23,17 @@ class SugestionModalView: XibView {
         }
     }
     var delegate: SugestionModalViewDelegate?
+    
+    override func layoutSubviews() {
+        let image = UIImage().imageWithGradient(startColor: UIColor.pale, endColor: UIColor.lightSalmon, size: bounds.size)
+        
+        self.secondActionButton.backgroundColor = UIColor.init(patternImage: image!)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        cardView.addRoundedBorder()
+    }
     
     func setDelegate(_ del: SugestionModalViewDelegate) {
         delegate = del

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TSN-mY-isg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TSN-mY-isg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gtc-Nj-lKI">
                                 <rect key="frame" x="16" y="595" width="343" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-aP-XxA" customClass="SecondaryButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-aP-XxA" customClass="PrimaryButton" customModule="RuleOfThumb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="163.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="jmI-XN-Efw"/>
@@ -33,7 +34,7 @@
                                             <segue destination="wXt-1T-qC7" kind="show" id="bWD-TR-Rco"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY3-9q-YWP" customClass="SecondaryButton" customModule="RuleOfThumb" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY3-9q-YWP" customClass="PrimaryButton" customModule="RuleOfThumb" customModuleProvider="target">
                                         <rect key="frame" x="179.5" y="0.0" width="163.5" height="40"/>
                                         <state key="normal" title="Create new home"/>
                                         <connections>
@@ -94,6 +95,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LFa-lU-4Ic">
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="34"/>
+                            <color key="textColor" name="dusk"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ifj-j4-RXs" kind="relationship" relationship="rootViewController" id="oPu-im-Ey3"/>
@@ -130,5 +135,8 @@
     </scenes>
     <resources>
         <image name="initial_bg" width="1000" height="667"/>
+        <namedColor name="dusk">
+            <color red="0.33700001239776611" green="0.29399999976158142" blue="0.42699998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

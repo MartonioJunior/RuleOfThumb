@@ -52,6 +52,7 @@ class CloudKitRepository {
         info.alertLocalizationArgs = ["name"]
         info.shouldSendContentAvailable = false
         info.shouldSendMutableContent = true
+        info.desiredKeys = ["name"]
         info.category = "RecordAdded"
         
         subscription.notificationInfo = info
@@ -78,7 +79,7 @@ class CloudKitRepository {
         info.alertLocalizationArgs = ["name"]
         info.shouldSendContentAvailable = false
         info.shouldSendMutableContent = true
-        info.desiredKeys = ["status"]
+        info.desiredKeys = ["name", "status"]
         info.category = "RecordUpdated"
         
         subscription.notificationInfo = info

@@ -37,6 +37,9 @@ class HomeCreateViewController: UIViewController {
         scrollView.contentOffset = CGPoint.zero
         
         promptStep2.isUserInteractionEnabled = false
+        
+        infoLabel.font = UIFont.secondaryTextCentralized
+        infoLabel.textColor = UIColor.dusk90
     }
     
     override func viewDidAppear(_ animated: Bool) {

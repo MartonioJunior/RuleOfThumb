@@ -17,6 +17,11 @@ class PromptView: XibView {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupStyle()
+    }
+    
     var input: String? {
         get {
             return inputTextField.text
@@ -29,5 +34,15 @@ class PromptView: XibView {
     
     func set(delegate: UITextFieldDelegate) {
         inputTextField.delegate = delegate
+    }
+    
+    func setupStyle() {
+        
+        titleLabel.font = UIFont.promptStyle
+        titleLabel.textColor = UIColor.dusk
+        
+        inputTextField.font = UIFont.secondaryText
+        inputTextField.textColor = UIColor.dusk80
+        
     }
 }

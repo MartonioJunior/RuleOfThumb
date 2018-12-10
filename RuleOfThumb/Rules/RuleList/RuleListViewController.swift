@@ -26,13 +26,16 @@ class RuleListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         rulesTableView.delegate = self
         rulesTableView.dataSource = self
         
         searchController.searchBar.delegate = self
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = UIColor.pastelRed90
+        searchController.searchBar.barTintColor = UIColor.blue
+        searchController.searchBar.setBackgroundImage(UIImage().imageWithGradient(startColor: UIColor.red, endColor: UIColor.red, size: view.layer.bounds.size), for: .any, barMetrics: .default)
+        
         definesPresentationContext = true
         
         setRefreshControl()
@@ -40,6 +43,19 @@ class RuleListViewController: UIViewController {
         refreshData(self)
         
         registerForPreviewing(with: self, sourceView: rulesTableView)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = true
+        navigationItem.searchController = searchController
+        self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
+        
+        rulesTableView.backgroundColor = UIColor.clear
+//        rulesTableView.topAnchor.constraint(equalTo: self.navigationController?.navigationBar.bottomAnchor ?? self.view.topAnchor).isActive = true
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,12 +72,14 @@ class RuleListViewController: UIViewController {
             guard let destination = segue.destination as? SugestionViewController, let modalType = sender as? ModalType else { return }
             switch modalType {
                 case .ruleCreated:
+                    destination.modalImage = UIImage(named: "voting-feedback-illustration")!
                     destination.modalTitle = "Your rule has been proposed!"
                     destination.modalDescription = "Now all members of your house will vote for or against your rule. See in your board the status of the proposed rule."
                     destination.firstButtonIsHidden = true
                     destination.secondButtonTitle = "Alright"
                     break
                 case .ruleApproved:
+                    destination.modalImage = UIImage(named: "approved-feedback-illustration")!
                     destination.modalTitle = "The rule has been approved!"
                     destination.modalDescription = "The rule got the majority of votes and now everyone must follow it"
                     destination.firstButtonIsHidden = true
@@ -86,7 +104,7 @@ class RuleListViewController: UIViewController {
     
     func setRefreshControl() {
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        refreshControl.tintColor = .black
+        refreshControl.tintColor = UIColor.pastelRed90
         refreshControl.attributedTitle = NSAttributedString(string: "Searching new rules...")
     }
     
@@ -134,7 +152,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 return 1
             case 1:
-                return searchRules.count
+                return searchRules.count > 0 ? searchRules.count : 1
             default:
                 return 0
         }
@@ -165,19 +183,38 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func createRuleCell(indexPath: IndexPath) -> UITableViewCell {
-        var cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
-        if cell == nil {
-            rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
-            cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+        
+        if searchRules.count > 0 {
+            var cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+            if cell == nil {
+                rulesTableView.register(UINib(nibName: "RuleTableViewCell", bundle: nil), forCellReuseIdentifier: "rule")
+                cell = rulesTableView.dequeueReusableCell(withIdentifier: "rule") as? RuleTableViewCell
+            }
+            let rule = searchRules[indexPath.row]
+            cell?.rule = rule
+            return cell!
+        } else {
+            var cell = rulesTableView.dequeueReusableCell(withIdentifier: "emptyRule") as? RuleEmptyTableViewCell
+            
+            if cell == nil {
+                rulesTableView.register(UINib(nibName: "RuleEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyRule")
+                cell = rulesTableView.dequeueReusableCell(withIdentifier: "emptyRule") as? RuleEmptyTableViewCell
+            }
+            
+            return cell!
         }
-        let rule = searchRules[indexPath.row]
-        cell?.rule = rule
-        return cell!
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
             case 1:
+                var cell = rulesTableView.cellForRow(at: indexPath) as? RuleTableViewCell
+                
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    cell?.cardView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+//                }, completion: nil)
+                
                 performSegue(withIdentifier: "detail", sender: searchRules[indexPath.row])
                 break
             default:
@@ -202,44 +239,44 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 { //Vote opened
-          return 130
+          return 134
         } else if indexPath.section == 1 { //Rule list
-            return 100
+            return 145
         } else { // ?
-            return 100
+            return 145
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
+        return 26
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: (self.tableView(tableView, heightForHeaderInSection: section))) )
-        headerView.backgroundColor = .white
+        var headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
         
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.frame = headerView.frame
+        if headerCell == nil {
+            rulesTableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
+            headerCell = rulesTableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell
+        }
+
         switch section {
         case 0:
-            titleLabel.text = "Vote opened"
+             headerCell?.headerTitleLabel.text = "Vote opened"
             break
         case 1:
-            titleLabel.text = "Rule List"
+             headerCell?.headerTitleLabel.text = "Rule List"
             break
         default:
             break
+            
         }
-        headerView.addSubview(titleLabel)
         
-        return headerView
+        return headerCell?.contentView
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ""
+//    }
 }
 
 // - MARK: Peek and Pop

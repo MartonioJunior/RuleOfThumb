@@ -20,10 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return AppDelegate.repository
         }
     }
+    static let notificationManager = NotificationManager()
+    var notificationManager: NotificationManager {
+        get {
+            return AppDelegate.notificationManager
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let notificationManager = NotificationManager()
         
         notificationManager.requestAuthorization()
         application.registerForRemoteNotifications()
@@ -38,11 +42,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("Casa criada com o id \(house?.ckRecordId())")
 //        }
         
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.dusk,
+             NSAttributedString.Key.font: UIFont(name: "Nunito-Black", size: 34) ??
+                UIFont.systemFont(ofSize: 30)]
+    
+        UINavigationBar.appearance().tintColor = UIColor.dusk
+        
         return true
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
         // TODO: Colocar toda essa lógica em outro lugar mais apropriado.
         if let userInfo = userInfo as? [String: NSObject] {
             let notification = CKNotification(fromRemoteNotificationDictionary: userInfo)
@@ -54,7 +65,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let recordID = queryNotification.recordID
                 
                 CloudKitRepository.fetchById(recordID!) { (record) in
-                    print(record)
+                    guard let record = record else { return }
+                    let rule = Rule(from: record)
+                    switch rule.status {
+                        case .inForce:
+                            self.notificationManager.sendRuleApprovedNotification(rule: rule)
+                            break
+                        case .voting:
+                            self.notificationManager.sendRuleProposalNotification(rule: rule)
+                            break
+                        case .revoked:
+                            self.notificationManager.sendRuleRejectedNotification(rule: rule)
+                            break
+                        
+                    }
                 }
             }
         }
