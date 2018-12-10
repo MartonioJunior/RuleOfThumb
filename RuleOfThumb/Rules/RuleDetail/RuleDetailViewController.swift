@@ -36,6 +36,8 @@ class RuleDetailViewController: UIViewController {
         setStatusLabel(status: rule.status)
         setCreatedAtLabel(date: rule.validFrom ?? Date())
         
+//        extendedLayoutIncludesOpaqueBars = true
+        
         setupStyle()
         
     }

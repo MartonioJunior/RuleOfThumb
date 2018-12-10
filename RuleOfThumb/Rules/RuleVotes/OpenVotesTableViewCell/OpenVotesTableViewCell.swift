@@ -83,7 +83,9 @@ extension OpenVotesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.seeRuleInVotation(rule: data[indexPath.row])
+        if data.count > 0 {
+            delegate?.seeRuleInVotation(rule: data[indexPath.row])
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {

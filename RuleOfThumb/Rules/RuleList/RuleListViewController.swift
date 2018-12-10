@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 enum ModalType {
     case ruleCreated
@@ -16,13 +17,41 @@ enum ModalType {
 
 class RuleListViewController: UIViewController {
     @IBOutlet weak var rulesTableView: UITableView!
-    var allRules = [Rule]()
     var rules = [Rule]()
     var searchRules = [Rule]()
     var rulesInVoting = [Rule]()
     var highlightedIndex = 0
     let searchController = UISearchController(searchResultsController: nil)
     let refreshControl = UIRefreshControl()
+    var allRules = [Rule]() {
+        didSet {
+            RulesDict.all = []
+
+            if allRules.count > 0 {
+                for r in 0..<allRules.count {
+                    if allRules[r].status == Rule.Status.inForce {
+                        let date = allRules[r].validFrom
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd/MM/yyyy"
+                        let dateString = dateFormatter.string(from: date ?? Date())
+
+                        RulesDict.all.append([
+                            "name" : allRules[r].name,
+                            "description" : allRules[r].description,
+                            "creator" : allRules[r].creatorName,
+                            "date" : dateString
+                        ])
+                    }
+                }
+            }
+            
+//            sendWatchMessage()
+            
+        }
+    }
+    
+    //watchkit
+    var lastMessage: CFAbsoluteTime = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +59,7 @@ class RuleListViewController: UIViewController {
         rulesTableView.delegate = self
         rulesTableView.dataSource = self
         
-        searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = UIColor.pastelRed90
-        searchController.searchBar.barTintColor = UIColor.blue
-        searchController.searchBar.setBackgroundImage(UIImage().imageWithGradient(startColor: UIColor.red, endColor: UIColor.red, size: view.layer.bounds.size), for: .any, barMetrics: .default)
-        
-        definesPresentationContext = true
+        configSearchController()
         
         setRefreshControl()
         rulesTableView.refreshControl = refreshControl
@@ -44,18 +67,43 @@ class RuleListViewController: UIViewController {
         
         registerForPreviewing(with: self, sourceView: rulesTableView)
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        extendedLayoutIncludesOpaqueBars = true
         navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
         
         rulesTableView.backgroundColor = UIColor.clear
-//        rulesTableView.topAnchor.constraint(equalTo: self.navigationController?.navigationBar.bottomAnchor ?? self.view.topAnchor).isActive = true
+        
+        searchBarInterfaceSetup()
+        
+        //Connect with apple watch
+        if (WCSession.isSupported()) {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.setBarTintColorWithGradient(colors: [UIColor.lightSalmon, UIColor.pale], size: CGSize(width: UIScreen.main.bounds.size.width, height: 1))
+    }
+    
+    func configSearchController() {
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = UIColor.pastelRed90
+        searchController.searchBar.barTintColor = UIColor.blue
+        definesPresentationContext = true
+        searchController.searchBar.setBackgroundImage(UIImage().imageWithGradient(startColor : UIColor.red, endColor: UIColor.red, size: view.layer.bounds.size), for: .any, barMetrics: .default)
+        
+        var searchTextField: UITextField? = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        if searchTextField!.responds(to: #selector(getter: UITextField.attributedPlaceholder)) {
+            let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            searchTextField!.attributedPlaceholder = NSAttributedString(string: "Search", attributes: attributeDict)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -139,6 +187,28 @@ class RuleListViewController: UIViewController {
             self.rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
         }
     }
+    
+    private func searchBarInterfaceSetup() {
+        if #available(iOS 11.0, *) {
+            let scb = searchController.searchBar
+            if let textfield = scb.value(forKey: "searchField") as? UITextField {
+                textfield.textColor = UIColor.almostWhite
+                if let backgroundview = textfield.subviews.first {
+                    
+                    // Background color
+                    backgroundview.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.05)
+                    
+                    // Rounded corner
+                    backgroundview.layer.cornerRadius = 10;
+                    backgroundview.clipsToBounds = true;
+                }
+            }
+        }
+    }
+    
+    
+    
+
 }
 
 // - MARK: TableView Delegate & Data Source
@@ -215,7 +285,9 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
 //                    cell?.cardView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 //                }, completion: nil)
                 
-                performSegue(withIdentifier: "detail", sender: searchRules[indexPath.row])
+                if indexPath.row < searchRules.count {
+                    performSegue(withIdentifier: "detail", sender: searchRules[indexPath.row])
+                }
                 break
             default:
                 break
@@ -274,9 +346,7 @@ extension RuleListViewController: UITableViewDelegate, UITableViewDataSource {
         return headerCell?.contentView
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return ""
-//    }
+
 }
 
 // - MARK: Peek and Pop
@@ -394,5 +464,41 @@ extension RuleListViewController: RuleDetailDelegate {
                 self.rulesTableView.reloadSections(IndexSet(integersIn: 0...1), with: .fade)
             }
         }
+    }
+}
+
+extension RuleListViewController : WCSessionDelegate {
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        self.sendWatchMessage()
+    }
+    
+    func sendWatchMessage() {
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        
+        if lastMessage + 0.5 > currentTime {
+            return
+        }
+        
+        if (WCSession.default.isReachable) {
+            let message = ["message": RulesDict.all]
+            WCSession.default.sendMessage(message, replyHandler: nil)
+        } else {
+            print("Apple Watch not reachable.")
+        }
+        
+        lastMessage = CFAbsoluteTimeGetCurrent()
     }
 }

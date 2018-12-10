@@ -32,7 +32,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="J64-D8-tSv">
                             <rect key="frame" x="16" y="16" width="343" height="445"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" image="image-default" translatesAutoresizingMaskIntoConstraints="NO" id="UME-Me-VUs">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" image="image-default" translatesAutoresizingMaskIntoConstraints="NO" id="UME-Me-VUs">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="272"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure that you want to archive this rule?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldk-X1-kW7">
@@ -72,6 +72,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Ldk-X1-kW7" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="mhj-Pd-Xjk"/>
+                                <constraint firstItem="UME-Me-VUs" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="qrX-Ol-55d"/>
                                 <constraint firstItem="9Tb-RH-mHL" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="rVW-VY-fMi"/>
                                 <constraint firstItem="egx-R3-I7M" firstAttribute="width" secondItem="J64-D8-tSv" secondAttribute="width" id="zGu-Yi-iAR"/>
                             </constraints>

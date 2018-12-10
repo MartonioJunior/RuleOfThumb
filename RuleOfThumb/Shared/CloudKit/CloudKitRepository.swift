@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 class CloudKitRepository {
-    let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome")
+    let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome-Debora")
     var customZone: CKRecordZone?
     var privateDB: CKDatabase?
     var publicDB: CKDatabase?
@@ -22,7 +22,7 @@ class CloudKitRepository {
     }
     
     static func fetchById(_ id: CKRecord.ID, then completion: @escaping ((CKRecord?) -> Void)) {
-        let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome")
+        let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome-Debora")
         container.publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
             guard let record = record, error == nil else {
                 print("On CloudKitRepository: \(error!.localizedDescription)")

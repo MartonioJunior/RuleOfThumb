@@ -129,7 +129,7 @@ class Rule: CKManagedObject {
     }
     
     func addVote(_ vote: VoteType, then completion: @escaping ((Bool) -> Void)) {
-        guard self.status != .voting else {
+        guard self.status == Rule.Status.voting else {
             completion(false)
             return
         }

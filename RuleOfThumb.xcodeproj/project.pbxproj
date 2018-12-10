@@ -70,7 +70,6 @@
 		3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065BD0821A2E6E50005339A /* LaunchScreen.storyboard */; };
 		3065BD1521A2E6E50005339A /* RuleOfThumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1421A2E6E50005339A /* RuleOfThumbTests.swift */; };
 		3065BD2021A2E6E50005339A /* RuleOfThumbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */; };
-		30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */; };
 		30ABEA6521B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D08B56221A5968E00FBF73A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56121A5968E00FBF73A /* Repository.swift */; };
 		5D08B56521A598C900FBF73A /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56421A598C900FBF73A /* Rule.swift */; };
@@ -91,12 +90,27 @@
 		E507C60A21B5620F00EEC7E7 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60921B5620F00EEC7E7 /* InitialViewController.swift */; };
 		E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60B21B56FBF00EEC7E7 /* IJProgressView.swift */; };
 		E507C60E21B605BD00EEC7E7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60D21B605BD00EEC7E7 /* PrimaryButton.swift */; };
+		E51A7E7921BE08EE000A1DA0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51A7E7721BE08EE000A1DA0 /* Interface.storyboard */; };
+		E51A7E7B21BE08F1000A1DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51A7E7A21BE08F1000A1DA0 /* Assets.xcassets */; };
+		E51A7E8221BE08F1000A1DA0 /* VeeHomeWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E51A7E8121BE08F1000A1DA0 /* VeeHomeWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E51A7E8721BE08F1000A1DA0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E8621BE08F1000A1DA0 /* InterfaceController.swift */; };
+		E51A7E8921BE08F1000A1DA0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E8821BE08F1000A1DA0 /* ExtensionDelegate.swift */; };
+		E51A7E8B21BE08F1000A1DA0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E8A21BE08F1000A1DA0 /* NotificationController.swift */; };
+		E51A7E8D21BE08F2000A1DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51A7E8C21BE08F2000A1DA0 /* Assets.xcassets */; };
+		E51A7E9221BE08F2000A1DA0 /* VeeHomeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E51A7E7521BE08EE000A1DA0 /* VeeHomeWatch.app */; };
+		E51A7E9E21BE0971000A1DA0 /* RulesRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E9B21BE0971000A1DA0 /* RulesRowController.swift */; };
+		E51A7E9F21BE0971000A1DA0 /* DetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E9C21BE0971000A1DA0 /* DetailsInterfaceController.swift */; };
+		E51A7EA021BE0971000A1DA0 /* RulesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7E9D21BE0971000A1DA0 /* RulesInterfaceController.swift */; };
+		E51A7EA921BE0CCE000A1DA0 /* RulesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EA821BE0CCE000A1DA0 /* RulesDict.swift */; };
+		E51A7EAA21BE1648000A1DA0 /* RulesDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A7EA821BE0CCE000A1DA0 /* RulesDict.swift */; };
+		E58CFA0321BCBB1A002A746C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABEA6021B7F8A2008C03A3 /* NotificationService.swift */; };
 		E597835F21A82695009FDDCF /* SugestionModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E597835E21A82695009FDDCF /* SugestionModalView.xib */; };
 		E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836021A8270D009FDDCF /* SugestionModalView.swift */; };
 		E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597836221A837E0009FDDCF /* SugestionModal.storyboard */; };
 		E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836421A83808009FDDCF /* SecondaryButton.swift */; };
 		E597836721A839B3009FDDCF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836621A839B3009FDDCF /* UIColor.swift */; };
 		E597836921A83AA5009FDDCF /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E597836821A83AA5009FDDCF /* FormButton.swift */; };
+		E5ACB8FD21BEAAF300156AFB /* CloudkitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACB8FC21BEAAF300156AFB /* CloudkitRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +135,20 @@
 			remoteGlobalIDString = 30ABEA5D21B7F8A2008C03A3;
 			remoteInfo = RuleOfThumbNotificationService;
 		};
+		E51A7E8321BE08F1000A1DA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3065BCF121A2E6E30005339A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E51A7E8021BE08F1000A1DA0;
+			remoteInfo = "VeeHomeWatch Extension";
+		};
+		E51A7E9021BE08F2000A1DA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3065BCF121A2E6E30005339A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E51A7E7421BE08EE000A1DA0;
+			remoteInfo = VeeHomeWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +161,28 @@
 				30ABEA6521B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51A7E9621BE08F2000A1DA0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E51A7E8221BE08F1000A1DA0 /* VeeHomeWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51A7E9A21BE08F2000A1DA0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E51A7E9221BE08F2000A1DA0 /* VeeHomeWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -231,12 +281,29 @@
 		E507C60921B5620F00EEC7E7 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		E507C60B21B56FBF00EEC7E7 /* IJProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJProgressView.swift; sourceTree = "<group>"; };
 		E507C60D21B605BD00EEC7E7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		E51A7E7521BE08EE000A1DA0 /* VeeHomeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeeHomeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E51A7E7821BE08EE000A1DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E51A7E7A21BE08F1000A1DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E51A7E7C21BE08F1000A1DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E51A7E8121BE08F1000A1DA0 /* VeeHomeWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VeeHomeWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E51A7E8621BE08F1000A1DA0 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E51A7E8821BE08F1000A1DA0 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E51A7E8A21BE08F1000A1DA0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E51A7E8C21BE08F2000A1DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E51A7E8E21BE08F2000A1DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E51A7E8F21BE08F2000A1DA0 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E51A7E9B21BE0971000A1DA0 /* RulesRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesRowController.swift; sourceTree = "<group>"; };
+		E51A7E9C21BE0971000A1DA0 /* DetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsInterfaceController.swift; sourceTree = "<group>"; };
+		E51A7E9D21BE0971000A1DA0 /* RulesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesInterfaceController.swift; sourceTree = "<group>"; };
+		E51A7EA821BE0CCE000A1DA0 /* RulesDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesDict.swift; sourceTree = "<group>"; };
+		E53AE78321BE9DBB00C3BC56 /* VeeHomeWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VeeHomeWatch Extension.entitlements"; sourceTree = "<group>"; };
 		E597835E21A82695009FDDCF /* SugestionModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugestionModalView.xib; sourceTree = "<group>"; };
 		E597836021A8270D009FDDCF /* SugestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionModalView.swift; sourceTree = "<group>"; };
 		E597836221A837E0009FDDCF /* SugestionModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SugestionModal.storyboard; sourceTree = "<group>"; };
 		E597836421A83808009FDDCF /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		E597836621A839B3009FDDCF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E597836821A83AA5009FDDCF /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
+		E5ACB8FC21BEAAF300156AFB /* CloudkitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +330,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		30ABEA5B21B7F8A2008C03A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51A7E7E21BE08F1000A1DA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,12 +499,12 @@
 		2BD394C521B8142900813EAC /* RuleList */ = {
 			isa = PBXGroup;
 			children = (
-				2BD394E521B8238B00813EAC /* RuleListDelegate.swift */,
 				2BD394E321B814B100813EAC /* RuleList.storyboard */,
+				2BD394C921B8142900813EAC /* RuleListViewController.swift */,
+				2BD394E521B8238B00813EAC /* RuleListDelegate.swift */,
 				2B34E96F21B94F7800066DC5 /* HeaderCell */,
 				2B34E96E21B94F5F00066DC5 /* RuleTableViewCell */,
 				2B34E96721B94F0C00066DC5 /* RuleTableViewEmptyCell */,
-				2BD394C921B8142900813EAC /* RuleListViewController.swift */,
 			);
 			path = RuleList;
 			sourceTree = "<group>";
@@ -494,6 +568,8 @@
 				3065BD1321A2E6E50005339A /* RuleOfThumbTests */,
 				3065BD1E21A2E6E50005339A /* RuleOfThumbUITests */,
 				30ABEA5F21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
+				E51A7E7621BE08EE000A1DA0 /* VeeHomeWatch */,
+				E51A7E8521BE08F1000A1DA0 /* VeeHomeWatch Extension */,
 				3065BCFA21A2E6E30005339A /* Products */,
 				3065BD3A21A2EEBF0005339A /* Frameworks */,
 				5D4A935B21BABFF50027362A /* Recovered References */,
@@ -507,6 +583,8 @@
 				3065BD1021A2E6E50005339A /* RuleOfThumbTests.xctest */,
 				3065BD1B21A2E6E50005339A /* RuleOfThumbUITests.xctest */,
 				30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */,
+				E51A7E7521BE08EE000A1DA0 /* VeeHomeWatch.app */,
+				E51A7E8121BE08F1000A1DA0 /* VeeHomeWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -627,6 +705,7 @@
 				5D08B56421A598C900FBF73A /* Rule.swift */,
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
+				E51A7EA821BE0CCE000A1DA0 /* RulesDict.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -657,6 +736,34 @@
 			path = Homes;
 			sourceTree = "<group>";
 		};
+		E51A7E7621BE08EE000A1DA0 /* VeeHomeWatch */ = {
+			isa = PBXGroup;
+			children = (
+				E51A7E7721BE08EE000A1DA0 /* Interface.storyboard */,
+				E51A7E7A21BE08F1000A1DA0 /* Assets.xcassets */,
+				E51A7E7C21BE08F1000A1DA0 /* Info.plist */,
+			);
+			path = VeeHomeWatch;
+			sourceTree = "<group>";
+		};
+		E51A7E8521BE08F1000A1DA0 /* VeeHomeWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E53AE78321BE9DBB00C3BC56 /* VeeHomeWatch Extension.entitlements */,
+				E51A7E9C21BE0971000A1DA0 /* DetailsInterfaceController.swift */,
+				E51A7E9D21BE0971000A1DA0 /* RulesInterfaceController.swift */,
+				E51A7E9B21BE0971000A1DA0 /* RulesRowController.swift */,
+				E51A7E8621BE08F1000A1DA0 /* InterfaceController.swift */,
+				E51A7E8821BE08F1000A1DA0 /* ExtensionDelegate.swift */,
+				E51A7E8A21BE08F1000A1DA0 /* NotificationController.swift */,
+				E51A7E8C21BE08F2000A1DA0 /* Assets.xcassets */,
+				E51A7E8E21BE08F2000A1DA0 /* Info.plist */,
+				E51A7E8F21BE08F2000A1DA0 /* PushNotificationPayload.apns */,
+				E5ACB8FC21BEAAF300156AFB /* CloudkitRepository.swift */,
+			);
+			path = "VeeHomeWatch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -668,11 +775,13 @@
 				3065BCF621A2E6E30005339A /* Frameworks */,
 				3065BCF721A2E6E30005339A /* Resources */,
 				30ABEA6921B7F8A2008C03A3 /* Embed App Extensions */,
+				E51A7E9A21BE08F2000A1DA0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				30ABEA6421B7F8A2008C03A3 /* PBXTargetDependency */,
+				E51A7E9121BE08F2000A1DA0 /* PBXTargetDependency */,
 			);
 			name = RuleOfThumb;
 			productName = RuleOfThumb;
@@ -732,19 +841,56 @@
 			productReference = 30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E51A7E7421BE08EE000A1DA0 /* VeeHomeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E51A7E9721BE08F2000A1DA0 /* Build configuration list for PBXNativeTarget "VeeHomeWatch" */;
+			buildPhases = (
+				E51A7E7321BE08EE000A1DA0 /* Resources */,
+				E51A7E9621BE08F2000A1DA0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E51A7E8421BE08F1000A1DA0 /* PBXTargetDependency */,
+			);
+			name = VeeHomeWatch;
+			productName = VeeHomeWatch;
+			productReference = E51A7E7521BE08EE000A1DA0 /* VeeHomeWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E51A7E8021BE08F1000A1DA0 /* VeeHomeWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E51A7E9321BE08F2000A1DA0 /* Build configuration list for PBXNativeTarget "VeeHomeWatch Extension" */;
+			buildPhases = (
+				E51A7E7D21BE08F1000A1DA0 /* Sources */,
+				E51A7E7E21BE08F1000A1DA0 /* Frameworks */,
+				E51A7E7F21BE08F1000A1DA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VeeHomeWatch Extension";
+			productName = "VeeHomeWatch Extension";
+			productReference = E51A7E8121BE08F1000A1DA0 /* VeeHomeWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3065BCF121A2E6E30005339A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "So Many Deadlines";
 				TargetAttributes = {
 					3065BCF821A2E6E30005339A = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -772,6 +918,17 @@
 							};
 						};
 					};
+					E51A7E7421BE08EE000A1DA0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E51A7E8021BE08F1000A1DA0 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 3065BCF421A2E6E30005339A /* Build configuration list for PBXProject "RuleOfThumb" */;
@@ -791,6 +948,8 @@
 				3065BD0F21A2E6E50005339A /* RuleOfThumbTests */,
 				3065BD1A21A2E6E50005339A /* RuleOfThumbUITests */,
 				30ABEA5D21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
+				E51A7E7421BE08EE000A1DA0 /* VeeHomeWatch */,
+				E51A7E8021BE08F1000A1DA0 /* VeeHomeWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -855,6 +1014,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E51A7E7321BE08EE000A1DA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E51A7E7B21BE08F1000A1DA0 /* Assets.xcassets in Resources */,
+				E51A7E7921BE08EE000A1DA0 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51A7E7F21BE08F1000A1DA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E51A7E8D21BE08F2000A1DA0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -871,6 +1047,7 @@
 				2B281D8421B84C950000695F /* CreatorProfileView.swift in Sources */,
 				2B281D8521B84C950000695F /* ViewController.swift in Sources */,
 				2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */,
+				E51A7EA921BE0CCE000A1DA0 /* RulesDict.swift in Sources */,
 				E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */,
 				2BD394E121B8142900813EAC /* RuleListViewController.swift in Sources */,
 				2BD3949621B7F10900813EAC /* UIImage.swift in Sources */,
@@ -938,8 +1115,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */,
+				E58CFA0321BCBB1A002A746C /* NotificationService.swift in Sources */,
 				5D4A935421BA962D0027362A /* NotificationFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51A7E7D21BE08F1000A1DA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E51A7E8B21BE08F1000A1DA0 /* NotificationController.swift in Sources */,
+				E51A7EAA21BE1648000A1DA0 /* RulesDict.swift in Sources */,
+				E5ACB8FD21BEAAF300156AFB /* CloudkitRepository.swift in Sources */,
+				E51A7EA021BE0971000A1DA0 /* RulesInterfaceController.swift in Sources */,
+				E51A7E9F21BE0971000A1DA0 /* DetailsInterfaceController.swift in Sources */,
+				E51A7E8921BE08F1000A1DA0 /* ExtensionDelegate.swift in Sources */,
+				E51A7E9E21BE0971000A1DA0 /* RulesRowController.swift in Sources */,
+				E51A7E8721BE08F1000A1DA0 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +1153,16 @@
 			target = 30ABEA5D21B7F8A2008C03A3 /* RuleOfThumbNotificationService */;
 			targetProxy = 30ABEA6321B7F8A2008C03A3 /* PBXContainerItemProxy */;
 		};
+		E51A7E8421BE08F1000A1DA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E51A7E8021BE08F1000A1DA0 /* VeeHomeWatch Extension */;
+			targetProxy = E51A7E8321BE08F1000A1DA0 /* PBXContainerItemProxy */;
+		};
+		E51A7E9121BE08F2000A1DA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E51A7E7421BE08EE000A1DA0 /* VeeHomeWatch */;
+			targetProxy = E51A7E9021BE08F2000A1DA0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -978,6 +1180,14 @@
 				3065BD0921A2E6E50005339A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E51A7E7721BE08EE000A1DA0 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E51A7E7821BE08EE000A1DA0 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1106,13 +1316,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93JMM3H2T;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1126,13 +1336,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RuleOfThumb/RuleOfThumb.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93JMM3H2T;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1225,14 +1435,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93JMM3H2T;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1244,18 +1454,102 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93JMM3H2T;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = RuleOfThumbNotificationService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Matheus.RuleOfThumbNotificationService";
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.RuleOfThumbNotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E51A7E9421BE08F2000A1DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "VeeHomeWatch Extension/VeeHomeWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = "VeeHomeWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		E51A7E9521BE08F2000A1DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "VeeHomeWatch Extension/VeeHomeWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = "VeeHomeWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		E51A7E9821BE08F2000A1DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				IBSC_MODULE = VeeHomeWatch_Extension;
+				INFOPLIST_FILE = VeeHomeWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		E51A7E9921BE08F2000A1DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				IBSC_MODULE = VeeHomeWatch_Extension;
+				INFOPLIST_FILE = VeeHomeWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "somanydeadlines.RuleOfThumb-Debora.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Release;
 		};
@@ -1303,6 +1597,24 @@
 			buildConfigurations = (
 				30ABEA6721B7F8A2008C03A3 /* Debug */,
 				30ABEA6821B7F8A2008C03A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E51A7E9321BE08F2000A1DA0 /* Build configuration list for PBXNativeTarget "VeeHomeWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E51A7E9421BE08F2000A1DA0 /* Debug */,
+				E51A7E9521BE08F2000A1DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E51A7E9721BE08F2000A1DA0 /* Build configuration list for PBXNativeTarget "VeeHomeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E51A7E9821BE08F2000A1DA0 /* Debug */,
+				E51A7E9921BE08F2000A1DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

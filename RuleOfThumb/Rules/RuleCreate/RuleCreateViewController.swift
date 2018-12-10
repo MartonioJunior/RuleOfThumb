@@ -78,7 +78,6 @@ class RuleCreateViewController: UIViewController {
     
     func saveRule(name: String, reason: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        //IJProgressView.shared.hideProgressView()
         
         AppDelegate.repository.currentHouse { (house) in
             guard let house = house else { return }
