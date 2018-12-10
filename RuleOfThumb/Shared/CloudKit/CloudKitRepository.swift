@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 class CloudKitRepository {
-    let container = CKContainer.default()
+    let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome")
     var customZone: CKRecordZone?
     var privateDB: CKDatabase?
     var publicDB: CKDatabase?
@@ -22,7 +22,8 @@ class CloudKitRepository {
     }
     
     static func fetchById(_ id: CKRecord.ID, then completion: @escaping ((CKRecord?) -> Void)) {
-        CKContainer.default().publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
+        let container = CKContainer(identifier: "iCloud.somanydeadlines.VeeHome")
+        container.publicCloudDatabase.fetch(withRecordID: id, completionHandler: { (record, error) in
             guard let record = record, error == nil else {
                 print("On CloudKitRepository: \(error!.localizedDescription)")
                 completion(nil)
@@ -30,67 +31,6 @@ class CloudKitRepository {
             }
             
             completion(record)
-        })
-    }
-
-    /// Cria uma nova subscription para o Record Type passado como parâmetro. Sempre
-    /// deve haver uma casa, pois a referência dela será usada como filtro.
-    ///
-    /// - Parameters:
-    ///   - recordType: nome do Record Type
-    ///   - house: objeto da casa do usuário salva no dispositivo.
-    // FIXME: Refatorar isso para usar uma mesma função para os dois tipos de subscriptions
-    func recordCreatedSubscription(in recordType: String, with house: House) {
-        let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
-        let subscription = CKQuerySubscription(
-            recordType: recordType,
-            predicate: NSPredicate(format: "house == %@", reference),
-            options: [.firesOnRecordCreation])
-        
-        let info = CKSubscription.NotificationInfo()
-        info.alertLocalizationKey = "New record on \(recordType): %@"
-        info.alertLocalizationArgs = ["name"]
-        info.shouldSendContentAvailable = false
-        info.shouldSendMutableContent = true
-        info.desiredKeys = ["name"]
-        info.category = "RecordAdded"
-        
-        subscription.notificationInfo = info
-        
-        self.publicDB?.save(subscription, completionHandler: { (subscription, error) in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
-        })
-    }
-    
-    func recordUpdatedSubscription(in recordType: String, with house: House) {
-        let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
-        let subscription = CKQuerySubscription(
-            recordType: recordType,
-            predicate: NSPredicate(format: "house == %@", reference),
-            options: [.firesOnRecordUpdate])
-        
-        let info = CKSubscription.NotificationInfo()
-        info.alertLocalizationKey = "Record updated on \(recordType): %@"
-        info.alertLocalizationArgs = ["name"]
-        info.shouldSendContentAvailable = false
-        info.shouldSendMutableContent = true
-        info.desiredKeys = ["name", "status"]
-        info.category = "RecordUpdated"
-        
-        subscription.notificationInfo = info
-        
-        self.publicDB?.save(subscription, completionHandler: { (subscription, error) in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            print("Subscription \(String(describing: subscription?.subscriptionID)) saved for \(recordType)")
         })
     }
     

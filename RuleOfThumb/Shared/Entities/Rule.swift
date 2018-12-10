@@ -33,6 +33,7 @@ class Rule: CKManagedObject {
     var number: Int
     var name: String
     var description: String
+    var creatorName: String
     var status: Status
     var validFrom: Date?
     var house: House?
@@ -40,11 +41,12 @@ class Rule: CKManagedObject {
     var upVotes: Int
     var downVotes: Int
     
-    init(name: String, description: String, house: House) {
+    init(name: String, description: String, house: House, creatorName: String) {
         self.name = name
         self.description = description
         self.house = house
         self.number = 1111
+        self.creatorName = creatorName
         self.status = .voting
         self.remainingVotes = house.users.count
         self.upVotes = 0
@@ -64,6 +66,7 @@ class Rule: CKManagedObject {
         self.name = record["name"] as! String
         self.number = record["number"] as! Int
         self.description = record["description"] as! String
+        self.creatorName = record["creatorName"] as! String
         self.status = Rule.Status(rawValue: record["status"] as! Int)!
         self.validFrom = record["validFrom"] as? Date
         self.remainingVotes = record["remainingVotes"] as! Int
@@ -88,6 +91,7 @@ class Rule: CKManagedObject {
             record["name"] = self.name as CKRecordValue
             record["number"] = self.number as CKRecordValue
             record["description"] = self.description as CKRecordValue
+            record["creatorName"] = self.creatorName as CKRecordValue
             record["validFrom"] = self.validFrom as CKRecordValue?
             record["status"] = self.status.rawValue as CKRecordValue
             record["remainingVotes"] = self.remainingVotes as CKRecordValue
@@ -110,6 +114,7 @@ class Rule: CKManagedObject {
             self.name = record["name"] as! String
             self.number = record["number"] as! Int
             self.description = record["description"] as! String
+            self.creatorName = record["creatorName"] as! String
             self.status = Rule.Status(rawValue: record["status"] as! Int)!
             self.validFrom = record["validFrom"] as? Date
             self.remainingVotes = record["remainingVotes"] as! Int
@@ -124,6 +129,11 @@ class Rule: CKManagedObject {
     }
     
     func addVote(_ vote: VoteType, then completion: @escaping ((Bool) -> Void)) {
+        guard self.status != .voting else {
+            completion(false)
+            return
+        }
+        
         let group = DispatchGroup()
         group.enter()
         

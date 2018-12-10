@@ -31,7 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         notificationManager.requestAuthorization()
         application.registerForRemoteNotifications()
-
+        
+        // Just for debugging.
+        repository.currentHouse { (house) in
+            if let house = house {
+                print(house.ckRecordId())
+            }
+        }
+        
 //        let defaults = UserDefaults.standard
 //        guard defaults.string(forKey: "HouseCreated") == nil else { return true }
 //

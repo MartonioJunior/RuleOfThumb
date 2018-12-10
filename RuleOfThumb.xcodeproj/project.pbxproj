@@ -96,6 +96,9 @@
 		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
 		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
 		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
+		5D4A935421BA962D0027362A /* NotificationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300CCED421B94692002B0527 /* NotificationFormatter.swift */; };
+		5D4A935621BAA20E0027362A /* CloudKitRepository+Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */; };
+		5D4A935821BAAFF10027362A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4A935721BAAFF10027362A /* CloudKit.framework */; };
 		E507C5FE21B01C7300EEC7E7 /* HomeCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */; };
 		E507C60021B02C1600EEC7E7 /* HomeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */; };
 		E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */; };
@@ -248,6 +251,8 @@
 		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
+		5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitRepository+Subscriptions.swift"; sourceTree = "<group>"; };
+		5D4A935721BAAFF10027362A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E507C5FD21B01C7300EEC7E7 /* HomeCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeCreate.storyboard; sourceTree = "<group>"; };
 		E507C5FF21B02C1600EEC7E7 /* HomeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCreateViewController.swift; sourceTree = "<group>"; };
 		E507C60321B1783500EEC7E7 /* HomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoginViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4A935821BAAFF10027362A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +590,7 @@
 				30ABEA5F21B7F8A2008C03A3 /* RuleOfThumbNotificationService */,
 				3065BCFA21A2E6E30005339A /* Products */,
 				3065BD3A21A2EEBF0005339A /* Frameworks */,
+				5D4A935B21BABFF50027362A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -653,7 +660,6 @@
 		3065BD2F21A2EB240005339A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				2BD3949721B8132A00813EAC /* New Group */,
 				5D2B432721B1828400A80354 /* NotificationManager.swift */,
 				300CCED421B94692002B0527 /* NotificationFormatter.swift */,
 			);
@@ -677,6 +683,7 @@
 		3065BD3A21A2EEBF0005339A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D4A935721BAAFF10027362A /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -707,6 +714,7 @@
 			isa = PBXGroup;
 			children = (
 				5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */,
+				5D4A935521BAA20E0027362A /* CloudKitRepository+Subscriptions.swift */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
@@ -729,6 +737,13 @@
 				5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */,
 			);
 			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		5D4A935B21BABFF50027362A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E507C5FC21B00D2800EEC7E7 /* Homes */ = {
@@ -1009,6 +1024,7 @@
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
 				5D15263421B93E56009377F7 /* Meeting.swift in Sources */,
+				5D4A935621BAA20E0027362A /* CloudKitRepository+Subscriptions.swift in Sources */,
 				2BD394DC21B8142900813EAC /* OpenVotesTableViewCell.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
 				2BD394D321B8142900813EAC /* RuleDetailViewController.swift in Sources */,
@@ -1039,6 +1055,7 @@
 			files = (
 				30ABEA6121B7F8A2008C03A3 /* NotificationService.swift in Sources */,
 				2BAD435C21BA9D8700C11834 /* NotificationFormatter.swift in Sources */,
+				5D4A935421BA962D0027362A /* NotificationFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
