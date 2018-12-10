@@ -19,3 +19,8 @@ protocol HousesRepository {
     func create(house: House, then completion: @escaping ((_ house: House) -> Void))
     func currentHouse(_ completion: @escaping ((_ house: House?) -> Void))
 }
+
+protocol MeetingsRepository {
+    func fetchAllMeetings(from house: House, then completion: @escaping (([Meeting]) -> Void))
+    func save(meeting: Meeting, then completion: @escaping ((_ rule: Meeting) -> Void))
+}

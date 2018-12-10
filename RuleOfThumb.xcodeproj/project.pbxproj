@@ -21,8 +21,23 @@
 		2B34E96C21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */; };
 		2B34E96D21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */; };
 		2B34E97121B95A1800066DC5 /* MeetingsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */; };
+		2B9E2DBA21BAA733008423F1 /* MeetingsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DB821BAA733008423F1 /* MeetingsListTableViewCell.swift */; };
+		2B9E2DBB21BAA733008423F1 /* MeetingsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E2DB921BAA733008423F1 /* MeetingsListTableViewCell.xib */; };
+		2B9E2DBF21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DBD21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.swift */; };
+		2B9E2DC021BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E2DBE21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.xib */; };
+		2B9E2DC321BAAB8F008423F1 /* MeetingsCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E2DC221BAAB8F008423F1 /* MeetingsCreate.storyboard */; };
+		2B9E2DC521BAABAC008423F1 /* MeetingsCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DC421BAABAC008423F1 /* MeetingsCreateViewController.swift */; };
+		2B9E2DC721BAB5F6008423F1 /* MeetingsCreateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DC621BAB5F6008423F1 /* MeetingsCreateDelegate.swift */; };
+		2B9E2DCA21BABA5E008423F1 /* PromptDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E2DC921BABA5E008423F1 /* PromptDateView.xib */; };
+		2B9E2DCC21BABA6C008423F1 /* PromptDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DCB21BABA6C008423F1 /* PromptDateView.swift */; };
+		2B9E2DCF21BB1593008423F1 /* MeetingsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E2DCE21BB1593008423F1 /* MeetingsDetail.storyboard */; };
+		2B9E2DD121BB15FE008423F1 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E2DD021BB15FE008423F1 /* MeetingsDetailViewController.swift */; };
 		2BA466C121BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA466BF21BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift */; };
 		2BA466C221BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */; };
+		2BAD435C21BA9D8700C11834 /* NotificationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300CCED421B94692002B0527 /* NotificationFormatter.swift */; };
+		2BAD435F21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD435D21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift */; };
+		2BAD436021BA9FD000C11834 /* HeaderMeetingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD435E21BA9FD000C11834 /* HeaderMeetingsTableViewCell.xib */; };
+		2BAD436421BAA09000C11834 /* MeetingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD436321BAA09000C11834 /* MeetingsListViewController.swift */; };
 		2BD3949021B6C32F00813EAC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3948F21B6C32F00813EAC /* UIView.swift */; };
 		2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949121B6D61300813EAC /* CAGradientLayer.swift */; };
 		2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3949321B6D72F00813EAC /* UINavigationBar.swift */; };
@@ -76,6 +91,7 @@
 		5D08B56721A59A4B00FBF73A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56621A59A4B00FBF73A /* House.swift */; };
 		5D08B56D21A5A39E00FBF73A /* CloudKitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */; };
 		5D08B56F21A6D62300FBF73A /* CKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */; };
+		5D15263421B93E56009377F7 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15263321B93E56009377F7 /* Meeting.swift */; };
 		5D2B432821B1828400A80354 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432721B1828400A80354 /* NotificationManager.swift */; };
 		5D2B432A21B1828B00A80354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B432921B1828B00A80354 /* User.swift */; };
 		5D2B433221B1833D00A80354 /* CloudKitRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */; };
@@ -199,8 +215,22 @@
 		2B34E96A21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		2B34E96B21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeetingsList.storyboard; sourceTree = "<group>"; };
+		2B9E2DB821BAA733008423F1 /* MeetingsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsListTableViewCell.swift; sourceTree = "<group>"; };
+		2B9E2DB921BAA733008423F1 /* MeetingsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingsListTableViewCell.xib; sourceTree = "<group>"; };
+		2B9E2DBD21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsListEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		2B9E2DBE21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingsListEmptyTableViewCell.xib; sourceTree = "<group>"; };
+		2B9E2DC221BAAB8F008423F1 /* MeetingsCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeetingsCreate.storyboard; sourceTree = "<group>"; };
+		2B9E2DC421BAABAC008423F1 /* MeetingsCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsCreateViewController.swift; sourceTree = "<group>"; };
+		2B9E2DC621BAB5F6008423F1 /* MeetingsCreateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsCreateDelegate.swift; sourceTree = "<group>"; };
+		2B9E2DC921BABA5E008423F1 /* PromptDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptDateView.xib; sourceTree = "<group>"; };
+		2B9E2DCB21BABA6C008423F1 /* PromptDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDateView.swift; sourceTree = "<group>"; };
+		2B9E2DCE21BB1593008423F1 /* MeetingsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeetingsDetail.storyboard; sourceTree = "<group>"; };
+		2B9E2DD021BB15FE008423F1 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		2BA466BF21BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleVotingEmptyCardViewCell.swift; sourceTree = "<group>"; };
 		2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuleVotingEmptyCardViewCell.xib; sourceTree = "<group>"; };
+		2BAD435D21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMeetingsTableViewCell.swift; sourceTree = "<group>"; };
+		2BAD435E21BA9FD000C11834 /* HeaderMeetingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMeetingsTableViewCell.xib; sourceTree = "<group>"; };
+		2BAD436321BAA09000C11834 /* MeetingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingsListViewController.swift; sourceTree = "<group>"; };
 		2BD3948F21B6C32F00813EAC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2BD3949121B6D61300813EAC /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
 		2BD3949321B6D72F00813EAC /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -257,7 +287,6 @@
 		3065BD1B21A2E6E50005339A /* RuleOfThumbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuleOfThumbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3065BD1F21A2E6E50005339A /* RuleOfThumbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleOfThumbUITests.swift; sourceTree = "<group>"; };
 		3065BD2121A2E6E50005339A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3065BD3121A2EB990005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3721A2EC1B0005339A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3065BD3921A2EEBD0005339A /* RuleOfThumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleOfThumb.entitlements; sourceTree = "<group>"; };
 		30ABEA5E21B7F8A2008C03A3 /* RuleOfThumbNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuleOfThumbNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +297,7 @@
 		5D08B56621A59A4B00FBF73A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		5D08B56C21A5A39E00FBF73A /* CloudKitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitRepository.swift; sourceTree = "<group>"; };
 		5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManagedObject.swift; sourceTree = "<group>"; };
+		5D15263321B93E56009377F7 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		5D2B432721B1828400A80354 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5D2B432921B1828B00A80354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D2B433121B1833D00A80354 /* CloudKitRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRulesTests.swift; sourceTree = "<group>"; };
@@ -441,6 +471,52 @@
 			path = RuleVotingCardViewCell;
 			sourceTree = "<group>";
 		};
+		2B9E2DB721BAA70E008423F1 /* MeetingsListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E2DB821BAA733008423F1 /* MeetingsListTableViewCell.swift */,
+				2B9E2DB921BAA733008423F1 /* MeetingsListTableViewCell.xib */,
+			);
+			path = MeetingsListTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B9E2DBC21BAA98A008423F1 /* MeetingsListEmptyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E2DBD21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.swift */,
+				2B9E2DBE21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.xib */,
+			);
+			path = MeetingsListEmptyTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B9E2DC121BAAB79008423F1 /* MeetingsCreate */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E2DC221BAAB8F008423F1 /* MeetingsCreate.storyboard */,
+				2B9E2DC421BAABAC008423F1 /* MeetingsCreateViewController.swift */,
+				2B9E2DC621BAB5F6008423F1 /* MeetingsCreateDelegate.swift */,
+			);
+			path = MeetingsCreate;
+			sourceTree = "<group>";
+		};
+		2B9E2DC821BABA14008423F1 /* PromptDateView */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E2DC921BABA5E008423F1 /* PromptDateView.xib */,
+				2B9E2DCB21BABA6C008423F1 /* PromptDateView.swift */,
+			);
+			path = PromptDateView;
+			sourceTree = "<group>";
+		};
+		2B9E2DCD21BB1577008423F1 /* MeetingsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E2DCE21BB1593008423F1 /* MeetingsDetail.storyboard */,
+				2B9E2DD021BB15FE008423F1 /* MeetingsDetailViewController.swift */,
+			);
+			path = MeetingsDetail;
+			sourceTree = "<group>";
+		};
 		2BA466BE21BA8E3D006DE1BC /* RuleVotingEmptyCardViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +524,23 @@
 				2BA466C021BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.xib */,
 			);
 			path = RuleVotingEmptyCardViewCell;
+			sourceTree = "<group>";
+		};
+		2BAD436221BA9FDC00C11834 /* HeaderMeetingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD435E21BA9FD000C11834 /* HeaderMeetingsTableViewCell.xib */,
+				2BAD435D21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift */,
+			);
+			path = HeaderMeetingsTableViewCell;
+			sourceTree = "<group>";
+		};
+		2BD3949721B8132A00813EAC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		2BD394AE21B8142900813EAC /* Rules */ = {
@@ -516,6 +609,7 @@
 				3004AE5521A44E3E0020629B /* CreatorProfileView.xib */,
 				300A58AD21A5995F000160DF /* PromptView.swift */,
 				300A58AF21A5996D000160DF /* PromptView.xib */,
+				2B9E2DC821BABA14008423F1 /* PromptDateView */,
 				300A58A921A586A8000160DF /* XibView.swift */,
 				300A5C4321AC1B0700C6013D /* XibView.xib */,
 				E597835E21A82695009FDDCF /* SugestionModalView.xib */,
@@ -653,8 +747,13 @@
 		3065BD3021A2EB430005339A /* Meetings */ = {
 			isa = PBXGroup;
 			children = (
-				3065BD3121A2EB990005339A /* .gitkeep */,
+				2B9E2DCD21BB1577008423F1 /* MeetingsDetail */,
+				2B9E2DC121BAAB79008423F1 /* MeetingsCreate */,
+				2B9E2DBC21BAA98A008423F1 /* MeetingsListEmptyTableViewCell */,
 				2B34E97021B95A1800066DC5 /* MeetingsList.storyboard */,
+				2BAD436321BAA09000C11834 /* MeetingsListViewController.swift */,
+				2B9E2DB721BAA70E008423F1 /* MeetingsListTableViewCell */,
+				2BAD436221BA9FDC00C11834 /* HeaderMeetingsTableViewCell */,
 			);
 			path = Meetings;
 			sourceTree = "<group>";
@@ -706,6 +805,7 @@
 				5D08B56621A59A4B00FBF73A /* House.swift */,
 				5D08B56E21A6D62300FBF73A /* CKManagedObject.swift */,
 				E51A7EA821BE0CCE000A1DA0 /* RulesDict.swift */,
+				5D15263321B93E56009377F7 /* Meeting.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -965,9 +1065,12 @@
 				3065BD0A21A2E6E50005339A /* LaunchScreen.storyboard in Resources */,
 				3065BD0721A2E6E50005339A /* Assets.xcassets in Resources */,
 				2B34E96D21B94F4D00066DC5 /* RuleEmptyTableViewCell.xib in Resources */,
+				2B9E2DCF21BB1593008423F1 /* MeetingsDetail.storyboard in Resources */,
 				2BD394DE21B8142900813EAC /* HeaderCell.xib in Resources */,
+				2B9E2DC021BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.xib in Resources */,
 				E507C60821B5577200EEC7E7 /* Initial.storyboard in Resources */,
 				2BD394D721B8142900813EAC /* OpenVotesTableViewCell.xib in Resources */,
+				2B9E2DCA21BABA5E008423F1 /* PromptDateView.xib in Resources */,
 				2B281D8621B84C950000695F /* Main.storyboard in Resources */,
 				2B257B7221B1863D00D56DEC /* Lato-Light.ttf in Resources */,
 				3004AE5721A44E3E0020629B /* CreatorProfileView.xib in Resources */,
@@ -982,11 +1085,14 @@
 				300A58B021A5996D000160DF /* PromptView.xib in Resources */,
 				2BD394CC21B8142900813EAC /* RuleCreate.storyboard in Resources */,
 				2BD394D021B8142900813EAC /* RuleDetail.storyboard in Resources */,
+				2B9E2DC321BAAB8F008423F1 /* MeetingsCreate.storyboard in Resources */,
 				2BD394E421B814B100813EAC /* RuleList.storyboard in Resources */,
+				2BAD436021BA9FD000C11834 /* HeaderMeetingsTableViewCell.xib in Resources */,
 				2BD394D421B8142900813EAC /* VotingStatusView.xib in Resources */,
 				2B257B8921B1865800D56DEC /* Nunito-SemiBold.ttf in Resources */,
 				2BD394CF21B8142900813EAC /* RulePeekView.xib in Resources */,
 				E597836321A837E0009FDDCF /* SugestionModal.storyboard in Resources */,
+				2B9E2DBB21BAA733008423F1 /* MeetingsListTableViewCell.xib in Resources */,
 				300A5C4421AC1B0700C6013D /* XibView.xib in Resources */,
 				2B257B8D21B1865800D56DEC /* Nunito-Regular.ttf in Resources */,
 				2BD394DF21B8142900813EAC /* RuleTableViewCell.xib in Resources */,
@@ -1040,6 +1146,7 @@
 			files = (
 				2BA466C121BA8E72006DE1BC /* RuleVotingEmptyCardViewCell.swift in Sources */,
 				2BD394D921B8142900813EAC /* VotingPromptView.swift in Sources */,
+				2B9E2DBA21BAA733008423F1 /* MeetingsListTableViewCell.swift in Sources */,
 				E507C60421B1783500EEC7E7 /* HomeLoginViewController.swift in Sources */,
 				E597836121A8270D009FDDCF /* SugestionModalView.swift in Sources */,
 				2BD394DD21B8142900813EAC /* RuleVotingCardViewCell.swift in Sources */,
@@ -1048,8 +1155,10 @@
 				2B281D8521B84C950000695F /* ViewController.swift in Sources */,
 				2BD3949421B6D72F00813EAC /* UINavigationBar.swift in Sources */,
 				E51A7EA921BE0CCE000A1DA0 /* RulesDict.swift in Sources */,
+				2B9E2DC721BAB5F6008423F1 /* MeetingsCreateDelegate.swift in Sources */,
 				E507C60C21B56FBF00EEC7E7 /* IJProgressView.swift in Sources */,
 				2BD394E121B8142900813EAC /* RuleListViewController.swift in Sources */,
+				2B9E2DC521BAABAC008423F1 /* MeetingsCreateViewController.swift in Sources */,
 				2BD3949621B7F10900813EAC /* UIImage.swift in Sources */,
 				2BD394CB21B8142900813EAC /* RuleCreateDelegate.swift in Sources */,
 				E597836721A839B3009FDDCF /* UIColor.swift in Sources */,
@@ -1057,6 +1166,7 @@
 				2BD394D121B8142900813EAC /* ActionlessRuleDetailViewController.swift in Sources */,
 				E597836521A83808009FDDCF /* SecondaryButton.swift in Sources */,
 				2BD3949221B6D61300813EAC /* CAGradientLayer.swift in Sources */,
+				2BAD436421BAA09000C11834 /* MeetingsListViewController.swift in Sources */,
 				2BD394DA21B8142900813EAC /* VotingStatusView.swift in Sources */,
 				300CCED521B94692002B0527 /* NotificationFormatter.swift in Sources */,
 				5D08B56521A598C900FBF73A /* Rule.swift in Sources */,
@@ -1074,6 +1184,7 @@
 				2BD394E021B8142900813EAC /* HeaderCell.swift in Sources */,
 				300A58B421A5A32B000160DF /* UIAlertController.swift in Sources */,
 				300A58AE21A5995F000160DF /* PromptView.swift in Sources */,
+				2B9E2DBF21BAA9B0008423F1 /* MeetingsListEmptyTableViewCell.swift in Sources */,
 				2B34E96C21B94F4D00066DC5 /* RuleEmptyTableViewCell.swift in Sources */,
 				E597836921A83AA5009FDDCF /* FormButton.swift in Sources */,
 				300D58E321AD6FD800766ECF /* SugestionModalViewDelegate.swift in Sources */,
@@ -1083,9 +1194,13 @@
 				3065BCFD21A2E6E30005339A /* AppDelegate.swift in Sources */,
 				E507C60A21B5620F00EEC7E7 /* InitialViewController.swift in Sources */,
 				2BD394E621B8238B00813EAC /* RuleListDelegate.swift in Sources */,
+				2B9E2DD121BB15FE008423F1 /* MeetingsDetailViewController.swift in Sources */,
+				2B9E2DCC21BABA6C008423F1 /* PromptDateView.swift in Sources */,
 				5D08B56721A59A4B00FBF73A /* House.swift in Sources */,
+				2BAD435F21BA9FD000C11834 /* HeaderMeetingsTableViewCell.swift in Sources */,
 				5D08B56221A5968E00FBF73A /* Repository.swift in Sources */,
 				301995C721B5632200D86396 /* CoreDataManager.swift in Sources */,
+				5D15263421B93E56009377F7 /* Meeting.swift in Sources */,
 				5D4A935621BAA20E0027362A /* CloudKitRepository+Subscriptions.swift in Sources */,
 				2BD394DC21B8142900813EAC /* OpenVotesTableViewCell.swift in Sources */,
 				300A58AA21A586A8000160DF /* XibView.swift in Sources */,
