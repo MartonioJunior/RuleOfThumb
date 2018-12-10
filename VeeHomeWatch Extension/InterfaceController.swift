@@ -47,7 +47,6 @@ extension InterfaceController : WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print(message["message"] as! [[String:String]])
         self.rules = message["message"] as! [[String:String]]
     }
     

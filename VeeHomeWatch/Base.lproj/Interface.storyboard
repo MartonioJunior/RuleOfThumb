@@ -7,6 +7,7 @@
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -47,13 +48,7 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="H0A-Xw-Yed">
                             <items>
-                                <group width="100" height="100" alignment="center" backgroundImage="image-default-watch" id="pAW-1t-3GA">
-                                    <items>
-                                        <label alignment="center" verticalAlignment="center" text="🏡" id="dcC-5u-e3J">
-                                            <fontDescription key="font" type="system" pointSize="36"/>
-                                        </label>
-                                    </items>
-                                </group>
+                                <group width="1" height="100" alignment="center" backgroundImage="people-watch" contentMode="scaleAspectFit" id="pAW-1t-3GA"/>
                                 <group width="1" alignment="left" layout="vertical" id="iVc-O5-JYR">
                                     <items>
                                         <label alignment="center" verticalAlignment="bottom" text="VeeHome" id="wXA-yI-0z8">
@@ -61,7 +56,7 @@
                                         </label>
                                         <button width="1" alignment="left" verticalAlignment="bottom" title="See rules" id="WDr-OQ-yaz">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="backgroundColor" red="0.97254901959999995" green="0.0" blue="0.61960784310000006" alpha="0.17000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.90196078431372551" green="0.37647058823529411" blue="0.35686274509803922" alpha="0.90200001001358032" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="seeRulesAction" destination="6xp-9i-SXM" id="CMg-5T-nvA"/>
                                             </connections>
@@ -91,7 +86,7 @@
                                             <group key="rootItem" width="1" alignment="left" spacing="8" id="HfT-Mo-Baa">
                                                 <items>
                                                     <separator height="1" heightAdjustment="-8" alignment="left" verticalAlignment="center" id="3Jb-4u-AhT">
-                                                        <color key="color" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="color" name="pastelRed90"/>
                                                     </separator>
                                                     <label height="1" alignment="left" text="Wake up early in th morning" numberOfLines="0" id="wyi-ij-YDk"/>
                                                 </items>
@@ -117,13 +112,13 @@
             <objects>
                 <controller identifier="DetailsInterfaceController" title="Cancel" id="Xn6-89-4Wq" customClass="DetailsInterfaceController" customModule="VeeHomeWatch_Extension">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" spacing="16" id="N8F-n5-6DV">
+                        <group width="1" alignment="left" layout="vertical" spacing="22" id="N8F-n5-6DV">
                             <items>
                                 <label alignment="left" text="Say good morning to all the members of the house" textAlignment="center" numberOfLines="0" id="Jdw-PT-Snc">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <separator alignment="left" id="e9t-9C-Slc">
-                                    <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <separator width="60" alignment="center" id="e9t-9C-Slc">
+                                    <color key="color" name="dusk80"/>
                                 </separator>
                                 <group width="1" alignment="left" layout="vertical" id="csF-sr-NCe">
                                     <items>
@@ -133,15 +128,15 @@
                                         <label width="1" alignment="left" text="20/12/2018" textAlignment="center" id="OvN-Yh-aWD"/>
                                     </items>
                                 </group>
-                                <separator alignment="left" id="bwa-pA-Nl5">
-                                    <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <separator width="60" alignment="center" id="HT7-O2-Dig">
+                                    <color key="color" name="dusk80"/>
                                 </separator>
                                 <group width="1" alignment="left" layout="vertical" id="rZ1-2W-F7l">
                                     <items>
                                         <label width="1" alignment="left" text="About" textAlignment="center" id="hQ6-BN-7Mb">
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
-                                        <group width="1" alignment="left" backgroundImage="bg_group_watch" id="xBY-IY-hjP">
+                                        <group width="1" alignment="left" backgroundImage="bg-group-watch" id="xBY-IY-hjP">
                                             <items>
                                                 <label width="0.80000000000000004" widthAdjustment="10" alignment="center" verticalAlignment="center" text="To bring all members closer together, everyone should say good morning as soon as they wake up." numberOfLines="0" id="ECa-yy-jHk">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,31 +145,24 @@
                                         </group>
                                     </items>
                                 </group>
-                                <separator alignment="left" id="7zq-KI-UPn">
-                                    <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <separator width="60" alignment="center" id="Yqx-h2-sQl">
+                                    <color key="color" name="dusk80"/>
                                 </separator>
-                                <group width="1" height="40" alignment="left" id="h2r-Ek-7Tt">
+                                <group width="1" height="40" alignment="left" spacing="8" id="h2r-Ek-7Tt">
                                     <items>
-                                        <group width="40" alignment="left" id="vdX-O5-hgm">
-                                            <items>
-                                                <imageView width="1" height="1" alignment="left" image="user-default-watch" contentMode="scaleAspectFill" id="hfS-LN-bKX"/>
-                                            </items>
-                                        </group>
+                                        <imageView width="40" height="1" alignment="left" image="image-default-watch" contentMode="scaleAspectFill" id="hfS-LN-bKX"/>
                                         <group width="1" alignment="left" layout="vertical" spacing="1" id="gsa-Q9-CID">
                                             <items>
                                                 <label alignment="left" text="Created by" id="jqk-MC-V5y">
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
-                                                <label alignment="left" text="Anne" id="nxs-9X-rzh">
+                                                <label alignment="left" text="Anne" numberOfLines="0" id="nxs-9X-rzh">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                             </items>
                                         </group>
                                     </items>
                                 </group>
-                                <separator alignment="left" id="7t7-WZ-RBr">
-                                    <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </separator>
                             </items>
                         </group>
                     </items>
@@ -190,4 +178,12 @@
             <point key="canvasLocation" x="1208" y="495"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="dusk80">
+            <color red="0.33700001239776611" green="0.29399999976158142" blue="0.42699998617172241" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pastelRed90">
+            <color red="0.90200001001358032" green="0.37599998712539673" blue="0.35699999332427979" alpha="0.90200001001358032" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
