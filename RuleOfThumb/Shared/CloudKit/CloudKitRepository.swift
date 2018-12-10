@@ -34,6 +34,33 @@ class CloudKitRepository {
         })
     }
     
+    func newMeetingSubscription(with house: House) {
+        let reference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
+        let subscription = CKQuerySubscription(
+            recordType: "Meetings",
+            predicate: NSPredicate(format: "house == %@", reference),
+            options: [.firesOnRecordCreation])
+        
+        let info = CKSubscription.NotificationInfo()
+        info.alertLocalizationKey = "Record created on Meetings: %@"
+        info.alertLocalizationArgs = ["title"]
+        info.shouldSendContentAvailable = false
+        info.shouldSendMutableContent = true
+        info.desiredKeys = ["title"]
+        info.category = "RecordCreated"
+        
+        subscription.notificationInfo = info
+        
+        self.publicDB?.save(subscription, completionHandler: { (subscription, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            print("Subscription \(String(describing: subscription?.subscriptionID)) saved for Meetings")
+        })
+    }
+    
 }
 
 // - MARK: RulesRepository protocol implementation.
@@ -149,6 +176,49 @@ extension CloudKitRepository: HousesRepository {
     
 }
 
+// - MARK: MeetingsRepository protocol implementation
+extension CloudKitRepository: MeetingsRepository {
+    
+    func fetchAllMeetings(from house: House, then completion: @escaping (([Meeting]) -> Void)) {
+        let houseReference = CKRecord.Reference(recordID: house.ckRecordId(), action: .none)
+        let query = CKQuery(recordType: "Meetings", predicate: NSPredicate(format: "house == %@", houseReference))
+        query.sortDescriptors = [NSSortDescriptor(key: "dateScheduled", ascending: true)]
+        
+        self.publicDB?.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            var meetings = [Meeting]()
+            
+            records?.forEach({ (record) in
+                meetings.append(Meeting(from: record))
+            })
+            
+            completion(meetings)
+        })
+    }
+    
+    func save(meeting: Meeting, then completion: @escaping ((Meeting) -> Void)) {
+        meeting.toCKRecord { (meetingRecord) in
+            self.publicDB?.save(meetingRecord) { (saved, error) in
+                guard let saved = saved, error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                print("Meeting \(String(describing: saved.recordID)) saved")
+                
+                let updatedMeeting = Meeting(from: saved)
+                
+                completion(updatedMeeting)
+            }
+        }
+    }
+    
+}
+
 // - MARK: Users logic
 extension CloudKitRepository {
 
@@ -213,6 +283,7 @@ extension CloudKitRepository {
                             
                             self.recordCreatedSubscription(in: "Rules", with: house)
                             self.recordUpdatedSubscription(in: "Rules", with: house)
+                            self.newMeetingSubscription(with: house)
                             
                             completion(house)
                         }
@@ -267,6 +338,7 @@ extension CloudKitRepository {
                         
                         self.recordCreatedSubscription(in: "Rules", with: house)
                         self.recordUpdatedSubscription(in: "Rules", with: house)
+                        self.newMeetingSubscription(with: house)
                         
                         defaults.set(houseRecord.recordID.recordName, forKey: "HouseCreated")
                         
